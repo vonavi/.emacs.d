@@ -60,6 +60,27 @@
 (setq x-select-enable-clipboard t) ; cut and paste to the X clipboard
 (setq mouse-yank-at-point t) ; paste at point NOT at cursor
 
+;;-------------------------
+;; Backup and restore Emacs
+;;-------------------------
+
+;; Create a backup file
+(setq backup-by-copying t                                    ; don't clobber symlinks
+      backup-directory-alist '(("." . "~/.emacs.d/backup/")) ; don't litter my fs tree
+      kept-new-versions 4                                    ; keep 4 last backups
+      kept-old-versions 0                                    ; don't keep first backups
+      delete-old-versions t                                  ; delete intermediate backup files
+      version-control t)                                     ; use versioned backups
+
+;; Automatically save and restore sessions
+(desktop-save-mode 1)
+(setq desktop-path '("~/.emacs.d/desktop/")
+      desktop-save t
+      desktop-load-locked-desktop nil)
+
+;; Show recent files in menu
+(recentf-mode 1)
+
 ;; If everything is OK, then a server starts
 (server-start)
 
