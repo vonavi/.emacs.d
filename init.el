@@ -42,6 +42,24 @@
       display-time-default-load-average nil) ; don't display the system load average
 (display-time)
 
+;;-----------------
+;; Emacs feel setup
+;;-----------------
+
+;; Enable mouse wheel
+(mouse-wheel-mode 1)
+(setq mouse-wheel-scroll-amount '(1)    ; mouse scroll one line at a time
+      mouse-wheel-progressive-speed nil ; don't accelerate scrolling
+      mouse-wheel-follow-mouse t        ; scroll window under mouse
+      setscroll-step 1                  ; keyboard scroll one line at a time
+      scroll-conservatively 10000       ; scroll one line at a time if point moves off-screen
+      scroll-preserve-screen-position t ; keep point at the same screen position
+      scroll-margin 0                   ; set scroll margin
+      auto-window-vscroll nil)          ; don't adjust window-vscroll to view tall lines
+
+(setq x-select-enable-clipboard t) ; cut and paste to the X clipboard
+(setq mouse-yank-at-point t) ; paste at point NOT at cursor
+
 ;; If everything is OK, then a server starts
 (server-start)
 
