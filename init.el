@@ -97,4 +97,22 @@
 (setq resize-minibuffer-mode t) ; minibuffer gets resized if it becomes too big
 (fset 'yes-or-no-p 'y-or-n-p) ; use y or n instead of yes or not
 
+;;---------------------
+;; Emacs buffer editing
+;;---------------------
+
+(setq sentence-end-double-space nil ; sentences end with one space
+	  require-final-newline t)      ; always end a file with a newline
+;; Delete trailing whitespaces before saving
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+;; Stop Emacs from arbitrarily adding lines to the end of a file when
+;; the cursor is moved past the end of it:
+(setq next-line-add-newlines nil)
+
+;; Indentation setup
+(setq indent-tabs-mode nil ; never use tab characters for indentation
+	  default-tab-width 4  ; set the default tab-width
+	  c-basic-offset 2     ; indentation level in CC mode
+	  js-indent-level 2)   ; indentation level in JS mode
+
 ;;; init.el ends here
