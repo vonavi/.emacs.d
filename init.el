@@ -115,4 +115,25 @@
 	  c-basic-offset 2     ; indentation level in CC mode
 	  js-indent-level 2)   ; indentation level in JS mode
 
+;;--------------------
+;; Miscellaneous stuff
+;;--------------------
+
+(setq default-input-method "russian-computer") ; default input method
+(show-paren-mode 1) ; highlight parenthesis pairs
+(setq blink-matching-paren-distance nil) ; search backwards for matching open-paren
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on) ; translate escape sequences
+(setq calendar-week-start-day 1      ; week starts Monday
+	  calendar-date-style 'european) ; European style calendar
+
+;; This function reverts all buffers that are visiting a file.
+(defun revert-all-buffers ()
+  "Refreshes all open buffers from their respective files."
+  (interactive)
+  (dolist (buf (buffer-list))
+    (with-current-buffer buf
+      (when (and (buffer-file-name) (not (buffer-modified-p)))
+        (revert-buffer t t t))))
+  (message "Refreshed open files."))
+
 ;;; init.el ends here
