@@ -1,4 +1,6 @@
 auto-save-list/
 backup/
+cache/*
+!cache/.gitkeep
 desktop/*
 !desktop/.gitkeep

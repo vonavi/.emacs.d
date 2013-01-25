@@ -81,4 +81,20 @@
 ;; Show recent files in menu
 (recentf-mode 1)
 
+;;--------------------------
+;; Emacs minibuffer behavior
+;;--------------------------
+
+;; Do interactively things with buffers and files
+(ido-mode 1)
+(setq ido-save-directory-list-file "~/.emacs.d/cache/ido.last"
+	  ido-ignore-buffers                      ; ignore these buffers
+	  '("\\` " "^\*" "^\.saves")
+	  ido-confirm-unique-completion t         ; wait for RET with unique completion
+	  confirm-nonexistent-file-or-buffer nil) ; don't need confirmation
+
+(icomplete-mode 1) ; completion in mini-buffer
+(setq resize-minibuffer-mode t) ; minibuffer gets resized if it becomes too big
+(fset 'yes-or-no-p 'y-or-n-p) ; use y or n instead of yes or not
+
 ;;; init.el ends here
