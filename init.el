@@ -81,7 +81,4 @@
 ;; Show recent files in menu
 (recentf-mode 1)
 
-;; If everything is OK, then a server starts
-(server-start)
-
 ;;; init.el ends here
