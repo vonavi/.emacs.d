@@ -88,10 +88,17 @@
 ;; Do interactively things with buffers and files
 (ido-mode 1)
 (setq ido-save-directory-list-file "~/.emacs.d/cache/ido.last"
-	  ido-ignore-buffers                      ; ignore these buffers
-	  '("\\` " "^\*" "^\.saves")
-	  ido-confirm-unique-completion t         ; wait for RET with unique completion
-	  confirm-nonexistent-file-or-buffer nil) ; don't need confirmation
+      ido-ignore-buffers                      ; ignore these buffers
+      '("^ " "\*scratch\*" ido-ignore-modes)
+      ido-confirm-unique-completion t         ; wait for RET with unique completion
+      confirm-nonexistent-file-or-buffer nil) ; don't need confirmation
+
+(defun ido-ignore-modes (name)
+  "Ignore all buffers having modes from the mode list."
+  (let ((mode-list
+         '(completion-list-mode fundamental-mode help-mode ibuffer-mode)))
+    (with-current-buffer name
+      (delete nil (mapcar 'derived-mode-p mode-list)))))
 
 (icomplete-mode 1) ; completion in mini-buffer
 (setq resize-minibuffer-mode t) ; minibuffer gets resized if it becomes too big
@@ -102,7 +109,7 @@
 ;;---------------------
 
 (setq sentence-end-double-space nil ; sentences end with one space
-	  require-final-newline t)      ; always end a file with a newline
+      require-final-newline t)      ; always end a file with a newline
 ;; Delete trailing whitespaces before saving
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 ;; Stop Emacs from arbitrarily adding lines to the end of a file when
@@ -111,9 +118,9 @@
 
 ;; Indentation setup
 (setq indent-tabs-mode nil ; never use tab characters for indentation
-	  default-tab-width 4  ; set the default tab-width
-	  c-basic-offset 2     ; indentation level in CC mode
-	  js-indent-level 2)   ; indentation level in JS mode
+      default-tab-width 4  ; set the default tab-width
+      c-basic-offset 2     ; indentation level in CC mode
+      js-indent-level 2)   ; indentation level in JS mode
 
 ;;--------------------
 ;; Miscellaneous stuff
@@ -124,7 +131,7 @@
 (setq blink-matching-paren-distance nil) ; search backwards for matching open-paren
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on) ; translate escape sequences
 (setq calendar-week-start-day 1      ; week starts Monday
-	  calendar-date-style 'european) ; European style calendar
+      calendar-date-style 'european) ; European style calendar
 
 ;; This function reverts all buffers that are visiting a file.
 (defun revert-all-buffers ()
