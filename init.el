@@ -143,4 +143,18 @@
         (revert-buffer t t t))))
   (message "Refreshed open files."))
 
+;;---------------------------
+;; Emacs Lisp Package Archive
+;;---------------------------
+
+(when
+    (load (expand-file-name "~/.emacs.d/elpa/package.el"))
+  (package-initialize))
+;; Add the user-contributed repository
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
+;; Fix HTTP1/1.1 problems
+(setq url-http-attempt-keepalives nil)
+
 ;;; init.el ends here
