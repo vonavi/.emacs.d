@@ -157,4 +157,15 @@
 ;; Fix HTTP1/1.1 problems
 (setq url-http-attempt-keepalives nil)
 
+;;--------------------------------------
+;; Load the rest of initialization files
+;;--------------------------------------
+
+(let ((init-dir "~/.emacs.d/init/"))
+  (dolist (file (directory-files init-dir))
+    (when
+        ;; Load Emacs Lisp source code but hidden files
+        (string-match "^[^.].*\\.elc?$" file)
+      (load (expand-file-name file init-dir)))))
+
 ;;; init.el ends here
