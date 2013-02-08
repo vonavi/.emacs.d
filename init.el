@@ -1,12 +1,12 @@
 ;;; init.el ---
 
-;; Copyright (C) Vladimir S. Ivanov
+;; Copyright (C) 2013 Vladimir S. Ivanov
 ;;
 ;; Author: Vladimir S. Ivanov <ivvl82@gmail.com>
+;; Version:
 ;; Keywords:
-;; Requirements:
-;; Status: not intended to be distributed yet
 
+;;; Code:
 
 ;;-----------------------
 ;; Emacs appearance setup
@@ -17,7 +17,6 @@
 (setq inhibit-splash-screen t) ; prevent silly initial splash screen
 (tool-bar-mode 0) ; no tool bar
 (set-scroll-bar-mode 'right) ; place scroll bar
-(global-font-lock-mode 1) ; use colors to highlight commands, etc.
 
 ;; Install a chosen color theme
 (require 'color-theme)
@@ -36,9 +35,9 @@
 
 ;; Mode bar preferences
 (column-number-mode 1) ; show column number in mode-line
-(setq display-time-day-and-date t ; display the day and date in the mode line
-      display-time-24hr-format t ; use 24hr format
-      display-time-interval 10 ; redisplay every ten seconds
+(setq display-time-day-and-date t            ; display the day and date in the mode line
+      display-time-24hr-format t             ; use 24hr format
+      display-time-interval 10               ; redisplay every ten seconds
       display-time-default-load-average nil) ; don't display the system load average
 (display-time)
 
@@ -89,7 +88,7 @@
 (ido-mode 1)
 (setq ido-save-directory-list-file "~/.emacs.d/cache/ido.last"
       ido-ignore-buffers                      ; ignore these buffers
-      '("^ " "\*scratch\*" ido-ignore-modes)
+      '("\\` " "\\`\\*scratch\\*\\'" ido-ignore-modes)
       ido-confirm-unique-completion t         ; wait for RET with unique completion
       confirm-nonexistent-file-or-buffer nil) ; don't need confirmation
 
@@ -117,10 +116,10 @@
 (setq next-line-add-newlines nil)
 
 ;; Indentation setup
-(setq indent-tabs-mode nil ; never use tab characters for indentation
-      default-tab-width 4  ; set the default tab-width
-      c-basic-offset 2     ; indentation level in CC mode
-      js-indent-level 2)   ; indentation level in JS mode
+(setq-default indent-tabs-mode nil) ; never use tab characters for indentation
+(setq tab-width 4        ; set tab-width
+      c-basic-offset 2   ; indentation level in CC mode
+      js-indent-level 2) ; indentation level in JS mode
 
 ;;--------------------
 ;; Miscellaneous stuff
@@ -165,7 +164,7 @@
   (dolist (file (directory-files init-dir))
     (when
         ;; Load Emacs Lisp source code but hidden files
-        (string-match "^[^.].*\\.elc?$" file)
+        (string-match "\\`[^.].*\\.elc?\\'" file)
       (load (expand-file-name file init-dir)))))
 
 ;;; init.el ends here
