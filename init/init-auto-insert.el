@@ -1,9 +1,8 @@
 ;;; init-auto-insert.el ---
 
 ;; Copyright (C) 2013 Vladimir S. Ivanov
-;;
+
 ;; Author: Vladimir S. Ivanov <ivvl82@gmail.com>
-;; Version:
 ;; Keywords:
 
 ;;; Code:
@@ -24,10 +23,10 @@
         ("(>>AUTHOR<<)" . "Vladimir S. Ivanov <ivvl82@gmail.com>")
         ("(>>USER_NAME<<)" . "Vladimir S. Ivanov")
         (file . (file-name-nondirectory buffer-file-name))
+        (file-sans-ext . (file-name-sans-extension file))
         ("(>>FILE<<)" . file)
-        ("(>>FILE_SANS<<)" . (file-name-sans-extension file))
-        ("(>>FILE_UPCASE<<)" . (subst-char-in-string ?- ?_
-                                (upcase (file-name-sans-extension file))))
+        ("(>>FILE_SANS<<)" . file-sans-ext)
+        ("(>>FILE_UPCASE<<)" . (subst-char-in-string ?- ?_ (upcase file-sans-ext)))
         ("(>>YEAR<<)" . (format-time-string "%Y" (current-time)))
         ))
 
@@ -36,14 +35,16 @@
         local-vars)
     (dolist (template auto-update-template-alist)
       (let ((key (car template))
-            (value (cdr template)))
-        (if (symbolp key)
-            (unless (boundp key)
-              (set (make-local-variable key) (eval value))
-              (push key local-vars))
+            (value (eval (cdr template))))
+        (cond
+         ((stringp key)
           (save-excursion
             (while (re-search-forward key nil t)
-              (replace-match (eval value) t))))))
+              (replace-match value t))))
+         ((symbolp key)
+          (unless (boundp key)
+            (set (make-local-variable key) value)
+            (push key local-vars))))))
     (mapc 'kill-local-variable local-vars)))
 
 ;;; init-auto-insert.el ends here
