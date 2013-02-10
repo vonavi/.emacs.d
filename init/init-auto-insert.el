@@ -31,6 +31,7 @@
         ))
 
 (defun auto-update-template ()
+  "Update insertions following `auto-update-template-alist'."
   (let ((case-fold-search nil)
         local-vars)
     (dolist (template auto-update-template-alist)

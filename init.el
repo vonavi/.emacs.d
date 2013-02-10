@@ -29,7 +29,7 @@
                   (concat
                    invocation-name "@" system-name ": "
                    (replace-regexp-in-string
-                    (concat "/home/" user-login-name) "~"
+                    (concat "\\`/home/" user-login-name) "~"
                     (or buffer-file-name "%b"))))))
 
 ;; Mode bar preferences
@@ -91,12 +91,12 @@
       ido-confirm-unique-completion t         ; wait for RET with unique completion
       confirm-nonexistent-file-or-buffer nil) ; don't need confirmation
 
+(setq ido-ignore-modes-list
+      '(completion-list-mode fundamental-mode help-mode ibuffer-mode))
 (defun ido-ignore-modes (name)
-  "Ignore all buffers having modes from the mode list."
-  (let ((mode-list
-         '(completion-list-mode fundamental-mode help-mode ibuffer-mode)))
-    (with-current-buffer name
-      (delete nil (mapcar 'derived-mode-p mode-list)))))
+  "Ignore all buffers having modes from `ido-ignore-modes-list'."
+  (with-current-buffer name
+    (apply 'derived-mode-p ido-ignore-modes-list)))
 
 (icomplete-mode 1) ; completion in mini-buffer
 (setq resize-minibuffer-mode t) ; minibuffer gets resized if it becomes too big
