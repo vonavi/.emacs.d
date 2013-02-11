@@ -78,6 +78,8 @@
 
 ;; Show recent files in menu
 (recentf-mode 1)
+;; File for storing customization information
+(setq custom-file "~/.emacs.d/init/init-custom.el")
 
 ;;--------------------------
 ;; Emacs minibuffer behavior
