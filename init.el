@@ -78,6 +78,8 @@
 
 ;; Show recent files in menu
 (recentf-mode 1)
+(setq recentf-save-file (recentf-expand-file-name "~/.emacs.d/cache/.recentf"))
+
 ;; File for storing customization information
 (setq custom-file "~/.emacs.d/init/init-custom.el")
 
@@ -116,11 +118,17 @@
 ;; the cursor is moved past the end of it:
 (setq next-line-add-newlines nil)
 
+;; Automatically fill lines as text is inserted
+(setq-default auto-fill-function 'do-auto-fill)
+;; Automatically fill comments but not code
+(setq comment-auto-fill-only-comments t)
+
 ;; Indentation setup
 (setq-default indent-tabs-mode nil) ; never use tab characters for indentation
-(setq tab-width 4        ; set tab-width
-      c-basic-offset 2   ; indentation level in CC mode
-      js-indent-level 2) ; indentation level in JS mode
+(setq tab-width 4          ; set tab-width
+      c-basic-offset 2     ; indentation level in CC mode
+      js-indent-level 2    ; indentation level in JS mode
+      css-indent-offset 2) ; indentation level in CSS mode
 
 ;;--------------------
 ;; Miscellaneous stuff
@@ -165,7 +173,7 @@
   (dolist (file (directory-files init-dir))
     (when
         ;; Load Emacs Lisp source code but hidden files
-        (string-match "\\`[^.].*\\.elc?\\'" file)
+        (string-match-p "\\`[^.].*\\.elc?\\'" file)
       (load (expand-file-name file init-dir)))))
 
 ;;; init.el ends here

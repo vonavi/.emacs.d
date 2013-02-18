@@ -16,7 +16,7 @@
 
 (defun linum-get-format-string ()
   "Get the string format of line numbers limited by window.
-The maximal point LIMIT of the window is used available within
+Use the maximal point LIMIT of the window available within
 `linum-update-window'."
   (let* ((width (length (number-to-string
                          (1+ (count-lines (point-min) limit)))))
