@@ -120,8 +120,7 @@
 
 ;; Automatically fill lines as text is inserted
 (setq-default auto-fill-function 'do-auto-fill)
-;; Automatically fill comments but not code
-(setq comment-auto-fill-only-comments t)
+(setq comment-auto-fill-only-comments t) ; auto fill comments but not code
 
 ;; Indentation setup
 (setq-default indent-tabs-mode nil) ; never use tab characters for indentation
