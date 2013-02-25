@@ -90,17 +90,9 @@
 ;; Do interactively things with buffers and files
 (ido-mode 1)
 (setq ido-save-directory-list-file "~/.emacs.d/cache/ido.last"
-      ido-ignore-buffers                      ; ignore these buffers
-      '("\\` " "\\`\\*scratch\\*\\'" ido-ignore-modes)
+      ido-ignore-buffers '("\\` " "\\`\\*")   ; ignore these buffers
       ido-confirm-unique-completion t         ; wait for RET with unique completion
       confirm-nonexistent-file-or-buffer nil) ; don't need confirmation
-
-(setq ido-ignore-modes-list
-      '(completion-list-mode fundamental-mode help-mode ibuffer-mode))
-(defun ido-ignore-modes (name)
-  "Ignore all buffers having modes from `ido-ignore-modes-list'."
-  (with-current-buffer name
-    (apply 'derived-mode-p ido-ignore-modes-list)))
 
 (icomplete-mode 1) ; completion in mini-buffer
 (setq resize-minibuffer-mode t) ; minibuffer gets resized if it becomes too big
