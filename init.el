@@ -29,8 +29,7 @@
                   (concat
                    invocation-name "@" system-name ": "
                    (replace-regexp-in-string
-                    (concat "\\`/home/" user-login-name) "~"
-                    (or buffer-file-name "%b"))))))
+                    (getenv "HOME") "~" (or buffer-file-name "%b"))))))
 
 ;; Mode bar preferences
 (column-number-mode 1) ; show column number in mode-line
@@ -76,9 +75,19 @@
       desktop-save t
       desktop-load-locked-desktop nil)
 
-;; Show recent files in menu
+;; List of most recent files, persisent between emacs session.
 (recentf-mode 1)
-(setq recentf-save-file (recentf-expand-file-name "~/.emacs.d/cache/.recentf"))
+(setq recentf-save-file "~/.emacs.d/cache/.recentf")
+(setq recentf-exclude '("/\\.[^/]+\\'" "/\\.emacs\\.d/elpa/" "/loaddefs\\.el\\'"))
+;; Get ido to handle recentf results
+(defun ido-recentf-open-files ()
+  "Use ido to select a recently opened file from the `recentf-list'"
+  (interactive)
+  (find-file (ido-completing-read
+              "Find recent file: "
+              (mapcar (apply-partially
+                       'replace-regexp-in-string (getenv "HOME") "~")
+                      recentf-list))))
 
 ;; File for storing customization information
 (setq custom-file "~/.emacs.d/init/init-custom.el")
@@ -146,9 +155,7 @@
 ;; Emacs Lisp Package Archive
 ;;---------------------------
 
-(when
-    (load (expand-file-name "~/.emacs.d/elpa/package.el"))
-  (package-initialize))
+(when (load "~/.emacs.d/elpa/package.el") (package-initialize))
 ;; Add the user-contributed repository
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
