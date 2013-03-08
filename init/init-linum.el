@@ -29,6 +29,11 @@ Use the maximal point LIMIT of the window available within
 
 ;; Provides an interface for turning line-numbering off
 
+;; Enabled `global-linum-mode' causes that magit hangs after
+;; log-edit-commit. Disabling `linum-mode' in the magit buffer status
+;; solved the problem. See at
+;; `https://github.com/magit/magit/issues/494'.
+
 (setq linum-disabled-buffers-list '("\\` " "\\`\\*")
       linum-disabled-modes-list '(dired-mode fundamental-mode latex-mode
                                              text-mode wl-summary-mode))

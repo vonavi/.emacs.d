@@ -77,8 +77,8 @@
 
 ;; List of most recent files, persisent between emacs session.
 (recentf-mode 1)
-(setq recentf-save-file "~/.emacs.d/cache/.recentf")
-(setq recentf-exclude '("/\\.[^/]+\\'" "/\\.emacs\\.d/elpa/" "/loaddefs\\.el\\'"))
+(setq recentf-save-file "~/.emacs.d/cache/.recentf"
+      recentf-exclude '("/\\.[^/]+\\'" "/\\.emacs\\.d/elpa/" "/loaddefs\\.el\\'"))
 ;; Get ido to handle recentf results
 (defun ido-recentf-open-files ()
   "Use ido to select a recently opened file from the `recentf-list'"
@@ -104,7 +104,7 @@
       confirm-nonexistent-file-or-buffer nil) ; don't need confirmation
 
 (icomplete-mode 1) ; completion in mini-buffer
-(setq resize-minibuffer-mode t) ; minibuffer gets resized if it becomes too big
+(setq resize-mini-windows t) ; minibuffer gets resized if it becomes too big
 (fset 'yes-or-no-p 'y-or-n-p) ; use y or n instead of yes or not
 
 ;;---------------------
@@ -122,6 +122,10 @@
 ;; Automatically fill lines as text is inserted
 (setq-default auto-fill-function 'do-auto-fill)
 (setq comment-auto-fill-only-comments t) ; auto fill comments but not code
+;; Auto fill not only inside comments for LaTeX files
+(add-hook 'LaTeX-mode-hook
+          (lambda ()
+            (set (make-local-variable 'comment-auto-fill-only-comments) nil)))
 
 ;; Indentation setup
 (setq-default indent-tabs-mode nil) ; never use tab characters for indentation
