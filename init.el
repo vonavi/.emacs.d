@@ -7,6 +7,27 @@
 
 ;;; Code:
 
+;;---------------------------
+;; Emacs Lisp Package Archive
+;;---------------------------
+
+(load-file "~/.emacs.d/elpa/package.el")
+
+;; Add the user-contributed repository
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
+;; Fix HTTP1/1.1 problem which appears when url-http-parse-response is
+;; called, there is no data, since the timeout has occurred
+(setq url-http-attempt-keepalives nil)
+
+;; Refresh the packages descriptions
+(unless package-archive-contents
+  (package-refresh-contents))
+
+;; Initialize & Install Packages
+(package-initialize)
+
 ;;-----------------------
 ;; Emacs appearance setup
 ;;-----------------------
@@ -155,18 +176,6 @@
         (revert-buffer t t t))))
   (message "Refreshed open files."))
 
-;;---------------------------
-;; Emacs Lisp Package Archive
-;;---------------------------
-
-(when (load "~/.emacs.d/elpa/package.el") (package-initialize))
-;; Add the user-contributed repository
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
-
-;; Fix HTTP1/1.1 problems
-(setq url-http-attempt-keepalives nil)
-
 ;;--------------------------------------
 ;; Load the rest of initialization files
 ;;--------------------------------------
@@ -176,6 +185,6 @@
     (when
         ;; Load Emacs Lisp source code but hidden files
         (string-match-p "\\`[^.].*\\.elc?\\'" file)
-      (load (expand-file-name file init-dir)))))
+      (load-file (expand-file-name file init-dir)))))
 
 ;;; init.el ends here
