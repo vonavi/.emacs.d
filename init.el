@@ -28,6 +28,14 @@
 ;; Initialize & Install Packages
 (package-initialize)
 
+(defvar prelude-packages
+  '(hungry-delete)
+  "A list of packages to ensure are installed at launch.")
+;; Make sure the prelude packages are installed
+(dolist (p prelude-packages)
+  (unless (package-installed-p p)
+    (package-install p)))
+
 ;;-----------------------
 ;; Emacs appearance setup
 ;;-----------------------
@@ -154,6 +162,10 @@
       c-basic-offset 2     ; indentation level in CC mode
       js-indent-level 2    ; indentation level in JS mode
       css-indent-offset 2) ; indentation level in CSS mode
+
+;; A single <DEL> or <BS> command deletes a contiguous block of whitespace
+(require 'hungry-delete)
+(global-hungry-delete-mode 1)
 
 ;;--------------------
 ;; Miscellaneous stuff
