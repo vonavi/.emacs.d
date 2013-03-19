@@ -12,19 +12,14 @@
 ;;---------------------------
 
 (load-file "~/.emacs.d/elpa/package.el")
-
-;; Add the user-contributed repository
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
-
-;; Fix HTTP1/1.1 problem which appears when url-http-parse-response is
-;; called, there is no data, since the timeout has occurred
-(setq url-http-attempt-keepalives nil)
-
+;; Use all available package repositories
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")))
 ;; Refresh the packages descriptions
-(unless package-archive-contents
-  (package-refresh-contents))
-
+(package-refresh-contents)
+;; List of packages to load
+(setq package-load-list '(all))
 ;; Initialize & Install Packages
 (package-initialize)
 
