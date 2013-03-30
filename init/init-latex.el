@@ -65,14 +65,17 @@
 ;; character isn't whitespace or a tilde
 (setq reftex-format-cite-function
       (lambda (key fmt)
-        (let ((cite (replace-regexp-in-string "%l" key fmt)))
-          (if (or
-               ;; Check if there is a tilde or already a cite command
-               (member (string-to-char fmt) '(?~ ?,))
-               ;; Check if the preceding character is a whitespace or tilde
-               (member (preceding-char) '(?\ ?\t ?\n ?~)))
-              cite
-            (concat "~" cite)))))
+        (concat
+         (unless (or
+                  ;; We are inside a cite command
+                  (some (apply-partially 'string= fmt)
+                        '("%l" ",%l" "%l," ",%l,"))
+                  ;; There is already a tilde
+                  (= ?~ (string-to-char fmt))
+                  ;; The preceding character is a whitespace or tilde
+                  (member (preceding-char) '(?\ ?\t ?\n ?~)))
+           "~")
+         (replace-regexp-in-string "%l" key fmt))))
 
 ;; Fold a RefTeX macro automatically after it's inserted
 (defadvice reftex-label (after TeX-fold-label activate)
