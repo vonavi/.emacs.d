@@ -7,24 +7,21 @@
 
 ;;; Code:
 
-(add-hook 'LaTeX-mode-hook
-          (lambda ()
-            ;; Turn on RefTeX Mode for all LaTeX files
-            (turn-on-reftex)
-            ;; Folding macros and environments
-            (TeX-fold-mode 1)
-            ;; Hide all macros and environments in the current buffer.
-            ;; *NOTE* First, turn on Font-Lock mode to correct folding
-            ;; if `global-font-lock-mode' enabled.
-            (turn-on-font-lock-if-desired)
-            (TeX-fold-buffer)
-            ;; Easy typing of mathematical symbols
-            (LaTeX-math-mode 1)
-            ;; On-the-fly syntax checking
-            (flymake-mode 1)))
-
-;; Automatically add a quick menu of document headings
-(add-hook 'reftex-mode-hook 'imenu-add-menubar-index)
+(add-hook 'LaTeX-mode-hook 'my-LaTeX-init)
+(defun my-LaTeX-init ()
+  ;; Turn on RefTeX Mode for all LaTeX files
+  (turn-on-reftex)
+  ;; Folding macros and environments
+  (TeX-fold-mode 1)
+  ;; Hide all macros and environments in the current buffer.
+  ;; *NOTE* Turn on Font-Lock mode first to correct folding if
+  ;; `global-font-lock-mode' enabled.
+  (turn-on-font-lock-if-desired)
+  (TeX-fold-buffer)
+  ;; Easy typing of mathematical symbols
+  (LaTeX-math-mode 1)
+  ;; On-the-fly syntax checking
+  (flymake-mode 1))
 
 (setq
  ;; Parse the buffer on load for extracting information
@@ -37,6 +34,9 @@
  reftex-extra-bindings t
  ;; Use extra bindings with this prefix
  reftex-extra-bindings-prefix "\C-c")
+
+;; Automatically add a quick menu of document headings
+(add-hook 'reftex-mode-hook 'imenu-add-menubar-index)
 
 (require 'tex)
 
@@ -55,9 +55,40 @@
                '("View" "%V" TeX-run-discard-or-function
                  t t :help "Run Viewer")))
 
-;; To use Flymake with latex or pdflatex from TeX Live distribution on Linux
+;; Use Flymake with pdflatex from TeX Live distribution on Linux
+(require 'flymake)
 (defun flymake-get-tex-args (file-name)
-  (list "pdflatex" (list "-file-line-error" "-draftmode"
-                         "-interaction=nonstopmode" file-name)))
+  `("pdflatex" ("-file-line-error" "-draftmode"
+                "-interaction=nonstopmode" ,file-name)))
+
+;; Auto insert a tilde before the \cite macro if the preceding
+;; character isn't whitespace or a tilde
+(setq reftex-format-cite-function
+      (lambda (key fmt)
+        (let ((cite (replace-regexp-in-string "%l" key fmt)))
+          (if (or
+               ;; Check if there is a tilde or already a cite command
+               (member (string-to-char fmt) '(?~ ?,))
+               ;; Check if the preceding character is a whitespace or tilde
+               (member (preceding-char) '(?\ ?\t ?\n ?~)))
+              cite
+            (concat "~" cite)))))
+
+;; Fold a RefTeX macro automatically after it's inserted
+(defadvice reftex-label (after TeX-fold-label activate)
+  (save-excursion (backward-char) (TeX-fold-item 'macro)))
+(defadvice reftex-reference (after TeX-fold-reference activate)
+  (save-excursion (backward-char) (TeX-fold-item 'macro)))
+(defadvice reftex-citation (after TeX-fold-citation activate)
+  (save-excursion (backward-char) (TeX-fold-item 'macro)))
+
+;; Fold a math macro automatically after it's inserted
+(require 'latex)
+(defun LaTeX-math-insert (string dollar)
+  "Insert \\STRING{}.  If DOLLAR is non-nil, put $'s around it."
+  (if dollar (insert "$"))
+  (funcall LaTeX-math-insert-function string)
+  (save-excursion (backward-char) (TeX-fold-item 'math))
+  (if dollar (insert "$")))
 
 ;;; init-latex.el ends here
