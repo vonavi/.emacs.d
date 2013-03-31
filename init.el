@@ -3,7 +3,8 @@
 ;; Copyright (C) 2013 Vladimir S. Ivanov
 
 ;; Author: Vladimir S. Ivanov <ivvl82@gmail.com>
-;; Keywords:
+
+;;; Commentary:
 
 ;;; Code:
 

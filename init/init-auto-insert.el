@@ -3,38 +3,38 @@
 ;; Copyright (C) 2013 Vladimir S. Ivanov
 
 ;; Author: Vladimir S. Ivanov <ivvl82@gmail.com>
-;; Keywords:
+
+;;; Commentary:
 
 ;;; Code:
 
 (require 'autoinsert)
-(auto-insert-mode 1) ; adds hook to find-files-hook
+(auto-insert-mode 1)                    ; adds hook to find-files-hook
 (setq auto-insert-directory "~/.emacs.d/auto-insert/" ; *NOTE* Trailing slash important
-      auto-insert-query nil                           ; don't prompt before insertion
-      auto-insert 'other)                             ; insert if possible, but mark as unmodified
+      auto-insert-query nil            ; don't prompt before insertion
+      auto-insert 'other) ; insert if possible, but mark as unmodified
 
 (setq auto-insert-alist
-      '(("\\.el\\'" . ["insert.el" auto-update-template])
-        ("\\.c\\'" . ["insert.c" auto-update-template])
-        ("\\.h\\'" . ["insert.h" auto-update-template])))
+      '(("\\.el\\'" . ["insert.el" my-auto-insert-template])
+        ("\\.c\\'" . ["insert.c" my-auto-insert-template])
+        ("\\.h\\'" . ["insert.h" my-auto-insert-template])))
 
-(setq auto-update-template-alist
-      '(
-        ("(>>AUTHOR<<)" . "Vladimir S. Ivanov <ivvl82@gmail.com>")
-        ("(>>USER_NAME<<)" . "Vladimir S. Ivanov")
-        (file . (file-name-nondirectory buffer-file-name))
-        (file-sans-ext . (file-name-sans-extension file))
-        ("(>>FILE<<)" . file)
-        ("(>>FILE_SANS<<)" . file-sans-ext)
-        ("(>>FILE_UPCASE<<)" . (subst-char-in-string ?- ?_ (upcase file-sans-ext)))
-        ("(>>YEAR<<)" . (format-time-string "%Y" (current-time)))
-        ))
+(defvar my-auto-insert-alist
+  '(("(>>AUTHOR<<)" . "Vladimir S. Ivanov <ivvl82@gmail.com>")
+    ("(>>USER_NAME<<)" . "Vladimir S. Ivanov")
+    (file . (file-name-nondirectory buffer-file-name))
+    (file-sans-ext . (file-name-sans-extension file))
+    ("(>>FILE<<)" . file)
+    ("(>>FILE_SANS<<)" . file-sans-ext)
+    ("(>>FILE_UPCASE<<)" . (subst-char-in-string ?- ?_ (upcase file-sans-ext)))
+    ("(>>YEAR<<)" . (format-time-string "%Y" (current-time))))
+  "An association list of templates to be inserted into a new file.")
 
-(defun auto-update-template ()
-  "Update insertions following `auto-update-template-alist'."
+(defun my-auto-insert-template ()
+  "Insert templates into a new file in accordance with `my-auto-insert-alist'."
   (let ((case-fold-search nil)
         local-vars)
-    (dolist (template auto-update-template-alist)
+    (dolist (template my-auto-insert-alist)
       (let ((key (car template))
             (value (eval (cdr template))))
         (cond
