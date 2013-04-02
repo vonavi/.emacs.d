@@ -38,8 +38,6 @@
 
 ;; Auto-start of Flyspell
 (add-hook 'text-mode-hook 'turn-on-flyspell)
-(mapcar (lambda (mode-hook) (add-hook mode-hook 'flyspell-prog-mode))
-        '(c-mode-common-hook css-mode-hook emacs-lisp-mode-hook
-                             js-mode-hook ruby-mode-hook sh-mode-hook))
+(add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
 ;;; init-flyspell.el ends here

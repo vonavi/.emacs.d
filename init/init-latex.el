@@ -79,11 +79,11 @@
          (replace-regexp-in-string "%l" key fmt))))
 
 ;; Fold a RefTeX macro automatically after it's inserted
-(defadvice reftex-label (after TeX-fold-label activate)
+(defadvice reftex-label (after my-TeX-fold-label activate)
   (save-excursion (backward-char) (TeX-fold-item 'macro)))
-(defadvice reftex-reference (after TeX-fold-reference activate)
+(defadvice reftex-reference (after my-TeX-fold-reference activate)
   (save-excursion (backward-char) (TeX-fold-item 'macro)))
-(defadvice reftex-citation (after TeX-fold-citation activate)
+(defadvice reftex-citation (after my-TeX-fold-citation activate)
   (save-excursion (backward-char) (TeX-fold-item 'macro)))
 
 ;; Fold a math macro automatically after it's inserted
