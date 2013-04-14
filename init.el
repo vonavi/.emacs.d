@@ -36,7 +36,7 @@
 ;; Emacs appearance setup
 ;;-----------------------
 
-(add-to-list 'default-frame-alist '(font . "Consolas 14")) ; set default font
+(add-to-list 'default-frame-alist '(font . "Consolas 16")) ; set default font
 (blink-cursor-mode 0)            ; no blinking cursor
 (setq inhibit-splash-screen t)   ; prevent silly initial splash screen
 (tool-bar-mode 0)                ; no tool bar
