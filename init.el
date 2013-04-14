@@ -162,6 +162,8 @@
 ;; A single <DEL> or <BS> command deletes a contiguous block of whitespace
 (require 'hungry-delete)
 (global-hungry-delete-mode 1)
+;; Need to remap <DEL> key to `hungry-delete-forward' for Emacs 24
+(define-key hungry-delete-mode-map [remap delete-forward-char] 'hungry-delete-forward)
 
 ;;--------------------
 ;; Miscellaneous stuff
