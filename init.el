@@ -42,11 +42,6 @@
 (tool-bar-mode 0)                ; no tool bar
 (set-scroll-bar-mode 'right)     ; place scroll bar
 
-;; Install a chosen color theme
-(require 'color-theme)
-(color-theme-initialize)
-(color-theme-standard)
-
 ;; Create a reasonable title bar
 (add-hook 'window-configuration-change-hook
           (lambda ()
