@@ -136,6 +136,8 @@
 ;; Emacs buffer editing
 ;;---------------------
 
+;; Disable displaying Bi-directional text
+(setq-default bidi-display-reordering nil)
 (setq sentence-end-double-space nil ; sentences end with one space
       require-final-newline t)      ; always end a file with a newline
 ;; Delete trailing whitespaces before saving
