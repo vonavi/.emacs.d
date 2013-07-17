@@ -25,7 +25,7 @@
 (package-initialize)
 
 (defvar prelude-packages
-  '(hungry-delete)
+  '(hungry-delete org-protocol-jekyll)
   "A list of packages to ensure are installed at launch.")
 ;; Make sure the prelude packages are installed
 (dolist (p prelude-packages)
