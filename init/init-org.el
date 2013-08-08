@@ -29,12 +29,12 @@
       '(("Локальная версия сайта"
          :base-url "http://localhost:4000"
          :permalink "pretty"
-         :working-directory "~/Dropbox/openshift/blog/source"
+         :working-directory "~/Dropbox/openshift/blog"
          :working-suffix ".org")
         ("Редактор на стероидах"
          :base-url "http://www.vonavi.me"
          :permalink "pretty"
-         :working-directory "~/Dropbox/openshift/blog/source"
+         :working-directory "~/Dropbox/openshift/blog"
          :working-suffix ".org")))
 
 ;;; init-org.el ends here
