@@ -23,6 +23,14 @@
 
 ;;; Code:
 
+(defadvice org-protocol-store-link (before rstrip-link activate)
+  "Force `org-protocol-store-link' to store the URL without
+trailing slash \"/\" and \"/index.output_ext\". Here, \"%2F\" is
+the URL-encoded symbol of slash."
+  (ad-set-arg 0 (replace-regexp-in-string
+                 "%2F\\(index\\.[a-zA-Z]+\\)?/" "/"
+                 (ad-get-arg 0))))
+
 ;; Set Jekyll’s handler for org-protocol
 (require 'org-protocol-jekyll)
 (setq org-protocol-jekyll-alist
