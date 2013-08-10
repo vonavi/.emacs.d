@@ -152,7 +152,7 @@
 ;; Indentation setup
 (setq-default indent-tabs-mode nil) ; never use tab characters for indentation
 (setq tab-width 4                   ; set tab-width
-      c-basic-offset 2              ; indentation level in CC mode
+      c-default-style "stroustrup"  ; indent style in CC mode
       js-indent-level 2             ; indentation level in JS mode
       css-indent-offset 2)          ; indentation level in CSS mode
 
