@@ -29,15 +29,17 @@
 
 ;; Set default dictionary
 (setq ispell-dictionary "english")
-;; Make the Russian dictionary available to 'ispell-change-dictionary'
-(add-to-list 'ispell-dictionary-alist
-             '("russian"
-               "[АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЬЫЪЭЮЯабвгдеёжзийклмнопрстуфхцчшщьыъэюя]"
-               "[^АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЬЫЪЭЮЯабвгдеёжзийклмнопрстуфхцчшщьыъэюя]"
-               "" nil ("-d" "ru") nil utf-8))
 
 ;; Auto-start of Flyspell
 (add-hook 'text-mode-hook 'turn-on-flyspell)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
+(add-hook 'text-mode-hook 'my-change-dictionary)
+
+(defun my-change-dictionary ()
+  "Set Russian language for \"ru\" directories."
+  (when (and buffer-file-name
+             (string-match-p "/ru/" buffer-file-name))
+    (set-input-method "russian-computer")
+    (ispell-change-dictionary "ru")))
 
 ;;; init-flyspell.el ends here
