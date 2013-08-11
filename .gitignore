@@ -4,5 +4,4 @@ cache/*
 !cache/.gitkeep
 desktop/*
 !desktop/.gitkeep
-elpa/*
-!elpa/package.el
+elpa/
