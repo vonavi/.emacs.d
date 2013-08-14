@@ -93,7 +93,7 @@
 (desktop-save-mode 1)
 (setq desktop-path '("~/.emacs.d/desktop/")
       desktop-save t
-      desktop-load-locked-desktop nil)
+      desktop-load-locked-desktop t)
 
 ;; List of most recent files, persisent between emacs session.
 (recentf-mode 1)
