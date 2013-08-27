@@ -187,11 +187,11 @@
 ;; Load the rest of initialization files
 ;;--------------------------------------
 
-(let ((init-dir "~/.emacs.d/init/"))
-  (dolist (file (directory-files init-dir))
+(let ((rc-dir "~/.emacs.d/rc/"))
+  (dolist (file (directory-files rc-dir))
     (when
         ;; Load Emacs Lisp source code but hidden files
         (string-match-p "\\`[^.].*\\.elc?\\'" file)
-      (load-file (expand-file-name file init-dir)))))
+      (load-file (expand-file-name file rc-dir)))))
 
 ;;; init.el ends here
