@@ -1,4 +1,4 @@
-;;; init-auto-insert.el ---
+;;; auto-insert-rc.el ---
 
 ;; Copyright (C) 2013 Vladimir S. Ivanov
 
@@ -48,4 +48,4 @@
             (push key local-vars))))))
     (mapc 'kill-local-variable local-vars)))
 
-;;; init-auto-insert.el ends here
+;;; auto-insert-rc.el ends here

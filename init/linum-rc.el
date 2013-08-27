@@ -1,4 +1,4 @@
-;;; init-linum.el ---
+;;; linum-rc.el ---
 
 ;; Copyright (C) 2013 Vladimir S. Ivanov
 
@@ -40,4 +40,4 @@ programming modes only."
 ;; Enable linum-mode
 (global-linum-mode)
 
-;;; init-linum.el ends here
+;;; linum-rc.el ends here

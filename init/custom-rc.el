@@ -1,4 +1,4 @@
-;;; init-custom.el ---
+;;; custom-rc.el ---
 
 ;; Copyright (C) 2013 Vladimir S. Ivanov
 
@@ -12,4 +12,4 @@
 
 (custom-set-faces)
 
-;;; init-custom.el ends here
+;;; custom-rc.el ends here

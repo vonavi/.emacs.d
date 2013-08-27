@@ -1,4 +1,4 @@
-;;; init-org.el ---
+;;; org-rc.el ---
 
 ;; Copyright (C) 2013 Vladimir S. Ivanov
 
@@ -45,4 +45,4 @@ the URL-encoded symbol of slash."
          :working-directory "~/Dropbox/openshift/blog"
          :working-suffix ".org")))
 
-;;; init-org.el ends here
+;;; org-rc.el ends here

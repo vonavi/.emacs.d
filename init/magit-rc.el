@@ -1,4 +1,4 @@
-;;; init-magit.el ---
+;;; magit-rc.el ---
 
 ;; Copyright (C) 2013 Vladimir S. Ivanov
 
@@ -83,4 +83,4 @@ highlighting."
              nil (list t nil) nil
              args))))
 
-;;; init-magit.el ends here
+;;; magit-rc.el ends here

@@ -1,4 +1,4 @@
-;;; init-latex.el ---
+;;; latex-rc.el ---
 
 ;; Copyright (C) 2013 Vladimir S. Ivanov
 
@@ -95,4 +95,4 @@
   (save-excursion (backward-char) (TeX-fold-item 'math))
   (if dollar (insert "$")))
 
-;;; init-latex.el ends here
+;;; latex-rc.el ends here

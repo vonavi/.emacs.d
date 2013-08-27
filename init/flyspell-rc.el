@@ -1,4 +1,4 @@
-;;; init-flyspell.el ---
+;;; flyspell-rc.el ---
 
 ;; Copyright (C) 2013 Vladimir S. Ivanov
 
@@ -42,4 +42,4 @@
     (set-input-method "russian-computer")
     (ispell-change-dictionary "ru")))
 
-;;; init-flyspell.el ends here
+;;; flyspell-rc.el ends here
