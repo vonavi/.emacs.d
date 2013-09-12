@@ -1,8 +1,8 @@
 ;;; auto-insert-rc.el ---
 
-;; Copyright (C) 2013 Vladimir S. Ivanov
+;; Copyright (C) 2013 Vladimir Ivanov
 
-;; Author: Vladimir S. Ivanov <ivvl82@gmail.com>
+;; Author: Vladimir Ivanov <ivvl82@gmail.com>
 
 ;;; Commentary:
 
@@ -20,8 +20,8 @@
         ("\\.h\\'" . ["insert.h" my-auto-insert-template])))
 
 (defvar my-auto-insert-alist
-  '(("(>>AUTHOR<<)" . "Vladimir S. Ivanov <ivvl82@gmail.com>")
-    ("(>>USER_NAME<<)" . "Vladimir S. Ivanov")
+  '(("(>>AUTHOR<<)" . "Vladimir Ivanov <ivvl82@gmail.com>")
+    ("(>>USER_NAME<<)" . "Vladimir Ivanov")
     (file . (file-name-nondirectory buffer-file-name))
     (file-sans-ext . (file-name-sans-extension file))
     ("(>>FILE<<)" . file)

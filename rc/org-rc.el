@@ -1,8 +1,8 @@
 ;;; org-rc.el ---
 
-;; Copyright (C) 2013 Vladimir S. Ivanov
+;; Copyright (C) 2013 Vladimir Ivanov
 
-;; Author: Vladimir S. Ivanov <ivvl82@gmail.com>
+;; Author: Vladimir Ivanov <ivvl82@gmail.com>
 
 ;; This file is not part of GNU Emacs.
 
