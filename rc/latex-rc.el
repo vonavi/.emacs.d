@@ -32,7 +32,9 @@
  ;; Additional key bindings for RefTeX mode
  reftex-extra-bindings t
  ;; Use extra bindings with this prefix
- reftex-extra-bindings-prefix "\C-c")
+ reftex-extra-bindings-prefix "\C-c"
+ ;; Auto save before compiling
+ TeX-save-query nil)
 
 ;; Automatically add a quick menu of document headings
 (add-hook 'reftex-mode-hook 'imenu-add-menubar-index)
