@@ -48,13 +48,6 @@
 (setq TeX-view-program-list
       '(("Acroread" "acroread /a \"zoom=100 & page=%(outpage)\" %o"))
       TeX-view-program-selection '((output-pdf "Acroread")))
-;; Because both X Window System and DISPLAY variable equals nil if
-;; Emacs starts as a daemon, handle this case separately.
-(when (daemonp)
-  (delete (assoc "View" TeX-command-list) TeX-command-list)
-  (add-to-list 'TeX-command-list
-               '("View" "%V" TeX-run-discard-or-function
-                 t t :help "Run Viewer")))
 
 ;; Use Flymake with pdflatex from TeX Live distribution on Linux
 (require 'flymake)

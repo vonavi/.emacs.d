@@ -8,6 +8,9 @@
 
 ;;; Code:
 
+;; Enable the support of X Window System if the daemon was run in TTY
+(when (daemonp) (setenv "DISPLAY" ":0"))
+
 ;;---------------------------
 ;; Emacs Lisp Package Archive
 ;;---------------------------
