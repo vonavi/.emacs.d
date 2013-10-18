@@ -20,9 +20,7 @@
   (turn-on-font-lock-if-desired)
   (TeX-fold-buffer)
   ;; Easy typing of mathematical symbols
-  (LaTeX-math-mode 1)
-  ;; On-the-fly syntax checking
-  (flymake-mode 1))
+  (LaTeX-math-mode 1))
 
 (setq
  ;; Parse the buffer on load for extracting information
@@ -48,12 +46,6 @@
 (setq TeX-view-program-list
       '(("Acroread" "acroread /a \"zoom=100 & page=%(outpage)\" %o"))
       TeX-view-program-selection '((output-pdf "Acroread")))
-
-;; Use Flymake with pdflatex from TeX Live distribution on Linux
-(require 'flymake)
-(defun flymake-get-tex-args (file-name)
-  `("pdflatex" ("-file-line-error" "-draftmode"
-                "-interaction=nonstopmode" ,file-name)))
 
 ;; Auto insert a tilde before the \cite macro if the preceding
 ;; character isn't whitespace or a tilde
