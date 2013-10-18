@@ -12,7 +12,6 @@
 ;; Emacs Lisp Package Archive
 ;;---------------------------
 
-(load-file "~/.emacs.d/elpa/package.el")
 ;; Use all available package repositories
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
