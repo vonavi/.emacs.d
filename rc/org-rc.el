@@ -14,12 +14,12 @@
       '(("Локальная версия сайта"
          :base-url "http://localhost:4000"
          :permalink "pretty"
-         :working-directory "~/Dropbox/openshift/blog"
+         :working-directory "~/Dropbox/openshift/jekyll"
          :working-suffix ".org")
         ("Редактор на стероидах"
          :base-url "http://www.vonavi.me"
          :permalink "pretty"
-         :working-directory "~/Dropbox/openshift/blog"
+         :working-directory "~/Dropbox/openshift/jekyll"
          :working-suffix ".org")))
 
 ;;; org-rc.el ends here
