@@ -15,22 +15,24 @@
 ;; Emacs Lisp Package Archive
 ;;---------------------------
 
-;; Use all available package repositories
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")))
-;; Refresh the packages descriptions
-(package-refresh-contents)
-;; List of packages to load
-(setq package-load-list '(all))
-;; Initialize & Install Packages
+(require 'package)
+;; Use available package repositories
+(add-to-list 'package-archives
+             '("elpa" . "http://tromey.com/elpa/") t)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+;; Initialize packages
 (package-initialize)
+;; Download the ELPA archive contents if needed
+(unless package-archive-contents (package-refresh-contents))
 
-(defvar prelude-packages
+(defvar my-packages
   '(hungry-delete org-protocol-jekyll)
   "A list of packages to ensure are installed at launch.")
-;; Make sure the prelude packages are installed
-(dolist (p prelude-packages)
+;; Make sure the packages are installed
+(dolist (p my-packages)
   (unless (package-installed-p p)
     (package-install p)))
 
