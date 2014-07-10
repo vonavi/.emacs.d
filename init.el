@@ -1,6 +1,6 @@
 ;;; init.el ---
 
-;; Copyright (C) 2013 Vladimir Ivanov
+;; Copyright (C) 2013, 2014 Vladimir Ivanov
 
 ;; Author: Vladimir Ivanov <ivvl82@gmail.com>
 
@@ -28,11 +28,11 @@
 ;; Download the ELPA archive contents if needed
 (unless package-archive-contents (package-refresh-contents))
 
-(defvar my-packages
-  '(hungry-delete org-protocol-jekyll)
+(defvar my-elpa-packages
+  '(adaptive-wrap hungry-delete org-protocol-jekyll)
   "A list of packages to ensure are installed at launch.")
 ;; Make sure the packages are installed
-(dolist (p my-packages)
+(dolist (p my-elpa-packages)
   (unless (package-installed-p p)
     (package-install p)))
 
@@ -145,13 +145,10 @@
 ;; the cursor is moved past the end of it:
 (setq next-line-add-newlines nil)
 
-;; Automatically fill lines as text is inserted
-(setq-default auto-fill-function 'do-auto-fill)
-(setq comment-auto-fill-only-comments t) ; auto fill comments but not code
-;; Auto fill not only inside comments for LaTeX files
-(add-hook 'LaTeX-mode-hook
-          (lambda ()
-            (set (make-local-variable 'comment-auto-fill-only-comments) nil)))
+;; Enable Visual Line mode
+(add-hook 'text-mode-hook 'turn-on-visual-line-mode)
+(add-hook 'text-mode-hook 'adaptive-wrap-prefix-mode)
+(setq visual-line-fringe-indicators '(nil right-curly-arrow))
 
 ;; Indentation setup
 (setq-default indent-tabs-mode nil) ; never use tab characters for indentation
