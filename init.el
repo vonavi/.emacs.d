@@ -29,12 +29,22 @@
 (unless package-archive-contents (package-refresh-contents))
 
 (defvar my-elpa-packages
-  '(adaptive-wrap hungry-delete org-protocol-jekyll)
+  '(adaptive-wrap el-get hungry-delete org-protocol-jekyll)
   "A list of packages to ensure are installed at launch.")
 ;; Make sure the packages are installed
 (dolist (p my-elpa-packages)
   (unless (package-installed-p p)
     (package-install p)))
+
+;;-------
+;; El-Get
+;;-------
+
+(require 'el-get)
+(defvar my-el-get-packages
+  '(window-margin)
+  "A list of packages to ensure are installed at launch.")
+(el-get 'sync my-el-get-packages)
 
 ;;-----------------------
 ;; Emacs appearance setup
@@ -149,6 +159,9 @@
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
 (add-hook 'text-mode-hook 'adaptive-wrap-prefix-mode)
 (setq visual-line-fringe-indicators '(nil right-curly-arrow))
+;; Automatic margins for visual-line-mode wrapping
+(setq window-margin-width t)
+(add-hook 'text-mode-hook 'turn-on-window-margin-mode)
 
 ;; Indentation setup
 (setq-default indent-tabs-mode nil) ; never use tab characters for indentation

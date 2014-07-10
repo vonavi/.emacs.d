@@ -1,7 +1,9 @@
-auto-save-list/
-backup/
-cache/*
-!cache/.gitkeep
-desktop/*
-!desktop/.gitkeep
-elpa/
+/auto-save-list/
+/backup/
+/cache/*
+!/cache/.gitkeep
+/desktop/*
+!/desktop/.gitkeep
+/el-get/*
+!/el-get/.gitkeep
+/elpa/
