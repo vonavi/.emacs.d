@@ -7,3 +7,6 @@
 /el-get/*
 !/el-get/.gitkeep
 /elpa/
+
+# Byte-compiled files
+*.elc

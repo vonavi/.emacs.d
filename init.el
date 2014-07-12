@@ -41,6 +41,8 @@
 ;;-------
 
 (require 'el-get)
+;; Look for init-pkgname.el configurations here
+(setq el-get-user-package-directory "~/.emacs.d/init-files")
 (defvar my-el-get-packages
   '(window-margin)
   "A list of packages to ensure are installed at launch.")
@@ -88,8 +90,8 @@
       scroll-margin 0                   ; set scroll margin
       auto-window-vscroll nil) ; don't adjust window-vscroll to view tall lines
 
-(setq x-select-enable-clipboard t)  ; cut and paste to the X clipboard
-(setq mouse-yank-at-point t)        ; paste at point NOT at cursor
+(setq x-select-enable-clipboard t   ; cut and paste to the X clipboard
+      mouse-yank-at-point t)        ; paste at point NOT at cursor
 
 ;;-------------------------
 ;; Backup and restore Emacs
@@ -159,9 +161,6 @@
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
 (add-hook 'text-mode-hook 'adaptive-wrap-prefix-mode)
 (setq visual-line-fringe-indicators '(nil right-curly-arrow))
-;; Automatic margins for visual-line-mode wrapping
-(setq window-margin-width t)
-(add-hook 'text-mode-hook 'turn-on-window-margin-mode)
 
 ;; Indentation setup
 (setq-default indent-tabs-mode nil) ; never use tab characters for indentation
