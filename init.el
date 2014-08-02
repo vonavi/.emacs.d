@@ -11,41 +11,40 @@
 ;; Enable the support of X Window System if the daemon was run in TTY
 (when (daemonp) (setenv "DISPLAY" ":0"))
 
-;;---------------------------
-;; Emacs Lisp Package Archive
-;;---------------------------
+;;-------
+;; El-Get
+;;-------
 
-(require 'package)
-;; Use available package repositories
+;; Ensure that El-Get is available
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+(unless (require 'el-get nil 'noerror)
+  (with-current-buffer
+      (url-retrieve-synchronously
+       "https://github.com/dimitri/el-get/raw/master/el-get-install.el")
+    (goto-char (point-max))
+    (eval-print-last-sexp)))
+
+;; Use available package.el repositories
 (add-to-list 'package-archives
              '("elpa" . "http://tromey.com/elpa/") t)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
-;; Initialize packages
-(package-initialize)
-;; Download the ELPA archive contents if needed
-(unless package-archive-contents (package-refresh-contents))
 
-(defvar my-elpa-packages
-  '(adaptive-wrap el-get hungry-delete org-protocol-jekyll)
-  "A list of packages to ensure are installed at launch.")
-;; Make sure the packages are installed
-(dolist (p my-elpa-packages)
-  (unless (package-installed-p p)
-    (package-install p)))
+;; Build the El-Get copy of the package.el packages if we have not
+;; built it before
+(unless (file-directory-p el-get-recipe-path-elpa)
+  (el-get-elpa-build-local-recipes))
 
-;;-------
-;; El-Get
-;;-------
-
-(require 'el-get)
 ;; Look for init-pkgname.el configurations here
 (setq el-get-user-package-directory "~/.emacs.d/init-files")
+
 (defvar my-el-get-packages
-  '(window-margin)
+  '(adaptive-wrap hungry-delete org-protocol-jekyll
+		  window-margin)
   "A list of packages to ensure are installed at launch.")
+
 (el-get 'sync my-el-get-packages)
 
 ;;-----------------------

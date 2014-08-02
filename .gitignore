@@ -4,8 +4,7 @@
 !/cache/.gitkeep
 /desktop/*
 !/desktop/.gitkeep
-/el-get/*
-!/el-get/.gitkeep
+/el-get/
 /elpa/
 
 # Byte-compiled files
