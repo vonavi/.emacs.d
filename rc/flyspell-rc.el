@@ -36,9 +36,9 @@
 ;; Auto-start of Flyspell
 (add-hook 'text-mode-hook 'turn-on-flyspell)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
-(add-hook 'text-mode-hook 'my-change-dictionary)
+(add-hook 'text-mode-hook 'my:change-dictionary)
 
-(defun my-change-dictionary ()
+(defun my:change-dictionary ()
   "Set Russian language for \"ru\" directories."
   (when (and buffer-file-name
              (string-match-p "/ru/" buffer-file-name))

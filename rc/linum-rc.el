@@ -16,7 +16,7 @@
 ;; Makes line numbers in linum-mode to be right-aligned and one-space
 ;; separated from the buffer contents
 
-(defadvice linum-update-window (before my-linum-set-format activate)
+(defadvice linum-update-window (before my:linum-set-format activate)
   "Set the string format `linum-format' of line numbers for the
 window. In contrast to `linum-format' of dynamic type, not all
 lines in the buffer are taken into account, but visual lines
@@ -35,7 +35,7 @@ only."
 ;; solved the problem. See at
 ;; `https://github.com/magit/magit/issues/494'.
 
-(defadvice linum-on (around my-linum-on activate)
+(defadvice linum-on (around my:linum-on activate)
   "When linum is running globally, enable line numbers for
 programming modes only."
   (when (derived-mode-p 'prog-mode) ad-do-it))
