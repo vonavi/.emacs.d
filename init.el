@@ -161,7 +161,6 @@
 
 ;; Enable Visual Line mode
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
-(add-hook 'text-mode-hook 'adaptive-wrap-prefix-mode)
 (setq visual-line-fringe-indicators '(nil right-curly-arrow))
 
 ;; Indentation setup
