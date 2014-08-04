@@ -44,8 +44,8 @@
 (setq el-get-user-package-directory "~/.emacs.d/init-files")
 
 (defvar my:el-get-packages
-  '(adaptive-wrap hungry-delete org-protocol-jekyll
-		  window-margin)
+  '(adaptive-wrap flyspell hungry-delete org-protocol-jekyll
+                  window-margin)
   "A list of packages to ensure are installed at launch.")
 
 (el-get 'sync my:el-get-packages)
