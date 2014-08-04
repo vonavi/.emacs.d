@@ -128,7 +128,7 @@
                       recentf-list))))
 
 ;; File for storing customization information
-(setq custom-file "~/.emacs.d/init/init-custom.el")
+(setq custom-file "~/.emacs.d/init-files/init-custom.el")
 
 ;;--------------------------
 ;; Emacs minibuffer behavior

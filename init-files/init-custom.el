@@ -1,6 +1,6 @@
-;;; custom-rc.el ---
+;;; init-custom.el ---
 
-;; Copyright (C) 2013  Vladimir Ivanov
+;; Copyright (C) 2014  Vladimir Ivanov
 
 ;; Author: Vladimir Ivanov <ivvl82@gmail.com>
 ;; Keywords:
@@ -15,4 +15,4 @@
 
 (custom-set-faces)
 
-;;; custom-rc.el ends here
+;;; init-custom.el ends here
