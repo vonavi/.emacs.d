@@ -1,10 +1,13 @@
 ;;; init.el ---
 
-;; Copyright (C) 2013, 2014 Vladimir Ivanov
+;; Copyright (C) 2013, 2014  Vladimir Ivanov
 
 ;; Author: Vladimir Ivanov <ivvl82@gmail.com>
+;; Keywords:
 
 ;;; Commentary:
+
+;;
 
 ;;; Code:
 
@@ -192,6 +195,13 @@
 ;;--------------------------------------
 ;; Load the rest of initialization files
 ;;--------------------------------------
+
+;; Load concrete packages
+(let ((init-files '(
+                    "init-autoinsert.el"
+                    )))
+  (dolist (file init-files)
+    (load-file (expand-file-name file el-get-user-package-directory))))
 
 (let ((rc-dir "~/.emacs.d/rc/"))
   (dolist (file (directory-files rc-dir))

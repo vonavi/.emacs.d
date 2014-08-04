@@ -1,10 +1,13 @@
 ;;; custom-rc.el ---
 
-;; Copyright (C) 2013 Vladimir Ivanov
+;; Copyright (C) 2013  Vladimir Ivanov
 
 ;; Author: Vladimir Ivanov <ivvl82@gmail.com>
+;; Keywords:
 
 ;;; Commentary:
+
+;;
 
 ;;; Code:
 

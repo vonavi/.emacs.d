@@ -1,10 +1,13 @@
 ;;; init-hungry-delete.el ---
 
-;; Copyright (C) 2014 Vladimir Ivanov
+;; Copyright (C) 2014  Vladimir Ivanov
 
 ;; Author: Vladimir Ivanov <ivvl82@gmail.com>
+;; Keywords:
 
 ;;; Commentary:
+
+;;
 
 ;;; Code:
 
