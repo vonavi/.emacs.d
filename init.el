@@ -197,7 +197,7 @@
 
 ;; Load concrete packages
 (let ((init-files '(
-                    "init-autoinsert.el"
+                    "init-auto-insert.el"
                     )))
   (dolist (file init-files)
     (load-file (expand-file-name file el-get-user-package-directory))))

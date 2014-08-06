@@ -1,4 +1,4 @@
-;;; init-autoinsert.el ---
+;;; init-auto-insert.el ---
 
 ;; Copyright (C) 2014  Vladimir Ivanov
 
@@ -20,4 +20,4 @@
 (setq user-full-name "Vladimir Ivanov"
       user-mail-address "ivvl82@gmail.com")
 
-;;; init-autoinsert.el ends here
+;;; init-auto-insert.el ends here
