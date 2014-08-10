@@ -48,6 +48,7 @@
                   realgud window-margin)
   "A list of packages to ensure are installed at launch.")
 
+(el-get-cleanup my:el-get-packages)
 (el-get 'sync my:el-get-packages)
 
 ;;-----------------------
