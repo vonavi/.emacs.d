@@ -45,7 +45,7 @@
 
 (defvar my:el-get-packages
   '(adaptive-wrap essh flyspell hungry-delete org-protocol-jekyll
-                  window-margin)
+                  realgud window-margin)
   "A list of packages to ensure are installed at launch.")
 
 (el-get 'sync my:el-get-packages)
