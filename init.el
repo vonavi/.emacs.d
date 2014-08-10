@@ -44,8 +44,9 @@
 (setq el-get-user-package-directory "~/.emacs.d/init-files")
 
 (defvar my:el-get-packages
-  '(adaptive-wrap essh flyspell hungry-delete org-protocol-jekyll
-                  realgud solarized-emacs window-margin)
+  '(adaptive-wrap essh flyspell hungry-delete magit
+                  org-protocol-jekyll realgud solarized-emacs
+                  window-margin)
   "A list of packages to ensure are installed at launch.")
 
 (el-get-cleanup my:el-get-packages)
