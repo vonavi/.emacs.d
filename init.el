@@ -43,10 +43,17 @@
 ;; Look for init-pkgname.el configurations here
 (setq el-get-user-package-directory "~/.emacs.d/init-files")
 
+;; Load initialization files for built-in packages
+(let ((init-files '(
+                    "init-auto-insert.el"
+                    "init-flyspell.el"
+                    )))
+  (dolist (file init-files)
+    (load-file (expand-file-name file el-get-user-package-directory))))
+
 (defvar my:el-get-packages
-  '(adaptive-wrap essh flyspell hungry-delete magit
-                  org-protocol-jekyll realgud solarized-emacs
-                  window-margin)
+  '(adaptive-wrap essh hungry-delete magit org-protocol-jekyll realgud
+                  solarized-emacs window-margin)
   "A list of packages to ensure are installed at launch.")
 
 (el-get-cleanup my:el-get-packages)
@@ -196,13 +203,6 @@
 ;;--------------------------------------
 ;; Load the rest of initialization files
 ;;--------------------------------------
-
-;; Load concrete packages
-(let ((init-files '(
-                    "init-auto-insert.el"
-                    )))
-  (dolist (file init-files)
-    (load-file (expand-file-name file el-get-user-package-directory))))
 
 (let ((rc-dir "~/.emacs.d/rc/"))
   (dolist (file (directory-files rc-dir))
