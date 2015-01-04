@@ -59,8 +59,18 @@
     (load-file (expand-file-name file el-get-user-package-directory))))
 
 (defvar my:el-get-packages
-  '(adaptive-wrap essh hungry-delete magit org-protocol-jekyll realgud
-                  solarized-emacs window-margin)
+  (list
+   ;; color theme
+   'solarized-emacs
+   ;; text formatting
+   'adaptive-wrap 'hungry-delete 'window-margin
+   ;; version control systems
+   'magit
+   ;; Bash debugging
+   'essh 'realgud
+   ;; Web technologies
+   'org-protocol-jekyll
+   )
   "A list of packages to ensure are installed at launch.")
 
 (el-get-cleanup my:el-get-packages)
