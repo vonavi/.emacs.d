@@ -1,6 +1,6 @@
 ;;; init.el ---
 
-;; Copyright (C) 2013, 2014  Vladimir Ivanov
+;; Copyright (C) 2013-2015  Vladimir Ivanov
 
 ;; Author: Vladimir Ivanov <ivvl82@gmail.com>
 ;; Keywords:
