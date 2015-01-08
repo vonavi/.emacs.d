@@ -14,6 +14,8 @@
 ;; Magit's status buffer
 (global-set-key (kbd "C-x m") 'magit-status)
 
+(add-hook 'magit-mode-hook (lambda () (setq truncate-lines nil)))
+
 ;; Show fine (word-granularity) differences within diff hunks
 (setq magit-diff-refine-hunk 'all)
 
