@@ -60,8 +60,8 @@
 
 (defvar my:el-get-packages
   (list
-   ;; color theme
-   'solarized-emacs
+   ;; Emacs appearance
+   'nlinum 'solarized-emacs
    ;; text formatting
    'adaptive-wrap 'hungry-delete 'window-margin
    ;; version control systems
