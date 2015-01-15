@@ -60,10 +60,10 @@
 
 (defvar my:el-get-packages
   (list
-   ;; Emacs appearance
-   'nlinum 'solarized-emacs
+   ;; frames, windows, and buffers
+   'fullscreen 'nlinum 'solarized-emacs 'window-margin
    ;; text formatting
-   'adaptive-wrap 'hungry-delete 'window-margin
+   'adaptive-wrap 'hungry-delete
    ;; version control systems
    'magit
    ;; Bash debugging
