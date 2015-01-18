@@ -1,6 +1,6 @@
-;;; latex-rc.el ---
+;;; init-auctex.el ---
 
-;; Copyright (C) 2013  Vladimir Ivanov
+;; Copyright (C) 2015  Vladimir Ivanov
 
 ;; Author: Vladimir Ivanov <ivvl82@gmail.com>
 ;; Keywords:
@@ -85,4 +85,4 @@
   (save-excursion (backward-char) (TeX-fold-item 'math))
   (if dollar (insert "$")))
 
-;;; latex-rc.el ends here
+;;; init-auctex.el ends here

@@ -66,6 +66,8 @@
    'adaptive-wrap 'hungry-delete
    ;; version control systems
    'magit
+   ;; document markup languages
+   'auctex
    ;; Bash debugging
    'essh 'realgud
    ;; Web technologies
@@ -212,16 +214,5 @@
       (when (and (buffer-file-name) (not (buffer-modified-p)))
         (revert-buffer t t t))))
   (message "Refreshed open files."))
-
-;;--------------------------------------
-;; Load the rest of initialization files
-;;--------------------------------------
-
-(let ((rc-dir "~/.emacs.d/rc/"))
-  (dolist (file (directory-files rc-dir))
-    (when
-        ;; Load Emacs Lisp source code but hidden files
-        (string-match-p "\\`[^.].*\\.elc?\\'" file)
-      (load-file (expand-file-name file rc-dir)))))
 
 ;;; init.el ends here
