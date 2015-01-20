@@ -50,14 +50,12 @@
 ;; Look for init-pkgname.el configurations here
 (setq el-get-user-package-directory "~/.emacs.d/init-files")
 
-;; Load initialization files for built-in packages
-(let ((init-files '(
-                    "init-auto-insert.el"
-                    "init-flyspell.el"
-                    )))
-  (dolist (file init-files)
-    (load-file (expand-file-name file el-get-user-package-directory))))
-
+(defvar my:builtin-packages
+  (list
+   'auto-insert 'flyspell
+   )
+  "A list of built-in packages, initialization files for which
+  are loaded at launch.")
 (defvar my:el-get-packages
   (list
    ;; frames, windows, and buffers
@@ -74,6 +72,15 @@
    'org-protocol-jekyll
    )
   "A list of packages to ensure are installed at launch.")
+
+;; Load initialization files for built-in packages
+(let ((init-files (mapcar (lambda (pkg)
+                            (concat (file-name-as-directory
+                                     el-get-user-package-directory)
+                                    "init-" (symbol-name pkg) ".el"))
+                          my:builtin-packages)))
+  (dolist (file init-files)
+    (load-file (expand-file-name file el-get-user-package-directory))))
 
 (el-get-cleanup my:el-get-packages)
 (el-get 'sync my:el-get-packages)
