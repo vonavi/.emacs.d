@@ -37,7 +37,11 @@
  ;; Auto save before compiling
  TeX-save-query nil
  ;; Start a correlation server without asking
- TeX-source-correlate-start-server t)
+ TeX-source-correlate-start-server t
+ ;; Function for reading \includegraphics files
+ LaTeX-includegraphics-read-file 'LaTeX-includegraphics-read-file-relative
+ ;; Strip known extensions from image file name
+ LaTeX-includegraphics-strip-extension-flag nil)
 
 ;; PDF mode enable, not plain
 (TeX-global-PDF-mode 1)
