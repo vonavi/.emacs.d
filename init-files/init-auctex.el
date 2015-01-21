@@ -23,13 +23,44 @@
   (turn-on-font-lock-if-desired)
   (TeX-fold-buffer)
   ;; Easy typing of mathematical symbols
-  (LaTeX-math-mode 1))
+  (LaTeX-math-mode 1)
+  ;; Forward and inverse search
+  (TeX-source-correlate-mode 1)
+  ;; Set the favorite environment
+  (setq LaTeX-default-environment "align"))
 
 (setq
  ;; Parse the buffer on load for extracting information
  TeX-parse-self t
  ;; Auto save before compiling
  TeX-save-query nil
+ ;; Start a correlation server without asking
+ TeX-source-correlate-start-server t)
+
+;; PDF mode enable, not plain
+(TeX-global-PDF-mode 1)
+
+;; Open PDF files in Evince
+(setq TeX-view-program-list
+      '(("Evince" "evince --page-index=%(outpage) %o"))
+      TeX-view-program-selection '((output-pdf "Evince")))
+
+;; Fold a math macro automatically after it's inserted
+(require 'latex)
+(defun LaTeX-math-insert (string dollar)
+  "Insert \\STRING{}.  If DOLLAR is non-nil, put $'s around it."
+  (if dollar (insert "$"))
+  (funcall LaTeX-math-insert-function string)
+  (save-excursion (backward-char) (TeX-fold-item 'math))
+  (if dollar (insert "$")))
+
+;;-------
+;; RefTeX
+;;-------
+
+(require 'reftex)
+
+(setq
  ;; Make RefTeX work properly with AUCTeX
  reftex-plug-into-AUCTeX t
  ;; Add \eqref to RefTeX for doing equation references
@@ -50,16 +81,6 @@
 
 ;; Automatically add a quick menu of document headings
 (add-hook 'reftex-mode-hook 'imenu-add-menubar-index)
-
-(require 'tex)
-
-;; PDF mode enable, not plain
-(TeX-global-PDF-mode 1)
-
-;; Open PDF files in Acrobat Reader
-(setq TeX-view-program-list
-      '(("Acroread" "acroread /a \"zoom=100 & page=%(outpage)\" %o"))
-      TeX-view-program-selection '((output-pdf "Acroread")))
 
 ;; Auto insert a tilde before the \cite macro if the preceding
 ;; character isn't whitespace or a tilde
@@ -84,14 +105,5 @@
   (save-excursion (backward-char) (TeX-fold-item 'macro)))
 (defadvice reftex-citation (after my:TeX-fold-citation activate)
   (save-excursion (backward-char) (TeX-fold-item 'macro)))
-
-;; Fold a math macro automatically after it's inserted
-(require 'latex)
-(defun LaTeX-math-insert (string dollar)
-  "Insert \\STRING{}.  If DOLLAR is non-nil, put $'s around it."
-  (if dollar (insert "$"))
-  (funcall LaTeX-math-insert-function string)
-  (save-excursion (backward-char) (TeX-fold-item 'math))
-  (if dollar (insert "$")))
 
 ;;; init-auctex.el ends here
