@@ -58,26 +58,13 @@
 ;; RefTeX
 ;;-------
 
-(require 'reftex)
-
 (setq
  ;; Make RefTeX work properly with AUCTeX
  reftex-plug-into-AUCTeX t
  ;; Add \eqref to RefTeX for doing equation references
- reftex-label-alist '(AMSTeX))
-
-;; Additional key bindings for RefTeX mode.
-;; *NOTE* This robust way is still working, even though RefTeX was
-;; already loaded.
-(loop for x in
-      '(("\C-ct" . reftex-toc)
-        ("\C-cl" . reftex-label)
-        ("\C-cr" . reftex-reference)
-        ("\C-cc" . reftex-citation)
-        ("\C-cv" . reftex-view-crossref)
-        ("\C-cg" . reftex-grep-document)
-        ("\C-cs" . reftex-search-document))
-      do (define-key reftex-mode-map (car x) (cdr x)))
+ reftex-label-alist '(AMSTeX)
+ ;; Additional key bindings for RefTeX mode
+ reftex-extra-bindings t)
 
 ;; Automatically add a quick menu of document headings
 (add-hook 'reftex-mode-hook 'imenu-add-menubar-index)
