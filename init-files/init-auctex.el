@@ -11,6 +11,8 @@
 
 ;;; Code:
 
+(require 'latex)
+
 (add-hook 'LaTeX-mode-hook 'my:LaTeX-init)
 (defun my:LaTeX-init ()
   ;; Turn on RefTeX Mode for all LaTeX files
@@ -46,13 +48,10 @@
       TeX-view-program-selection '((output-pdf "Evince")))
 
 ;; Fold a math macro automatically after it's inserted
-(require 'latex)
-(defun LaTeX-math-insert (string dollar)
-  "Insert \\STRING{}.  If DOLLAR is non-nil, put $'s around it."
-  (if dollar (insert "$"))
-  (funcall LaTeX-math-insert-function string)
-  (save-excursion (backward-char) (TeX-fold-item 'math))
-  (if dollar (insert "$")))
+(setq LaTeX-math-insert-function
+      (lambda (string)
+        (TeX-insert-macro string)
+        (save-excursion (backward-char) (TeX-fold-item 'math))))
 
 ;;-------
 ;; RefTeX
