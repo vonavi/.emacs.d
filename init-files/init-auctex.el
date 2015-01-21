@@ -41,7 +41,9 @@
  ;; Function for reading \includegraphics files
  LaTeX-includegraphics-read-file 'LaTeX-includegraphics-read-file-relative
  ;; Strip known extensions from image file name
- LaTeX-includegraphics-strip-extension-flag nil)
+ LaTeX-includegraphics-strip-extension-flag nil
+ ;; Insert paired symbols for opening and closing inline equation
+ TeX-electric-math '("$" . "$"))
 
 ;; PDF mode enable, not plain
 (TeX-global-PDF-mode 1)
