@@ -11,16 +11,6 @@
 
 ;;; Code:
 
-;; Enable the support of X Window System if the daemon was run in TTY
-(when (and (daemonp)
-           (not (getenv "DISPLAY")))
-  (let ((hostname (replace-regexp-in-string "\n\\'" ""
-                                            (shell-command-to-string "hostname")))
-        (xauth-list (shell-command-to-string
-                     (concat "xauth -f " (getenv "HOME") "/.Xauthority list"))))
-    (string-match (concat "^" hostname "/unix:\\([0-9]+\\)") xauth-list)
-    (setenv "DISPLAY" (concat ":" (match-string 1 xauth-list)))))
-
 ;;-------
 ;; El-Get
 ;;-------
