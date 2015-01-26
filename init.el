@@ -56,6 +56,8 @@
    'magit
    ;; document markup languages
    'auctex
+   ;; Haskell
+   'haskell-mode 'structured-haskell-mode
    ;; Bash debugging
    'essh 'realgud
    ;; Web technologies
