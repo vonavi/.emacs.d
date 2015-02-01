@@ -41,28 +41,24 @@
 (setq el-get-user-package-directory "~/.emacs.d/init-files")
 
 (defvar my:builtin-packages
-  (list
-   'auto-insert 'flyspell
-   )
+  '(auto-insert                   ; auto-inserts text into new buffers
+    flyspell)                     ; on-the-fly spell checking
   "A list of built-in packages, initialization files for which
   are loaded at launch.")
 (defvar my:el-get-packages
-  (list
-   ;; frames, windows, and buffers
-   'fullscreen 'nlinum 'solarized-emacs 'window-margin
-   ;; text formatting
-   'adaptive-wrap 'hungry-delete
-   ;; version control systems
-   'magit
-   ;; document markup languages
-   'auctex
-   ;; Haskell
-   'haskell-mode 'structured-haskell-mode
-   ;; Bash debugging
-   'essh 'realgud
-   ;; Web technologies
-   'org-protocol-jekyll
-   )
+  '(adaptive-wrap             ; smart line-wrapping
+    auctex                    ; writing and formatting TeX/LaTeX files
+    essh                      ; emulates for bash what ESS is to R
+    fullscreen                ; full-screen support
+    haskell-mode              ; editing Haskell source code
+    hungry-delete             ; hungry delete whitespaces
+    magit                     ; interface to Git
+    nlinum                    ; displays line numbers
+    org-protocol-jekyll       ; Jekyll's handler for org-protocol
+    realgud                   ; interacting with external debuggers
+    solarized-emacs           ; Solarized colour theme
+    structured-haskell-mode   ; structured editing mode for Haskell
+    window-margin)            ; auto margins for Visual Line mode
   "A list of packages to ensure are installed at launch.")
 
 ;; Load initialization files for built-in packages
