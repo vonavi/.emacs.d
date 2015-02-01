@@ -1,0 +1,27 @@
+--- sdcv.el	2009-08-23 17:18:34.000000000 +0800
++++ /home/reiv/emacs/site-lisp/sdcv.el	2009-08-23 17:19:04.000000000 +0800
+@@ -356,9 +356,10 @@
+     (setq buffer-read-only nil)
+     (erase-buffer)
+     (let* ((process
+-            (start-process
+-             "sdcv" sdcv-buffer-name "sdcv"
+-             (sdcv-search-witch-dictionary word sdcv-dictionary-complete-list))))
++            (apply 'start-process
++                   (append `("sdcv" ,sdcv-buffer-name "sdcv")
++                           (sdcv-search-args word sdcv-dictionary-complete-list))
++                   )))
+       (set-process-sentinel
+        process
+        (lambda (process signal)
+@@ -367,6 +368,10 @@
+              (sdcv-goto-sdcv))
+            (sdcv-mode-reinit)))))))
+ 
++(defun sdcv-search-args (word dict-list)
++  (append (apply 'append (mapcar (lambda (d) `("-u" ,d)) dict-list))
++          (list "-n" word)))
++
+ (defun sdcv-search-simple (&optional word)
+   "Search WORD simple translate result."
+   (showtip

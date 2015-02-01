@@ -37,6 +37,17 @@
 (unless (file-directory-p el-get-recipe-path-elpa)
   (el-get-elpa-build-local-recipes))
 
+;; Declare extra custom recipes
+(setq el-get-sources
+      '((:name sdcv
+               :depends showtip
+               :build
+               `(("patch" "sdcv.el"
+                  ,(expand-file-name "sdcv-start-process.patch"
+                    (concat user-emacs-directory
+                            (file-name-as-directory "patches")))))
+               :compile "sdcv.el")))
+
 ;; Look for init-pkgname.el configurations here
 (setq el-get-user-package-directory "~/.emacs.d/init-files")
 
@@ -56,6 +67,7 @@
     nlinum                    ; displays line numbers
     org-protocol-jekyll       ; Jekyll's handler for org-protocol
     realgud                   ; interacting with external debuggers
+    sdcv                      ; interface for sdcv
     solarized-emacs           ; Solarized colour theme
     structured-haskell-mode   ; structured editing mode for Haskell
     window-margin)            ; auto margins for Visual Line mode
