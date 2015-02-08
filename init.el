@@ -41,6 +41,7 @@
 (setq el-get-user-package-directory
       (concat user-emacs-directory "init-files"))
 
+(el-get-save-package-status 'el-get "installed")
 (el-get-do-init 'el-get)
 
 ;;-----------------------
