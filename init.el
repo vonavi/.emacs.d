@@ -154,6 +154,7 @@
 (setq visual-line-fringe-indicators '(nil right-curly-arrow))
 
 ;; Indentation setup
+(electric-indent-mode 1)            ; auto indentation
 (setq-default indent-tabs-mode nil) ; never use tab characters for indentation
 (setq tab-width 4                   ; set tab-width
       c-default-style "stroustrup"  ; indent style in CC mode

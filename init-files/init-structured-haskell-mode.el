@@ -16,6 +16,9 @@
 
 ;; Structured Haskell mode is incompatible with indentation modes
 (remove-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+;; Electric Indent mode doesn't work properly Structured Haskell mode
+(add-hook 'haskell-mode-hook
+          (lambda () (apply (make-local-variable 'electric-indent-mode) '(0))))
 
 ;; The following are apparently pretty good for solarized-light
 (set-face-background 'shm-current-face "#eee8d5")
