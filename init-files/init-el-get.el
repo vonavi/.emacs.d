@@ -40,8 +40,8 @@
                :build
                `(("patch" "sdcv.el"
                   ,(expand-file-name "sdcv-start-process.patch"
-                    (concat user-emacs-directory
-                            (file-name-as-directory "patches")))))
+                                     (concat user-emacs-directory
+                                             (file-name-as-directory "patches")))))
                :compile "sdcv.el")))
 
 ;; Load initialization files for built-in packages
