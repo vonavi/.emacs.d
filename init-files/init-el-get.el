@@ -21,7 +21,6 @@
     auctex                    ; writing and formatting TeX/LaTeX files
     essh                      ; emulates for bash what ESS is to R
     fullscreen                ; full-screen support
-    haskell-mode              ; editing Haskell source code
     hungry-delete             ; hungry delete whitespaces
     magit                     ; interface to Git
     nlinum                    ; displays line numbers

@@ -21,7 +21,8 @@
           (lambda () (apply (make-local-variable 'electric-indent-mode) '(0))))
 
 ;; The following are apparently pretty good for solarized-light
-(set-face-background 'shm-current-face "#eee8d5")
-(set-face-background 'shm-quarantine-face "lemonchiffon")
+(el-get-eval-after-load 'solarized-emacs
+  (progn (set-face-background 'shm-current-face "#eee8d5")
+         (set-face-background 'shm-quarantine-face "lemonchiffon")))
 
 ;;; init-structured-haskell-mode.el ends here
