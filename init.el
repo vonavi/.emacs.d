@@ -38,10 +38,12 @@
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
 
-;; Build the El-Get copy of the package.el packages if we have not
-;; built it before
+;; Build the El-Get copy of ELPA and EmacsWiki packages if we have not
+;; built them before
 (unless (file-directory-p el-get-recipe-path-elpa)
   (el-get-elpa-build-local-recipes))
+(unless (file-directory-p el-get-recipe-path-emacswiki)
+  (el-get-emacswiki-build-local-recipes))
 
 ;; Look for init-pkgname.el configurations here
 (setq el-get-user-package-directory
