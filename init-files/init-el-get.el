@@ -29,7 +29,8 @@
     sdcv                      ; interface for sdcv
     solarized-emacs           ; Solarized colour theme
     structured-haskell-mode   ; structured editing mode for Haskell
-    window-margin)            ; auto margins for Visual Line mode
+    window-margin             ; auto margins for Visual Line mode
+    ws-butler)                ; trim white-space *ONLY* in lines edited
   "A list of packages to ensure are installed at launch.")
 
 ;; Declare extra custom recipes

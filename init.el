@@ -151,11 +151,6 @@
 (setq-default bidi-display-reordering nil)
 (setq sentence-end-double-space nil ; sentences end with one space
       require-final-newline t)      ; always end a file with a newline
-;; Delete trailing whitespaces before saving
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
-;; Stop Emacs from arbitrarily adding lines to the end of a file when
-;; the cursor is moved past the end of it:
-(setq next-line-add-newlines nil)
 
 ;; Enable Visual Line mode
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
