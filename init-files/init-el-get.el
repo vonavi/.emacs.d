@@ -17,17 +17,18 @@
   "A list of built-in packages, initialization files for which
   are loaded at launch.")
 (defvar my:el-get-packages
-  '(adaptive-wrap            ; smart line-wrapping
-    auctex                   ; writing and formatting TeX/LaTeX files
-    essh                     ; emulates for bash what ESS is to R
-    fullscreen               ; full-screen support
-    hungry-delete            ; hungry delete whitespaces
-    magit                    ; interface to Git
-    nlinum                   ; displays line numbers
-    org-protocol-jekyll      ; Jekyll's handler for org-protocol
-    realgud                  ; interacting with external debuggers
-    sdcv                     ; interface for sdcv
-    solarized-emacs          ; Solarized colour theme
+  '(ace-jump-mode        ; fast/direct cursor movement in current view
+    adaptive-wrap        ; smart line-wrapping
+    auctex               ; writing and formatting TeX/LaTeX files
+    essh                 ; emulates for bash what ESS is to R
+    fullscreen           ; full-screen support
+    hungry-delete        ; hungry delete whitespaces
+    magit                ; interface to Git
+    nlinum               ; displays line numbers
+    org-protocol-jekyll  ; Jekyll's handler for org-protocol
+    realgud              ; interacting with external debuggers
+    sdcv                 ; interface for sdcv
+    solarized-emacs      ; Solarized colour theme
     structured-haskell-mode  ; structured editing mode for Haskell
     window-margin            ; auto margins for Visual Line mode
     ws-butler)               ; trim white-space *ONLY* in lines edited
