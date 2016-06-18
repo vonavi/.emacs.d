@@ -62,7 +62,7 @@
 ;; Fixes the following bug:
 ;; http://tex.stackexchange.com/questions/124246/uninformative-error-message-when-using-auctex
 (setq LaTeX-command-style
-      '(("" "%(PDF)%(latex) -file-line-error %S%(PDFout)")))
+      '(("" "%(PDF)%(latex) -shell-escape -file-line-error %S%(PDFout)")))
 
 ;;-------
 ;; RefTeX
