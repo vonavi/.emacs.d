@@ -1,6 +1,6 @@
 ;;; init-el-get.el ---
 
-;; Copyright (C) 2015  Vladimir Ivanov
+;; Copyright (C) 2015, 2016  Vladimir Ivanov
 
 ;; Author: Vladimir Ivanov <ivvl82@gmail.com>
 ;; Keywords:
@@ -35,13 +35,24 @@
 
 ;; Declare extra custom recipes
 (setq el-get-sources
-      '((:name sdcv
+      '((:name nlinum
+               :description "Show line numbers in the margin"
+               :build
+               `(("patch" "nlinum.el"
+                  ,(expand-file-name
+                    "nlinum-emacs24.patch"
+                    (concat user-emacs-directory
+                            (file-name-as-directory "patches")))))
+               :compile "nlinum.el")
+        (:name sdcv
+               :description "Interface for sdcv (StartDict console version)."
                :depends showtip
                :build
                `(("patch" "sdcv.el"
-                  ,(expand-file-name "sdcv-start-process.patch"
-                                     (concat user-emacs-directory
-                                             (file-name-as-directory "patches")))))
+                  ,(expand-file-name
+                    "sdcv-start-process.patch"
+                    (concat user-emacs-directory
+                            (file-name-as-directory "patches")))))
                :compile "sdcv.el")))
 
 ;; Load initialization files for built-in packages
