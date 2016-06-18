@@ -30,6 +30,7 @@
     realgud                  ; interacting with external debuggers
     sdcv                     ; interface for sdcv
     solarized-emacs          ; Solarized colour theme
+    undo-tree                ; treat undo history as a tree
     window-margin            ; auto margins for Visual Line mode
     ws-butler)               ; trim white-space *ONLY* in lines edited
   "A list of packages to ensure are installed at launch.")
