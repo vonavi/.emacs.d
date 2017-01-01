@@ -32,11 +32,11 @@
 
 ;; Use available package.el repositories
 (add-to-list 'package-archives
-             '("elpa" . "http://tromey.com/elpa/") t)
+             '("elpa" . "https://elpa.gnu.org/packages/") t)
 (add-to-list 'package-archives
              '("marmalade" . "https://marmalade-repo.org/packages/") t)
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/") t)
+             '("melpa" . "https://melpa.org/packages/") t)
 
 ;; Build the El-Get copy of ELPA and EmacsWiki packages if we have not
 ;; built them before
