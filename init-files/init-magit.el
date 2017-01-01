@@ -19,4 +19,7 @@
 ;; Show fine (word-granularity) differences within diff hunks
 (setq magit-diff-refine-hunk 'all)
 
+;; Do not show the diff before writing a commit message
+(setq magit-commit-show-diff nil)
+
 ;;; init-magit.el ends here
