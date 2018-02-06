@@ -35,28 +35,6 @@
     ws-butler)               ; trim white-space *ONLY* in lines edited
   "A list of packages to ensure are installed at launch.")
 
-;; Declare extra custom recipes
-(setq el-get-sources
-      '((:name nlinum
-               :description "Show line numbers in the margin"
-               :build
-               `(("patch" "nlinum.el"
-                  ,(expand-file-name
-                    "nlinum-emacs24.patch"
-                    (concat user-emacs-directory
-                            (file-name-as-directory "patches")))))
-               :compile "nlinum.el")
-        (:name sdcv
-               :description "Interface for sdcv (StartDict console version)."
-               :depends showtip
-               :build
-               `(("patch" "sdcv.el"
-                  ,(expand-file-name
-                    "sdcv-start-process.patch"
-                    (concat user-emacs-directory
-                            (file-name-as-directory "patches")))))
-               :compile "sdcv.el")))
-
 ;; Load initialization files for built-in packages
 (let ((init-files (mapcar (lambda (pkg)
                             (concat (file-name-as-directory
