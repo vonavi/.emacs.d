@@ -12,26 +12,26 @@
 ;;; Code:
 
 (defvar my:builtin-packages
-  '(auto-insert                   ; auto-inserts text into new buffers
-    flyspell)                     ; on-the-fly spell checking
+  '(auto-insert ; automatic mode-dependent insertion of text into new files
+    flyspell)   ; on-the-fly spell checker
   "A list of built-in packages, initialization files for which
   are loaded at launch.")
 (defvar my:el-get-packages
-  '(ace-jump-mode        ; fast/direct cursor movement in current view
-    adaptive-wrap        ; smart line-wrapping
-    auctex               ; writing and formatting TeX/LaTeX files
-    essh                 ; emulates for bash what ESS is to R
+  '(ace-jump-mode           ; fast buffer switching extension to `avy'
+    adaptive-wrap           ; smart line-wrapping with wrap-prefix
+    auctex                  ; integrated environment for *TeX*
+    essh    ; a set of commands that emulate for bash what ESS is to R
     fill-column-indicator    ; graphically indicate the fill column
-    fullscreen               ; full-screen support
-    hungry-delete            ; hungry delete whitespaces
-    magit                    ; interface to Git
-    nlinum                   ; displays line numbers
-    realgud                  ; interacting with external debuggers
-    sdcv                     ; interface for sdcv
-    solarized-emacs          ; Solarized colour theme
+    fullscreen               ; full screen
+    hungry-delete            ; hungry delete minor mode
+    magit                    ; a Git porcelain inside Emacs
+    nlinum                   ; show line numbers in the margin
+    realgud ; a modular front-end for interacting with external debuggers
+    sdcv    ; interface for sdcv (StartDict console version)
+    solarized-emacs          ; Solarized for Emacs
     undo-tree                ; treat undo history as a tree
-    window-margin            ; auto margins for Visual Line mode
-    ws-butler)               ; trim white-space *ONLY* in lines edited
+    window-margin    ; automatic margins for visual-line-mode wrapping
+    ws-butler)       ; unobtrusively remove trailing whitespace
   "A list of packages to ensure are installed at launch.")
 
 ;; Load initialization files for built-in packages
