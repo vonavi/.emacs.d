@@ -26,7 +26,6 @@
     hungry-delete            ; hungry delete whitespaces
     magit                    ; interface to Git
     nlinum                   ; displays line numbers
-    org-protocol-jekyll      ; Jekyll's handler for org-protocol
     realgud                  ; interacting with external debuggers
     sdcv                     ; interface for sdcv
     solarized-emacs          ; Solarized colour theme
