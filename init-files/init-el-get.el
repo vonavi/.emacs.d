@@ -26,6 +26,7 @@
     hungry-delete            ; hungry delete minor mode
     magit                    ; a Git porcelain inside Emacs
     nlinum                   ; show line numbers in the margin
+    org     ; outline-based notes management and organizer
     realgud ; a modular front-end for interacting with external debuggers
     sdcv    ; interface for sdcv (StartDict console version)
     solarized-emacs          ; Solarized for Emacs
