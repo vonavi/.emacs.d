@@ -1,6 +1,6 @@
 ;;; init.el ---
 
-;; Copyright (C) 2013-2015  Vladimir Ivanov
+;; Copyright (C) 2013-2021  Vladimir Ivanov
 
 ;; Author: Vladimir Ivanov <ivvl82@gmail.com>
 ;; Keywords:
@@ -27,16 +27,10 @@
     (eval-print-last-sexp)))
 
 ;; Use available package.el repositories
-(add-to-list 'package-archives
-             '("elpa" . "https://elpa.gnu.org/packages/") t)
-(add-to-list 'package-archives
-             '("marmalade" . "https://marmalade-repo.org/packages/") t)
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/") t)
-(add-to-list 'package-archives
-             '("org" . "https://orgmode.org/elpa/") t)
-;; Allow packages to be installed over insecure connections
-(setq el-get-allow-insecure t)
+(setq package-archives
+      '(("elpa" . "https://elpa.gnu.org/packages/")
+        ("melpa" . "https://melpa.org/packages/")
+        ("org" . "https://orgmode.org/elpa/")))
 
 ;; Build the El-Get copy of ELPA and EmacsWiki packages if we have not
 ;; built them before
