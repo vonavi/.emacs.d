@@ -105,37 +105,8 @@
       desktop-save t
       desktop-load-locked-desktop t)
 
-;; List of most recent files, persisent between emacs session.
-(recentf-mode 1)
-(setq recentf-save-file "~/.emacs.d/cache/.recentf"
-      recentf-exclude '("/\\.[^/]+\\'" "/\\.emacs\\.d/elpa/" "/loaddefs\\.el\\'"))
-;; Get ido to handle recentf results
-(defun ido-recentf-open-files ()
-  "Use ido to select a recently opened file from the `recentf-list'"
-  (interactive)
-  (find-file (ido-completing-read
-              "Find recent file: "
-              (mapcar (apply-partially
-                       'replace-regexp-in-string (getenv "HOME") "~")
-                      recentf-list))))
-
 ;; File for storing customization information
 (setq custom-file "~/.emacs.d/init-files/init-custom.el")
-
-;;--------------------------
-;; Emacs minibuffer behavior
-;;--------------------------
-
-;; Do interactively things with buffers and files
-(ido-mode 1)
-(setq ido-save-directory-list-file "~/.emacs.d/cache/ido.last"
-      ido-ignore-buffers '("\\` " "\\`\\*") ; ignore these buffers
-      ido-confirm-unique-completion t ; wait for RET with unique completion
-      confirm-nonexistent-file-or-buffer nil) ; don't need confirmation
-
-(icomplete-mode 1)           ; completion in mini-buffer
-(setq resize-mini-windows t) ; minibuffer gets resized if it becomes too big
-(fset 'yes-or-no-p 'y-or-n-p)       ; use y or n instead of yes or not
 
 ;;---------------------
 ;; Emacs buffer editing
@@ -168,6 +139,7 @@
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on) ; translate escape sequences
 (setq calendar-week-start-day 1         ; week starts Monday
       calendar-date-style 'european)    ; European style calendar
+(fset 'yes-or-no-p 'y-or-n-p)       ; use y or n instead of yes or not
 
 ;; This function reverts all buffers that are visiting a file.
 (defun revert-all-buffers ()

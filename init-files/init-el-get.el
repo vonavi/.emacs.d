@@ -29,7 +29,9 @@
     org     ; outline-based notes management and organizer
     pomidor ; simple and cool http://www.pomodorotechnique.com timer
     realgud ; a modular front-end for interacting with external debuggers
-    sdcv    ; interface for sdcv (StartDict console version)
+    selectrum                           ; easily select item from list
+    selectrum-prescient                 ; Selectrum integration
+    sdcv             ; interface for sdcv (StartDict console version)
     solarized-emacs  ; Solarized for Emacs
     undo-tree        ; treat undo history as a tree
     window-margin    ; automatic margins for visual-line-mode wrapping
