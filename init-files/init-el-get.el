@@ -12,8 +12,9 @@
 ;;; Code:
 
 (defvar my:builtin-packages
-  '(auto-insert ; automatic mode-dependent insertion of text into new files
-    flyspell)   ; on-the-fly spell checker
+  '(auto-insert      ; automatic mode-dependent insertion of text into new files
+    display-fill-column-indicator  ; interface for display-fill-column-indicator
+    flyspell)                      ; on-the-fly spell checker
   "A list of built-in packages, initialization files for which
   are loaded at launch.")
 (defvar my:el-get-packages
@@ -21,14 +22,13 @@
     adaptive-wrap     ; smart line-wrapping with wrap-prefix
     auctex            ; integrated environment for *TeX*
     essh              ; a set of commands that emulate for bash what ESS is to R
-    fill-column-indicator         ; graphically indicate the fill column
-    fullscreen                    ; full screen
-    hungry-delete                 ; hungry delete minor mode
-    magit                         ; a Git porcelain inside Emacs
-    nlinum                        ; show line numbers in the margin
-    org                           ; outline-based notes management and organizer
-    pomidor             ; simple and cool http://www.pomodorotechnique.com timer
-    (selectrum          ; easily select item from list
+    fullscreen        ; full screen
+    hungry-delete     ; hungry delete minor mode
+    magit             ; a Git porcelain inside Emacs
+    nlinum            ; show line numbers in the margin
+    org               ; outline-based notes management and organizer
+    pomidor           ; simple and cool http://www.pomodorotechnique.com timer
+    (selectrum        ; easily select item from list
      selectrum-prescient)      ; Selectrum integration
     sdcv                       ; interface for sdcv (StartDict console version)
     solarized-emacs            ; Solarized for Emacs

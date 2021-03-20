@@ -15,8 +15,6 @@
 ;; El-Get
 ;;-------
 
-;; (package-initialize)
-
 ;; Ensure that El-Get is available
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (unless (require 'el-get nil 'noerror)
@@ -112,14 +110,15 @@
 ;; Emacs buffer editing
 ;;---------------------
 
-;; Disable displaying Bi-directional text
-(setq-default bidi-display-reordering nil)
-(setq sentence-end-double-space nil ; sentences end with one space
-      require-final-newline t)      ; always end a file with a newline
+(setq sentence-end-double-space nil     ; sentences end with one space
+      require-final-newline t)          ; always end a file with a newline
 
 ;; Enable Visual Line mode
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
 (setq visual-line-fringe-indicators '(nil right-curly-arrow))
+
+;; Avoid performance issues in files with very long lines
+(global-so-long-mode 1)
 
 ;; Indentation setup
 (electric-indent-mode 1)            ; auto indentation
