@@ -18,23 +18,24 @@
   "A list of built-in packages, initialization files for which
   are loaded at launch.")
 (defvar my:el-get-packages
-  '(ace-jump-mode     ; fast buffer switching extension to `avy'
-    adaptive-wrap     ; smart line-wrapping with wrap-prefix
-    auctex            ; integrated environment for *TeX*
-    essh              ; a set of commands that emulate for bash what ESS is to R
-    fullscreen        ; full screen
-    hungry-delete     ; hungry delete minor mode
-    magit             ; a Git porcelain inside Emacs
-    nlinum            ; show line numbers in the margin
-    org               ; outline-based notes management and organizer
-    pomidor           ; simple and cool http://www.pomodorotechnique.com timer
-    (selectrum        ; easily select item from list
-     selectrum-prescient)      ; Selectrum integration
-    sdcv                       ; interface for sdcv (StartDict console version)
-    solarized-emacs            ; Solarized for Emacs
-    undo-tree                  ; treat undo history as a tree
-    window-margin              ; automatic margins for visual-line-mode wrapping
-    ws-butler)                 ; unobtrusively remove trailing whitespace
+  '(ace-jump-mode           ; fast buffer switching extension to `avy'
+    adaptive-wrap           ; smart line-wrapping with wrap-prefix
+    auctex                  ; integrated environment for *TeX*
+    (counsel                ; various completion functions using Ivy
+     ivy                    ; Incremental Vertical completYon
+     ivy-prescient)         ; prescient.el + Ivy
+    essh    ; a set of commands that emulate for bash what ESS is to R
+    fullscreen          ; full screen
+    hungry-delete       ; hungry delete minor mode
+    magit               ; a Git porcelain inside Emacs
+    nlinum              ; show line numbers in the margin
+    org                 ; outline-based notes management and organizer
+    pomidor   ; simple and cool http://www.pomodorotechnique.com timer
+    sdcv      ; interface for sdcv (StartDict console version)
+    solarized-emacs  ; Solarized for Emacs
+    undo-tree        ; treat undo history as a tree
+    window-margin    ; automatic margins for visual-line-mode wrapping
+    ws-butler)       ; unobtrusively remove trailing whitespace
   "A list of packages to ensure are installed at launch.")
 
 ;; Load initialization files for built-in packages
