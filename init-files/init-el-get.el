@@ -32,11 +32,16 @@
     nlinum            ; show line numbers in the margin
     org               ; outline-based notes management and organizer
     pomidor           ; simple and cool http://www.pomodorotechnique.com timer
-    sdcv              ; interface for sdcv (StartDict console version)
-    solarized-emacs   ; Solarized for Emacs
-    undo-tree         ; treat undo history as a tree
-    window-margin     ; automatic margins for visual-line-mode wrapping
-    ws-butler)        ; unobtrusively remove trailing whitespace
+    (dune             ; integration with the dune build system
+     dune-format      ; reformat OCaml's dune files automatically
+     merlin           ; mode for Merlin, an assistant for OCaml
+     proof-general ; a generic front-end for proof assistants (interactive theorem provers)
+     tuareg-mode)  ; an Emacs OCaml mode
+    sdcv           ; interface for sdcv (StartDict console version)
+    solarized-emacs  ; Solarized for Emacs
+    undo-tree        ; treat undo history as a tree
+    window-margin    ; automatic margins for visual-line-mode wrapping
+    ws-butler)       ; unobtrusively remove trailing whitespace
   "A list of packages to ensure are installed at launch.")
 
 ;; Load initialization files for built-in packages
