@@ -50,8 +50,7 @@
 ;; Clean up and init packages installed by El-Get
 (let* ((flatten (lambda (l)
                   (if (listp l)
-                      (apply 'concatenate
-                             'list
+                      (apply 'append
                              (mapcar (lambda (p) (funcall flatten p)) l))
                     (list l))))
        (packages (funcall flatten my:el-get-packages)))
