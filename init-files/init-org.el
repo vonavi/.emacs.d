@@ -11,12 +11,6 @@
 
 ;;; Code:
 
-;; Indent text according to outline structure
-(add-hook 'org-mode-hook (lambda () (org-indent-mode 1)))
-
-;; Display entities as UTF-8 characters
-(setq org-pretty-entities t)
-
 (require 'org)
 ;; Default viewer for HTML files
 (add-to-list 'org-file-apps
@@ -35,6 +29,30 @@
 (require 'org-protocol)
 (require 'server)
 (unless (server-running-p) (server-start))
+
+;;---------------
+;; Org appearance
+;;---------------
+
+;; Set the font family for Org headings
+(add-hook 'org-mode-hook
+          (lambda ()
+            (let ((font-family (face-attribute 'default :family)))
+              (dolist (face '(org-level-1
+                              org-level-2
+                              org-level-3
+                              org-level-4
+                              org-level-5
+                              org-level-6
+                              org-level-7
+                              org-level-8))
+                (set-face-attribute face nil :family font-family)))))
+
+;; Indent text according to outline structure
+(add-hook 'org-mode-hook (lambda () (org-indent-mode 1)))
+
+;; Display entities as UTF-8 characters
+(setq org-pretty-entities t)
 
 ;;-------------
 ;; LaTeX export

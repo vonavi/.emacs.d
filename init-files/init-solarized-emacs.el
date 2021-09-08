@@ -11,6 +11,6 @@
 
 ;;; Code:
 
-(load-theme 'solarized-light t)
+(load-theme 'solarized-dark t)
 
 ;;; init-solarized-emacs.el ends here

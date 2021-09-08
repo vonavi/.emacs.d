@@ -48,7 +48,7 @@
 ;; Emacs appearance setup
 ;;-----------------------
 
-(add-to-list 'default-frame-alist '(font . "PragmataPro 14")) ; set default font
+(set-face-attribute 'default nil :font "Iosevka 12") ; set the default font
 (blink-cursor-mode 0)            ; no blinking cursor
 (setq inhibit-splash-screen t)   ; prevent silly initial splash screen
 (tool-bar-mode 0)                ; no tool bar
