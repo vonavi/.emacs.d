@@ -18,30 +18,27 @@
   "A list of built-in packages, initialization files for which
   are loaded at launch.")
 (defvar my:el-get-packages
-  '(adaptive-wrap             ; smart line-wrapping with wrap-prefix
-    auctex                    ; integrated environment for *TeX*
-    (avy                      ; jump to things in Emacs tree-style
-     avy-zap)                 ; zap to char using `avy'
-    (counsel                  ; various completion functions using Ivy
-     ivy                      ; Incremental Vertical completYon
-     ivy-prescient)           ; prescient.el + Ivy
-    essh    ; a set of commands that emulate for bash what ESS is to R
-    fullscreen          ; full screen
-    hungry-delete       ; enables hungry deletion in all modes
-    magit               ; it's Magit! An Emacs mode for Git
-    nlinum              ; show line numbers in the margin
-    org                 ; outline-based notes management and organizer
-    pomidor             ; simple and cool pomodoro timer
-    (dune               ; integration with the dune build system
-     dune-format        ; reformat OCaml's dune files automatically
-     merlin             ; mode for Merlin, an assistant for OCaml
+  '((adaptive-wrap   ; smart line-wrapping with wrap-prefix
+     nlinum          ; show line numbers in the margin
+     window-margin)  ; automatic margins for visual-line-mode wrapping
+    auctex           ; integrated environment for *TeX*
+    (avy             ; jump to things in Emacs tree-style
+     avy-zap)        ; zap to char using `avy'
+    (counsel         ; various completion functions using Ivy
+     ivy             ; Incremental Vertical completYon
+     ivy-prescient)  ; prescient.el + Ivy
+    (dune            ; integration with the dune build system
+     merlin          ; mode for Merlin, an assistant for OCaml
      proof-general ; a generic Emacs interface for interactive proof assistants
      tuareg-mode)  ; an Emacs OCaml mode
-    sdcv           ; interface for sdcv (StartDict console version)
-    solarized-emacs  ; the Solarized color theme
-    undo-tree        ; treat undo history as a tree
-    window-margin    ; automatic margins for visual-line-mode wrapping
-    ws-butler) ; unobtrusively trim extraneous white-space *ONLY* in lines edited
+    (hungry-delete ; enables hungry deletion in all modes
+     undo-tree     ; treat undo history as a tree
+     ws-butler) ; unobtrusively trim extraneous white-space *ONLY* in lines edited
+    magit       ; it's Magit! An Emacs mode for Git
+    org         ; outline-based notes management and organizer
+    pomidor     ; simple and cool pomodoro timer
+    sdcv        ; interface for sdcv (StartDict console version)
+    solarized-emacs)                    ; the Solarized color theme
   "A list of packages to ensure are installed at launch.")
 
 ;; Load initialization files for built-in packages
