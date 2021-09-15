@@ -17,6 +17,7 @@
     flyspell)                     ; on-the-fly spell checker
   "A list of built-in packages, initialization files for which
   are loaded at launch.")
+
 (defvar my:el-get-packages
   '((adaptive-wrap   ; smart line-wrapping with wrap-prefix
      nlinum          ; show line numbers in the margin
@@ -42,13 +43,11 @@
   "A list of packages to ensure are installed at launch.")
 
 ;; Load initialization files for built-in packages
-(let ((init-files (mapcar (lambda (pkg)
-                            (concat (file-name-as-directory
-                                     el-get-user-package-directory)
-                                    "init-" (symbol-name pkg) ".el"))
-                          my:builtin-packages)))
-  (dolist (file init-files)
-    (load-file (expand-file-name file el-get-user-package-directory))))
+(dolist (pkg my:builtin-packages)
+  (let ((init-file (expand-file-name (concat "init-" (symbol-name pkg))
+                                     el-get-user-package-directory)))
+    (el-get-byte-compile-file (concat init-file ".el") byte-compile-warnings)
+    (load init-file)))
 
 ;; Clean up and init packages installed by El-Get
 (let* ((flatten (lambda (l)

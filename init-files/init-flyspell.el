@@ -13,9 +13,6 @@
 
 (require 'flyspell)
 
-;; Use spell checker Aspell as a replacement for Ispell
-(setq ispell-program-name "aspell")
-
 ;; According to the aspell documentation, "ultra" is the fastest mode,
 ;; which is still twice as slow as ispell. If your machine is fast
 ;; enough, a better option might be to try "fast" mode, which is twice
@@ -28,15 +25,15 @@
 (setq ispell-extra-args '("--sug-mode=ultra"))
 
 ;; Some extra flyspell delayed command
-(mapcar 'flyspell-delay-command '(scroll-up1 scroll-down1))
+(mapc #'flyspell-delay-command '(scroll-up1 scroll-down1))
 
 ;; Set default dictionary
 (setq ispell-dictionary "english")
 
 ;; Auto-start of Flyspell
-(add-hook 'text-mode-hook 'turn-on-flyspell)
-(add-hook 'prog-mode-hook 'flyspell-prog-mode)
-(add-hook 'text-mode-hook 'my:change-dictionary)
+(add-hook 'text-mode-hook #'turn-on-flyspell)
+(add-hook 'prog-mode-hook #'flyspell-prog-mode)
+(add-hook 'text-mode-hook #'my:change-dictionary)
 
 (defun my:change-dictionary ()
   "Set Russian language for \"ru\" directories."
