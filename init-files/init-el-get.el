@@ -30,6 +30,7 @@
      ivy-prescient)  ; prescient.el + Ivy
     (dune            ; integration with the dune build system
      merlin          ; mode for Merlin, an assistant for OCaml
+     ocp-indent      ; automatic indentation with ocp-indent
      proof-general ; a generic Emacs interface for interactive proof assistants
      tuareg-mode)  ; an Emacs OCaml mode
     (hungry-delete ; enables hungry deletion in all modes
