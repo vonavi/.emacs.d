@@ -14,6 +14,9 @@
 ;; Enable generic Ivy completion
 (ivy-mode 1)
 
+;; Make the prompt line selectable like a candidate
+(setq ivy-use-selectable-prompt t)
+
 ;; Enable switching to the "special" buffers
 (setq ivy-use-virtual-buffers t)
 
