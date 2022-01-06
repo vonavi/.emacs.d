@@ -25,10 +25,8 @@
     (eval-print-last-sexp)))
 
 ;; Use available package.el repositories
-(setq package-archives
-      '(("elpa" . "https://elpa.gnu.org/packages/")
-        ("melpa" . "https://melpa.org/packages/")
-        ("org" . "https://orgmode.org/elpa/")))
+(add-to-list 'package-archives '("elpa" . "https://elpa.gnu.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
 ;; Build the El-Get copy of ELPA and EmacsWiki packages if we have not
 ;; built them before

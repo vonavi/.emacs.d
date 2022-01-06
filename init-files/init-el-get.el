@@ -38,9 +38,10 @@
      ws-butler) ; unobtrusively trim extraneous white-space *ONLY* in lines edited
     magit       ; it's Magit! An Emacs mode for Git
     (org        ; outline-based notes management and organizer
-     org-ref) ; citations, cross-references and bibliographies in org-mode
-    pomidor   ; simple and cool pomodoro timer
-    sdcv      ; interface for sdcv (StartDict console version)
+     (citeproc	; a CSL 1.0.2 Citation Processor
+      org-ref)) ; citations, cross-references and bibliographies in org-mode
+    pomidor     ; simple and cool pomodoro timer
+    sdcv        ; interface for sdcv (StartDict console version)
     solarized-emacs)                    ; the Solarized color theme
   "A list of packages to ensure are installed at launch.")
 
