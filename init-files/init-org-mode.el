@@ -54,6 +54,17 @@
 ;; Display entities as UTF-8 characters
 (setq org-pretty-entities t)
 
+;;----------
+;; Org Babel
+;;----------
+
+;; Active Babel languages
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((C . t)
+   (dot . t)
+   (python . t)))
+
 ;;-------------
 ;; LaTeX export
 ;;-------------

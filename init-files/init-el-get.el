@@ -33,15 +33,16 @@
      ocp-indent      ; automatic indentation with ocp-indent
      proof-general ; a generic Emacs interface for interactive proof assistants
      tuareg-mode)  ; an Emacs OCaml mode
-    (hungry-delete ; enables hungry deletion in all modes
-     undo-tree     ; treat undo history as a tree
+    graphviz-dot-mode     ; mode for the dot-language used by graphviz
+    (hungry-delete        ; enables hungry deletion in all modes
+     undo-tree            ; treat undo history as a tree
      ws-butler) ; unobtrusively trim extraneous white-space *ONLY* in lines edited
     magit       ; it's Magit! An Emacs mode for Git
-    (org        ; outline-based notes management and organizer
-     (citeproc	; a CSL 1.0.2 Citation Processor
-      org-ref)) ; citations, cross-references and bibliographies in org-mode
-    pomidor     ; simple and cool pomodoro timer
-    sdcv        ; interface for sdcv (StartDict console version)
+    ((citeproc	; a CSL 1.0.2 Citation Processor
+      org-ref) ; citations, cross-references and bibliographies in org-mode
+     org-mode) ; outline-based notes management and organizer
+    pomidor    ; simple and cool pomodoro timer
+    sdcv       ; interface for sdcv (StartDict console version)
     solarized-emacs)                    ; the Solarized color theme
   "A list of packages to ensure are installed at launch.")
 
