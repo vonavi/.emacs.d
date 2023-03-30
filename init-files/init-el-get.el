@@ -12,38 +12,38 @@
 ;;; Code:
 
 (defvar my:builtin-packages
-  '(auto-insert ; automatic mode-dependent insertion of text into new files
-    display-fill-column-indicator ; interface for display-fill-column-indicator
-    flyspell)                     ; on-the-fly spell checker
+  '(auto-insert      ; automatic mode-dependent insertion of text into new files
+    display-fill-column-indicator  ; interface for display-fill-column-indicator
+    flyspell)                      ; on-the-fly spell checker
   "A list of built-in packages, initialization files for which
   are loaded at launch.")
 
 (defvar my:el-get-packages
-  '((adaptive-wrap   ; smart line-wrapping with wrap-prefix
-     nlinum          ; show line numbers in the margin
-     window-margin)  ; automatic margins for visual-line-mode wrapping
-    auctex           ; integrated environment for *TeX*
-    (avy             ; jump to things in Emacs tree-style
-     avy-zap)        ; zap to char using `avy'
-    (counsel         ; various completion functions using Ivy
-     ivy             ; Incremental Vertical completYon
-     ivy-prescient)  ; prescient.el + Ivy
-    (dune            ; integration with the dune build system
-     merlin          ; mode for Merlin, an assistant for OCaml
-     ocp-indent      ; automatic indentation with ocp-indent
-     proof-general ; a generic Emacs interface for interactive proof assistants
-     tuareg-mode)  ; an Emacs OCaml mode
-    graphviz-dot-mode     ; mode for the dot-language used by graphviz
-    (hungry-delete        ; enables hungry deletion in all modes
-     undo-tree            ; treat undo history as a tree
+  '((adaptive-wrap  ; smart line-wrapping with wrap-prefix
+     nlinum         ; show line numbers in the margin
+     window-margin) ; automatic margins for visual-line-mode wrapping
+    auctex          ; integrated environment for *TeX*
+    (avy            ; jump to things in Emacs tree-style
+     avy-zap)       ; zap to char using `avy'
+    (counsel        ; various completion functions using Ivy
+     ivy            ; Incremental Vertical completYon
+     ivy-prescient) ; prescient.el + Ivy
+    (dune           ; integration with the dune build system
+     merlin         ; mode for Merlin, an assistant for OCaml
+     ocp-indent     ; automatic indentation with ocp-indent
+     proof-general  ; a generic Emacs interface for interactive proof assistants
+     tuareg-mode)   ; an Emacs OCaml mode
+    graphviz-dot-mode               ; mode for the dot-language used by graphviz
+    (hungry-delete                  ; enables hungry deletion in all modes
+     undo-tree                      ; treat undo history as a tree
      ws-butler) ; unobtrusively trim extraneous white-space *ONLY* in lines edited
     magit       ; it's Magit! An Emacs mode for Git
-    ((citeproc	; a CSL 1.0.2 Citation Processor
-      org-ref) ; citations, cross-references and bibliographies in org-mode
-     org-mode) ; outline-based notes management and organizer
-    pomidor    ; simple and cool pomodoro timer
-    sdcv       ; interface for sdcv (StartDict console version)
-    solarized-emacs)                    ; the Solarized color theme
+    ((citeproc  ; a CSL 1.0.2 Citation Processor
+      org-ref)  ; citations, cross-references and bibliographies in org-mode
+     org-mode)  ; outline-based notes management and organizer
+    pomidor     ; simple and cool pomodoro timer
+    sdcv                        ; interface for sdcv (StartDict console version)
+    solarized-emacs)            ; the Solarized color theme
   "A list of packages to ensure are installed at launch.")
 
 ;; Load initialization files for built-in packages
