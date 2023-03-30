@@ -11,7 +11,7 @@
 
 ;;; Code:
 
-(setq-default display-fill-column-indicator-column 80)
+(setq-default fill-column 80)
 (add-hook 'prog-mode-hook (lambda () (display-fill-column-indicator-mode 1)))
 
 ;;; init-display-fill-column-indicator.el ends here

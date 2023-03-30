@@ -27,9 +27,7 @@
   ;; Easy typing of mathematical symbols
   (LaTeX-math-mode 1)
   ;; Forward and inverse search
-  (TeX-source-correlate-mode 1)
-  ;; Set the favorite environment
-  (setq LaTeX-default-environment "align"))
+  (TeX-source-correlate-mode 1))
 
 (setq
  ;; Parse the buffer on load for extracting information
