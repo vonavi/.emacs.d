@@ -28,6 +28,8 @@
     (counsel        ; various completion functions using Ivy
      ivy            ; Incremental Vertical completYon
      ivy-prescient) ; prescient.el + Ivy
+    dired+          ; extensions to Dired
+    dockerfile-mode ; major mode for editing Docker's Dockerfiles
     (dune           ; integration with the dune build system
      merlin         ; mode for Merlin, an assistant for OCaml
      ocp-indent     ; automatic indentation with ocp-indent
@@ -42,6 +44,8 @@
       org-ref)  ; citations, cross-references and bibliographies in org-mode
      org-mode)  ; outline-based notes management and organizer
     pomidor     ; simple and cool pomodoro timer
+    protobuf-mode               ; major mode for editing protocol buffers
+    rainbow-delimiters          ; highlight brackets according to their depth
     sdcv                        ; interface for sdcv (StartDict console version)
     solarized-emacs)            ; the Solarized color theme
   "A list of packages to ensure are installed at launch.")
