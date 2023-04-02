@@ -40,14 +40,13 @@
      undo-tree                      ; treat undo history as a tree
      ws-butler) ; unobtrusively trim extraneous white-space *ONLY* in lines edited
     magit       ; it's Magit! An Emacs mode for Git
-    ((citeproc  ; a CSL 1.0.2 Citation Processor
-      org-ref)  ; citations, cross-references and bibliographies in org-mode
-     org-mode)  ; outline-based notes management and organizer
-    pomidor     ; simple and cool pomodoro timer
-    protobuf-mode               ; major mode for editing protocol buffers
-    rainbow-delimiters          ; highlight brackets according to their depth
-    sdcv                        ; interface for sdcv (StartDict console version)
-    solarized-emacs)            ; the Solarized color theme
+    (org-mode   ; outline-based notes management and organizer
+     org-ref) ; citations, cross-references and bibliographies in org-mode
+    pomidor   ; simple and cool pomodoro timer
+    protobuf-mode        ; major mode for editing protocol buffers
+    rainbow-delimiters   ; highlight brackets according to their depth
+    sdcv              ; interface for sdcv (StartDict console version)
+    solarized-emacs)  ; the Solarized color theme
   "A list of packages to ensure are installed at launch.")
 
 ;; Load initialization files for built-in packages
