@@ -42,6 +42,31 @@
 (el-get-save-package-status 'el-get "installed")
 (el-get-do-init 'el-get)
 
+;;----------------------------
+;; Configure and load packages
+;;----------------------------
+
+;; Set up the load-paths and autoloads for installed packages
+(package-initialize)
+
+;; Bootstrap `use-package'
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(add-to-list 'load-path (concat user-emacs-directory "packages"))
+
+;; Always install packages if they are not installed
+(require 'use-package-ensure)
+(setq use-package-always-ensure t)
+
+;; Incremental Vertical completYon
+(require 'config/ivy)
+;; A generic Emacs interface for interactive proof assistants
+(require 'config/proof-general)
+;; Treat undo history as a tree
+(require 'config/undo-tree)
+
 ;;-----------------------
 ;; Emacs appearance setup
 ;;-----------------------

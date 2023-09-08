@@ -26,18 +26,15 @@
     (avy            ; jump to things in Emacs tree-style
      avy-zap)       ; zap to char using `avy'
     (counsel        ; various completion functions using Ivy
-     ivy            ; Incremental Vertical completYon
      ivy-prescient) ; prescient.el + Ivy
     dired+          ; extensions to Dired
     dockerfile-mode ; major mode for editing Docker's Dockerfiles
     (dune           ; integration with the dune build system
      merlin         ; mode for Merlin, an assistant for OCaml
      ocp-indent     ; automatic indentation with ocp-indent
-     proof-general  ; a generic Emacs interface for interactive proof assistants
      tuareg-mode)   ; an Emacs OCaml mode
     graphviz-dot-mode               ; mode for the dot-language used by graphviz
     (hungry-delete                  ; enables hungry deletion in all modes
-     undo-tree                      ; treat undo history as a tree
      ws-butler) ; unobtrusively trim extraneous white-space *ONLY* in lines edited
     magit       ; it's Magit! An Emacs mode for Git
     (org-mode   ; outline-based notes management and organizer
