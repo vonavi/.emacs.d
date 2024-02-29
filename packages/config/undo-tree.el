@@ -20,5 +20,4 @@
         `(("." . ,(concat user-emacs-directory "undo")))))
 
 (provide 'config/undo-tree)
-
 ;;; undo-tree.el ends here

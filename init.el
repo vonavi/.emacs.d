@@ -60,12 +60,12 @@
 (require 'use-package-ensure)
 (setq use-package-always-ensure t)
 
-;; Incremental Vertical completYon
-(require 'config/ivy)
 ;; A generic Emacs interface for interactive proof assistants
 (require 'config/proof-general)
 ;; Treat undo history as a tree
 (require 'config/undo-tree)
+;; VERTical Interactive COmpletion
+(require 'config/vertico)
 
 ;;-----------------------
 ;; Emacs appearance setup

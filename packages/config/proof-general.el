@@ -27,5 +27,4 @@
   :mode "\\.v\\'")
 
 (provide 'config/proof-general)
-
 ;;; proof-general.el ends here

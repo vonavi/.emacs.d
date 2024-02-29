@@ -25,8 +25,6 @@
     auctex          ; integrated environment for *TeX*
     (avy            ; jump to things in Emacs tree-style
      avy-zap)       ; zap to char using `avy'
-    (counsel        ; various completion functions using Ivy
-     ivy-prescient) ; prescient.el + Ivy
     dired+          ; extensions to Dired
     dockerfile-mode ; major mode for editing Docker's Dockerfiles
     (dune           ; integration with the dune build system
