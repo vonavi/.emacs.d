@@ -11,13 +11,6 @@
 
 ;;; Code:
 
-(defvar my:builtin-packages
-  '(auto-insert      ; automatic mode-dependent insertion of text into new files
-    display-fill-column-indicator  ; interface for display-fill-column-indicator
-    flyspell)                      ; on-the-fly spell checker
-  "A list of built-in packages, initialization files for which
-  are loaded at launch.")
-
 (defvar my:el-get-packages
   '((adaptive-wrap  ; smart line-wrapping with wrap-prefix
      nlinum         ; show line numbers in the margin
@@ -43,13 +36,6 @@
     sdcv              ; interface for sdcv (StartDict console version)
     solarized-emacs)  ; the Solarized color theme
   "A list of packages to ensure are installed at launch.")
-
-;; Load initialization files for built-in packages
-(dolist (pkg my:builtin-packages)
-  (let ((init-file (expand-file-name (concat "init-" (symbol-name pkg))
-                                     el-get-user-package-directory)))
-    (el-get-byte-compile-file (concat init-file ".el") byte-compile-warnings)
-    (load init-file)))
 
 ;; Clean up and init packages installed by El-Get
 (let* ((flatten (lambda (l)

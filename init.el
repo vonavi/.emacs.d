@@ -60,6 +60,11 @@
 (require 'use-package-ensure)
 (setq use-package-always-ensure t)
 
+;; Built-in packages
+(require 'config/auto-insert)
+(require 'config/display-fill-column-indicator)
+(require 'config/flyspell)
+
 ;; A generic Emacs interface for interactive proof assistants
 (require 'config/proof-general)
 ;; Treat undo history as a tree
