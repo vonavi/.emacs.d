@@ -65,6 +65,11 @@
 (require 'config/display-fill-column-indicator)
 (require 'config/flyspell)
 
+;; Show line numbers in the margin
+(require 'config/nlinum)
+;; Visual Fill Column
+(require 'config/visual-fill-column)
+
 ;; A generic Emacs interface for interactive proof assistants
 (require 'config/proof-general)
 ;; Treat undo history as a tree
@@ -140,10 +145,6 @@
 
 (setq sentence-end-double-space nil     ; sentences end with one space
       require-final-newline t)          ; always end a file with a newline
-
-;; Enable Visual Line mode
-(add-hook 'text-mode-hook 'turn-on-visual-line-mode)
-(setq visual-line-fringe-indicators '(nil right-curly-arrow))
 
 ;; Avoid performance issues in files with very long lines
 (global-so-long-mode 1)

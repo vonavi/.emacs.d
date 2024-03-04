@@ -20,10 +20,10 @@
 (use-package coq-mode
   :ensure nil
   :after undo-tree
-  :hook
-  (coq-mode . (lambda () (undo-tree-mode +1)))
-  ;; Do not indicate the proof position by arrow
-  (coq-mode . (lambda () (setq overlay-arrow-string "")))
+  :hook (coq-mode . (lambda ()
+                      ;; Do not indicate the proof position by arrow
+                      (setq overlay-arrow-string "")
+                      (undo-tree-mode +1)))
   :mode "\\.v\\'")
 
 (provide 'config/proof-general)

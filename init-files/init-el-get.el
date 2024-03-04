@@ -12,10 +12,7 @@
 ;;; Code:
 
 (defvar my:el-get-packages
-  '((adaptive-wrap  ; smart line-wrapping with wrap-prefix
-     nlinum         ; show line numbers in the margin
-     window-margin) ; automatic margins for visual-line-mode wrapping
-    auctex          ; integrated environment for *TeX*
+  '(auctex          ; integrated environment for *TeX*
     (avy            ; jump to things in Emacs tree-style
      avy-zap)       ; zap to char using `avy'
     dired+          ; extensions to Dired
