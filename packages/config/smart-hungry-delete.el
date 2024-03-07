@@ -12,8 +12,7 @@
 ;;; Code:
 
 (use-package smart-hungry-delete
-  :init (smart-hungry-delete-add-default-hooks)
-
+  :config (smart-hungry-delete-add-default-hooks)
   :bind
   (([remap delete-backward-char] . smart-hungry-delete-backward-char)
    ([remap backward-delete-char-untabify] . smart-hungry-delete-backward-char)

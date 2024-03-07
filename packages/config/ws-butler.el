@@ -12,7 +12,7 @@
 ;;; Code:
 
 (use-package ws-butler
-  :init (ws-butler-global-mode +1))
+  :config (ws-butler-global-mode +1))
 
 (provide 'config/ws-butler)
 ;;; ws-butler.el ends here

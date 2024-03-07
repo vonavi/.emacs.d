@@ -12,10 +12,10 @@
 ;;; Code:
 
 (use-package vertico
-  :init (vertico-mode))
+  :config (vertico-mode +1))
 
 (use-package savehist
-  :init (savehist-mode))
+  :config (savehist-mode +1))
 
 (use-package vertico-directory
   :ensure nil
