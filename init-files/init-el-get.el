@@ -12,8 +12,7 @@
 ;;; Code:
 
 (defvar my:el-get-packages
-  '(auctex          ; integrated environment for *TeX*
-    (avy            ; jump to things in Emacs tree-style
+  '((avy            ; jump to things in Emacs tree-style
      avy-zap)       ; zap to char using `avy'
     dired+          ; extensions to Dired
     dockerfile-mode ; major mode for editing Docker's Dockerfiles

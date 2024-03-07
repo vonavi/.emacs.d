@@ -75,7 +75,9 @@
 ;; Visual Fill Column
 (require 'config/visual-fill-column)
 
-;; A generic Emacs interface for interactive proof assistants
+;; Extensible package for writing and formatting TeX files
+(require 'config/auctex)
+;; Generic Emacs interface for interactive proof assistants
 (require 'config/proof-general)
 ;; Treat undo history as a tree
 (require 'config/undo-tree)
