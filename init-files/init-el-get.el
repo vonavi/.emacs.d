@@ -22,8 +22,6 @@
      ocp-indent     ; automatic indentation with ocp-indent
      tuareg-mode)   ; an Emacs OCaml mode
     graphviz-dot-mode               ; mode for the dot-language used by graphviz
-    (hungry-delete                  ; enables hungry deletion in all modes
-     ws-butler) ; unobtrusively trim extraneous white-space *ONLY* in lines edited
     magit       ; it's Magit! An Emacs mode for Git
     (org-mode   ; outline-based notes management and organizer
      org-ref) ; citations, cross-references and bibliographies in org-mode

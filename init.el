@@ -65,6 +65,11 @@
 (require 'config/display-fill-column-indicator)
 (require 'config/flyspell)
 
+;; Smart hungry deletion of whitespace
+(require 'config/smart-hungry-delete)
+;; Unobtrusively remove trailing whitespace
+(require 'config/ws-butler)
+
 ;; Show line numbers in the margin
 (require 'config/nlinum)
 ;; Visual Fill Column
