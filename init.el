@@ -94,6 +94,7 @@
 (require 'config/auto-insert)
 (require 'config/display-fill-column-indicator)
 (require 'config/flyspell)
+(require 'config/so-long)
 
 ;; Smart hungry deletion of whitespace
 (require 'config/smart-hungry-delete)
@@ -157,9 +158,6 @@
 
 (setq sentence-end-double-space nil     ; sentences end with one space
       require-final-newline t)          ; always end a file with a newline
-
-;; Avoid performance issues in files with very long lines
-(global-so-long-mode 1)
 
 ;; Indentation setup
 (electric-indent-mode 1)            ; auto indentation
