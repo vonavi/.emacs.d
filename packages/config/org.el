@@ -17,6 +17,10 @@
         org-pretty-entities t   ; display entities as UTF-8 characters
         org-src-fontify-natively t)     ; fontify code in code blocks
 
+  ;; Set the font family for Org headings
+  (set-face-attribute 'variable-pitch nil
+                      :family (face-attribute 'default :family))
+
   :config
   ;; Keyboard shortcuts
   (require 'org-agenda)
