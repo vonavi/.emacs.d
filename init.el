@@ -77,6 +77,8 @@
 
 ;; Extensible package for writing and formatting TeX files
 (require 'config/auctex)
+;; Org Mode is a mode for document editing, formatting, and organizing
+(require 'config/org)
 ;; Generic Emacs interface for interactive proof assistants
 (require 'config/proof-general)
 ;; Treat undo history as a tree
