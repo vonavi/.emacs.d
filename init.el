@@ -110,6 +110,8 @@
 (require 'config/auctex)
 ;; Org Mode is a mode for document editing, formatting, and organizing
 (require 'config/org)
+;; Tooling to handle citations in Org via "citation processors"
+(require 'config/org-cite)
 ;; Generic Emacs interface for interactive proof assistants
 (require 'config/proof-general)
 ;; Treat undo history as a tree
