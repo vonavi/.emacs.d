@@ -11,20 +11,8 @@
 
 ;;; Code:
 
-(defun my:LaTeX-init ()
-  ;; Folding macros and environments
-  (TeX-fold-mode +1)
-  ;; Hide all macros and environments in the current buffer.
-  ;; *NOTE* Turn on Font-Lock mode first to correct folding if
-  ;; `global-font-lock-mode' enabled.
-  (turn-on-font-lock-if-desired)
-  (TeX-fold-buffer)
-  ;; Easy typing of mathematical symbols
-  (LaTeX-math-mode +1)
-  ;; Forward and inverse search
-  (TeX-source-correlate-mode +1))
-
-(use-package auctex
+(use-package tex
+  :ensure auctex
   :init
   (setq
    ;; Parse the buffer on load for extracting information
@@ -33,12 +21,34 @@
    TeX-save-query nil
    ;; Start a correlation server without asking
    TeX-source-correlate-start-server t
+   ;; Insert paired symbols for opening and closing inline equation
+   TeX-electric-math '("$" . "$"))
+
+  ;; Open PDF files in Evince
+  (setq TeX-view-program-list
+        '(("Evince" "evince --page-index=%(outpage) %o"))
+        TeX-view-program-selection '((output-pdf "Evince")))
+
+  :hook
+  (TeX-mode . (lambda ()
+                ;; Folding macros and environments
+                (TeX-fold-mode +1)
+                ;; Hide all macros and environments in the buffer.
+                ;; *NOTE* Turn on Font-Lock mode first to correct
+                ;; folding if `global-font-lock-mode' enabled.
+                (turn-on-font-lock-if-desired)
+                (TeX-fold-buffer)
+                ;; Forward and inverse search
+                (TeX-source-correlate-mode +1))))
+
+(use-package latex
+  :ensure auctex
+  :init
+  (setq
    ;; Function for reading \includegraphics files
    LaTeX-includegraphics-read-file 'LaTeX-includegraphics-read-file-relative
    ;; Strip known extensions from image file name
-   LaTeX-includegraphics-strip-extension-flag nil
-   ;; Insert paired symbols for opening and closing inline equation
-   TeX-electric-math '("$" . "$"))
+   LaTeX-includegraphics-strip-extension-flag nil)
 
   ;; Fold a math macro automatically after it's inserted
   (setq LaTeX-math-insert-function
@@ -46,12 +56,11 @@
           (TeX-insert-macro string)
           (save-excursion (backward-char) (TeX-fold-item 'math))))
 
-  ;; Open PDF files in Evince
-  (setq TeX-view-program-list
-        '(("Evince" "evince --page-index=%(outpage) %o"))
-        TeX-view-program-selection '((output-pdf "Evince")))
+  ;; Easy typing of mathematical symbols
+  :hook (LaTeX-mode . (lambda () (LaTeX-math-mode +1))))
 
-  ;; RefTeX options
+(use-package reftex
+  :init
   (setq
    ;; Make RefTeX work properly with AUCTeX
    reftex-plug-into-AUCTeX t
@@ -83,16 +92,10 @@
              "~")
            (replace-regexp-in-string "%l" key fmt))))
 
-  :config
-  ;; Enable PDF mode, not plain
-  (TeX-global-PDF-mode +1)
-
-  :hook
-  ((LaTeX-mode . my:LaTeX-init)
-   ;; Support for LaTeX labels, references, citations and index entries
-   (LaTeX-mode . turn-on-reftex)
-   ;; Automatically add a quick menu of document headings
-   (reftex-mode . imenu-add-menubar-index)))
+  ;; Support for labels, references, citations and index entries
+  :hook (TeX-mode . turn-on-reftex)
+  ;; Automatically add a quick menu of document headings
+  :hook (reftex-mode . imenu-add-menubar-index))
 
 (provide 'config/auctex)
 ;;; auctex.el ends here
