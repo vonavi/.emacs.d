@@ -18,7 +18,7 @@
         proof-three-window-mode-policy 'hybrid)) ; enable three windows mode
 
 (use-package coq-mode
-  :ensure nil
+  :ensure proof-general
   :after undo-tree
   :hook (coq-mode . (lambda ()
                       ;; Do not indicate the proof position by arrow

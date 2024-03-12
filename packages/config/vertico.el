@@ -18,8 +18,7 @@
   :config (savehist-mode +1))
 
 (use-package vertico-directory
-  :ensure nil
-  :after vertico
+  :ensure vertico
   ;; More convenient directory navigation commands
   :bind (:map vertico-map
               ("RET" . vertico-directory-enter)
