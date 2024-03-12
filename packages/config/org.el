@@ -22,11 +22,6 @@
                       :family (face-attribute 'default :family))
 
   :config
-  ;; Keyboard shortcuts
-  (require 'org-agenda)
-  (bind-keys ("C-c a" . org-agenda)
-             ("C-c l" . org-store-link))
-
   ;; Default viewer for HTML files
   (add-to-list 'org-file-apps
                '("\\.x?html?\\'" . (lambda (file path) (browse-url file))))
@@ -35,12 +30,29 @@
   (add-to-list 'org-file-apps
                '("\\.pdf::\\([0-9]+\\)\\'" . "evince --page-label=%1 %s"))
 
+  ;; Indent text according to outline structure
+  :hook (org-mode . (lambda () (org-indent-mode +1))))
+
+(use-package ol
+  :ensure org
+  :bind ("C-c l" . org-store-link))
+
+(use-package org-agenda
+  :ensure org
+  :bind ("C-c a" . org-agenda))
+
+(use-package ob-org
+  :ensure org
+  :init
   ;; Active Babel languages
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((C . t)
-     (python . t)))
+     (python . t))))
 
+(use-package ox-latex
+  :ensure org
+  :init
   ;; To use the listings package automatically for LaTeX documents
   (setq org-latex-listings 'minted)
   ;; List of additional LaTeX packages
@@ -66,10 +78,7 @@
    '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
      "bibtex %b"
      "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-     "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
-
-  ;; Indent text according to outline structure
-  :hook (org-mode . (lambda () (org-indent-mode +1))))
+     "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f")))
 
 (provide 'config/org)
 ;;; org.el ends here
