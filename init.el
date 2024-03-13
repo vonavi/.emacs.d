@@ -108,6 +108,8 @@
 
 ;; Extensible package for writing and formatting TeX files
 (require 'config/auctex)
+;; Complete text-based user interface to Git
+(require 'config/magit)
 ;; Org Mode is a mode for document editing, formatting, and organizing
 (require 'config/org)
 ;; Tooling to handle citations in Org via "citation processors"
