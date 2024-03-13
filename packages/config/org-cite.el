@@ -16,7 +16,7 @@
   :init
   (setq
    ;; Set bibliographies globally
-   org-cite-global-bibliography '("~/org/bibliography/references.bib")
+   org-cite-global-bibliography my::bib-files
    ;; Set the directory where CSL styles are stored
    org-cite-csl-styles-dir "~/org/styles"
    ;; Automatically select the processor for exporting citations
@@ -28,7 +28,7 @@
 
 (use-package citar
   :init
-  (setq citar-bibliography org-cite-global-bibliography)
+  (setq citar-bibliography my::bib-files)
   ;; Select citation processors
   (setq org-cite-activate-processor 'citar
         org-cite-follow-processor 'citar

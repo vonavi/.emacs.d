@@ -76,6 +76,11 @@
 ;; Configure and load packages
 ;;----------------------------
 
+;; Store BibTeX files here
+(defvar my::bib-files '("~/org/bibliography/references.bib"))
+;; Store PDFs here
+(defvar my::pdf-dirs '("~/org/bibliography/bibtex-pdfs/"))
+
 ;; Set up the load-paths and autoloads for installed packages
 (package-initialize)
 
@@ -112,6 +117,8 @@
 (require 'config/magit)
 ;; Org Mode is a mode for document editing, formatting, and organizing
 (require 'config/org)
+;; Provide rich support for citations, labels and cross-references in Org-mode
+(require 'config/org-ref)
 ;; Tooling to handle citations in Org via "citation processors"
 (require 'config/org-cite)
 ;; Generic Emacs interface for interactive proof assistants

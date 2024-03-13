@@ -21,7 +21,6 @@
      ocp-indent     ; automatic indentation with ocp-indent
      tuareg-mode)   ; an Emacs OCaml mode
     graphviz-dot-mode               ; mode for the dot-language used by graphviz
-    org-ref ; citations, cross-references and bibliographies in org-mode
     pomidor   ; simple and cool pomodoro timer
     protobuf-mode        ; major mode for editing protocol buffers
     rainbow-delimiters   ; highlight brackets according to their depth
