@@ -1,15 +1,4 @@
-;;; org-ref.el ---
-
-;; Copyright (C) 2024  Vladimir Ivanov
-
-;; Author: Vladimir Ivanov <ivvl82@gmail.com>
-;; Keywords:
-
-;;; Commentary:
-
-;;
-
-;;; Code:
+;;; org-ref.el
 
 (use-package async)       ; required by `doi-utils-async-download-pdf'
 

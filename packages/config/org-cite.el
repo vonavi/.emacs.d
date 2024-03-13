@@ -1,15 +1,4 @@
-;;; org-cite.el ---
-
-;; Copyright (C) 2024  Vladimir Ivanov
-
-;; Author: Vladimir Ivanov <ivvl82@gmail.com>
-;; Keywords:
-
-;;; Commentary:
-
-;;
-
-;;; Code:
+;;; org-cite.el
 
 (use-package oc
   :ensure org

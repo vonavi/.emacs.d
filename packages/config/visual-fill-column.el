@@ -1,15 +1,4 @@
-;;; visual-fill-column.el ---
-
-;; Copyright (C) 2024  Vladimir Ivanov
-
-;; Author: Vladimir Ivanov <ivvl82@gmail.com>
-;; Keywords:
-
-;;; Commentary:
-
-;;
-
-;;; Code:
+;;; visual-fill-column.el
 
 (use-package visual-fill-column
   :init

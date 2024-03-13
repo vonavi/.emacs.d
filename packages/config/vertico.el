@@ -1,15 +1,4 @@
-;;; vertico.el ---
-
-;; Copyright (C) 2024  Vladimir Ivanov
-
-;; Author: Vladimir Ivanov <ivvl82@gmail.com>
-;; Keywords:
-
-;;; Commentary:
-
-;;
-
-;;; Code:
+;;; vertico.el
 
 (use-package vertico
   :config (vertico-mode +1))

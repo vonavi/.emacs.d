@@ -1,15 +1,4 @@
-;;; smart-hungry-delete.el ---
-
-;; Copyright (C) 2024  Vladimir Ivanov
-
-;; Author: Vladimir Ivanov <ivvl82@gmail.com>
-;; Keywords:
-
-;;; Commentary:
-
-;;
-
-;;; Code:
+;;; smart-hungry-delete.el
 
 (use-package smart-hungry-delete
   :config (smart-hungry-delete-add-default-hooks)

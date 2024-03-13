@@ -1,15 +1,4 @@
-;;; display-fill-column-indicator.el ---
-
-;; Copyright (C) 2024  Vladimir Ivanov
-
-;; Author: Vladimir Ivanov <ivvl82@gmail.com>
-;; Keywords:
-
-;;; Commentary:
-
-;;
-
-;;; Code:
+;;; display-fill-column-indicator.el
 
 (use-package display-fill-column-indicator
   :init

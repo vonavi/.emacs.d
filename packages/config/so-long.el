@@ -1,15 +1,4 @@
-;;; so-long.el ---                                   -*- lexical-binding: t; -*-
-
-;; Copyright (C) 2024  Vladimir Ivanov
-
-;; Author: Vladimir Ivanov <ivvl82@gmail.com>
-;; Keywords:
-
-;;; Commentary:
-
-;;
-
-;;; Code:
+;;; so-long.el
 
 (use-package so-long
   ;; Avoid performance issues in files with very long lines

@@ -1,15 +1,4 @@
-;;; flyspell.el ---
-
-;; Copyright (C) 2024  Vladimir Ivanov
-
-;; Author: Vladimir Ivanov <ivvl82@gmail.com>
-;; Keywords:
-
-;;; Commentary:
-
-;;
-
-;;; Code:
+;;; flyspell.el
 
 (use-package flyspell
   :init

@@ -1,15 +1,4 @@
-;;; undo-tree.el ---
-
-;; Copyright (C) 2023  Vladimir Ivanov
-
-;; Author: Vladimir Ivanov <ivvl82@gmail.com>
-;; Keywords:
-
-;;; Commentary:
-
-;;
-
-;;; Code:
+;;; undo-tree.el
 
 (use-package undo-tree
   :init

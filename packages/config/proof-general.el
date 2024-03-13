@@ -1,15 +1,4 @@
-;;; proof-general.el ---
-
-;; Copyright (C) 2023  Vladimir Ivanov
-
-;; Author: Vladimir Ivanov <ivvl82@gmail.com>
-;; Keywords:
-
-;;; Commentary:
-
-;;
-
-;;; Code:
+;;; proof-general.el
 
 (use-package proof-general
   :init

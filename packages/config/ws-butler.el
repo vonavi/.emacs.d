@@ -1,15 +1,4 @@
-;;; ws-butler.el ---
-
-;; Copyright (C) 2024  Vladimir Ivanov
-
-;; Author: Vladimir Ivanov <ivvl82@gmail.com>
-;; Keywords:
-
-;;; Commentary:
-
-;;
-
-;;; Code:
+;;; ws-butler.el
 
 (use-package ws-butler
   :config (ws-butler-global-mode +1))
