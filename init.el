@@ -125,6 +125,8 @@
 (require 'config/proof-general)
 ;; Highlight delimiters according to their depth
 (require 'config/rainbow-delimiters)
+;; Interface for sdcv (StartDict console version)
+(require 'config/sdcv)
 ;; The Solarized colour theme, ported to Emacs
 (require 'config/solarized-theme)
 ;; Treat undo history as a tree
