@@ -113,6 +113,8 @@
 
 ;; Extensible package for writing and formatting TeX files
 (require 'config/auctex)
+;; Jump to things in Emacs tree-style
+(require 'config/avy)
 ;; Complete text-based user interface to Git
 (require 'config/magit)
 ;; Org Mode is a mode for document editing, formatting, and organizing

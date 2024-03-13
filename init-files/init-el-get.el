@@ -12,9 +12,7 @@
 ;;; Code:
 
 (defvar my:el-get-packages
-  '((avy            ; jump to things in Emacs tree-style
-     avy-zap)       ; zap to char using `avy'
-    dired+          ; extensions to Dired
+  '(dired+          ; extensions to Dired
     dockerfile-mode ; major mode for editing Docker's Dockerfiles
     (dune           ; integration with the dune build system
      merlin         ; mode for Merlin, an assistant for OCaml
