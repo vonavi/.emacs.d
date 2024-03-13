@@ -121,8 +121,6 @@
 (require 'config/org)
 ;; Provide rich support for citations, labels and cross-references in Org-mode
 (require 'config/org-ref)
-;; Tooling to handle citations in Org via "citation processors"
-(require 'config/org-cite)
 ;; Generic Emacs interface for interactive proof assistants
 (require 'config/proof-general)
 ;; Treat undo history as a tree
