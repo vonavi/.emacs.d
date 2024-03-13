@@ -1,6 +1,7 @@
 ;;; display-fill-column-indicator.el
 
 (use-package display-fill-column-indicator
+  :ensure nil
   :init
   (setq-default display-fill-column-indicator-column 80)
   :hook

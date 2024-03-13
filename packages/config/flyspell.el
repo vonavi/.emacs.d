@@ -1,6 +1,7 @@
 ;;; flyspell.el
 
 (use-package flyspell
+  :ensure nil
   :init
   ;; This mode will use the fastest available method to come up with
   ;; decent suggestions for common misspellings.
