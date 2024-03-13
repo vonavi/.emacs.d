@@ -123,6 +123,10 @@
 (require 'config/org-ref)
 ;; Generic Emacs interface for interactive proof assistants
 (require 'config/proof-general)
+;; Highlight delimiters according to their depth
+(require 'config/rainbow-delimiters)
+;; The Solarized colour theme, ported to Emacs
+(require 'config/solarized-theme)
 ;; Treat undo history as a tree
 (require 'config/undo-tree)
 ;; VERTical Interactive COmpletion
