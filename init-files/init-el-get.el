@@ -20,8 +20,7 @@
      tuareg-mode)   ; an Emacs OCaml mode
     graphviz-dot-mode               ; mode for the dot-language used by graphviz
     pomidor   ; simple and cool pomodoro timer
-    protobuf-mode        ; major mode for editing protocol buffers
-    sdcv)             ; interface for sdcv (StartDict console version)
+    protobuf-mode)       ; major mode for editing protocol buffers
   "A list of packages to ensure are installed at launch.")
 
 ;; Clean up and init packages installed by El-Get
