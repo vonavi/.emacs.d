@@ -97,6 +97,7 @@
 
 ;; Built-in packages
 (require 'config/auto-insert)
+(require 'config/dired)
 (require 'config/display-fill-column-indicator)
 (require 'config/flyspell)
 (require 'config/so-long)
@@ -133,6 +134,11 @@
 (require 'config/undo-tree)
 ;; VERTical Interactive COmpletion
 (require 'config/vertico)
+
+;; An Emacs mode for handling Dockerfiles
+(use-package dockerfile-mode)
+;; Major mode for editing Protocol buffers
+(use-package protobuf-mode)
 
 ;;-----------------
 ;; Emacs feel setup
