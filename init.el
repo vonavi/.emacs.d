@@ -122,6 +122,8 @@
 (require 'config/org)
 ;; Provide rich support for citations, labels and cross-references in Org-mode
 (require 'config/org-ref)
+;; Implementation of Pomodoro and Third Time techniques
+(require 'config/pomm)
 ;; Generic Emacs interface for interactive proof assistants
 (require 'config/proof-general)
 ;; Highlight delimiters according to their depth

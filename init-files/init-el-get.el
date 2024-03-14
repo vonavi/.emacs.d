@@ -12,11 +12,10 @@
 ;;; Code:
 
 (defvar my:el-get-packages
-  '((dune           ; integration with the dune build system
-     merlin         ; mode for Merlin, an assistant for OCaml
-     ocp-indent     ; automatic indentation with ocp-indent
-     tuareg-mode)   ; an Emacs OCaml mode
-    pomidor)  ; simple and cool pomodoro timer
+  '(dune                     ; integration with the dune build system
+    merlin                   ; mode for Merlin, an assistant for OCaml
+    ocp-indent               ; automatic indentation with ocp-indent
+    tuareg-mode)             ; an Emacs OCaml mode
   "A list of packages to ensure are installed at launch.")
 
 ;; Clean up and init packages installed by El-Get
