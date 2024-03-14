@@ -173,7 +173,9 @@
       desktop-load-locked-desktop t)
 
 ;; File for storing customization information
-(setq custom-file "~/.emacs.d/init-files/init-custom.el")
+(setq custom-file (concat user-emacs-directory "custom.el"))
+(when (file-exists-p custom-file)
+  (load custom-file))
 
 ;;---------------------
 ;; Emacs buffer editing
