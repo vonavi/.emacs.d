@@ -76,10 +76,19 @@
 ;; Configure and load packages
 ;;----------------------------
 
+;; Check if we're on WSL (Windows Subsystem Linux)
+(defconst my/wsl
+  (let ((case-fold-search nil))
+    (string-match "WSL" (shell-command-to-string "uname -r"))))
+
+(when my/wsl
+  (setq browse-url-browser-function 'browse-url-generic
+        browse-url-generic-program (executable-find "wslview")))
+
 ;; Store BibTeX files here
-(defvar my::bib-files '("~/org/bibliography/references.bib"))
+(defvar my/bib-files '("~/org/bibliography/references.bib"))
 ;; Store PDFs here
-(defvar my::pdf-dirs '("~/org/bibliography/bibtex-pdfs/"))
+(defvar my/pdf-dirs '("~/org/bibliography/bibtex-pdfs/"))
 
 ;; Set up the load-paths and autoloads for installed packages
 (package-initialize)
