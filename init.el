@@ -125,6 +125,8 @@
 (require 'config/auctex)
 ;; Jump to things in Emacs tree-style
 (require 'config/avy)
+;; A set of Emacs functions and bindings to google under point
+(require 'config/google-this)
 ;; Complete text-based user interface to Git
 (require 'config/magit)
 ;; Org Mode is a mode for document editing, formatting, and organizing
