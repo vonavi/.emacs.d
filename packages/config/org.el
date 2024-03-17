@@ -1,5 +1,9 @@
 ;;; org.el
 
+;; Workaround to fetch Org-mode from a remote repository
+(assq-delete-all 'org package--builtins)
+(assq-delete-all 'org package--builtin-versions)
+
 (use-package org
   :init
   (setq org-highlight-latex-and-related '(native) ; highlight inline mathematics
