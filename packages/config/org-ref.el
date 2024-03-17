@@ -6,8 +6,8 @@
   :ensure org-ref
   :init
   ;; Set bibtex-completion variables
-  (setq bibtex-completion-bibliography my::bib-files
-        bibtex-completion-library-path my::pdf-dirs))
+  (setq bibtex-completion-bibliography my/bib-files
+        bibtex-completion-library-path my/pdf-dirs))
 
 (provide 'config/org-ref)
 ;;; org-ref.el ends here

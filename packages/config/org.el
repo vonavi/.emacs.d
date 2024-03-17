@@ -15,9 +15,6 @@
                       :family (face-attribute 'default :family))
 
   :config
-  ;; Default viewer for HTML files
-  (add-to-list 'org-file-apps
-               '("\\.x?html?\\'" . (lambda (file path) (browse-url file))))
   ;; Default viewer for PDF files
   (add-to-list 'org-file-apps '("\\.pdf\\'" . "evince %s"))
   (add-to-list 'org-file-apps
@@ -48,7 +45,7 @@
   :init
   (setq
    ;; Set bibliographies globally
-   org-cite-global-bibliography my::bib-files
+   org-cite-global-bibliography my/bib-files
    ;; Set the directory where CSL styles are stored
    org-cite-csl-styles-dir "~/org/styles"
    ;; Automatically select the processor for exporting citations
@@ -60,7 +57,7 @@
 
 (use-package citar
   :init
-  (setq citar-bibliography my::bib-files)
+  (setq citar-bibliography my/bib-files)
   ;; Select citation processors
   (setq org-cite-activate-processor 'citar
         org-cite-follow-processor 'citar
