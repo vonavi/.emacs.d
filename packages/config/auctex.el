@@ -59,11 +59,11 @@
    reftex-extra-bindings t)
 
   ;; Fold a RefTeX macro automatically after it's inserted
-  (defun my:RefTeX-fold ()
+  (defun my/RefTeX-fold ()
     (save-excursion (backward-char) (TeX-fold-item 'macro)))
-  (advice-add 'reftex-label :after #'my:RefTeX-fold)
-  (advice-add 'reftex-reference :after #'my:RefTeX-fold)
-  (advice-add 'reftex-citation :after #'my:RefTeX-fold)
+  (advice-add 'reftex-label :after #'my/RefTeX-fold)
+  (advice-add 'reftex-reference :after #'my/RefTeX-fold)
+  (advice-add 'reftex-citation :after #'my/RefTeX-fold)
 
   ;; Auto insert a tilde before the \cite macro if the preceding
   ;; character isn't whitespace or a tilde
