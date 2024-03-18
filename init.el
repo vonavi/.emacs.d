@@ -67,7 +67,7 @@
 
 ;; Look for init-pkgname.el configurations here
 (setq el-get-user-package-directory
-      (concat user-emacs-directory "init-files"))
+      (concat user-emacs-directory "init-files/"))
 
 (el-get-save-package-status 'el-get "installed")
 (el-get-do-init 'el-get)
@@ -98,7 +98,7 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-(add-to-list 'load-path (concat user-emacs-directory "packages"))
+(add-to-list 'load-path (concat user-emacs-directory "packages/"))
 
 ;; Always install packages if they are not installed
 (require 'use-package-ensure)

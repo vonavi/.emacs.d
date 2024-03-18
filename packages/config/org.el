@@ -47,7 +47,7 @@
    ;; Set bibliographies globally
    org-cite-global-bibliography my/bib-files
    ;; Set the directory where CSL styles are stored
-   org-cite-csl-styles-dir "~/org/styles"
+   org-cite-csl-styles-dir "~/org/styles/"
    ;; Automatically select the processor for exporting citations
    org-cite-export-processors '((latex biblatex)
                                 (t . (csl "ieee.csl"))))
