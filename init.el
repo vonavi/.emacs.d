@@ -111,15 +111,15 @@
 (require 'config/flyspell)
 (require 'config/so-long)
 
-;; Smart hungry deletion of whitespace
-(require 'config/smart-hungry-delete)
-;; Unobtrusively remove trailing whitespace
-(require 'config/ws-butler)
-
 ;; Show line numbers in the margin
 (require 'config/nlinum)
 ;; Visual Fill Column
 (require 'config/visual-fill-column)
+
+;; Smart hungry deletion of whitespace
+(require 'config/smart-hungry-delete)
+;; Unobtrusively remove trailing whitespace
+(require 'config/ws-butler)
 
 ;; Extensible package for writing and formatting TeX files
 (require 'config/auctex)
@@ -129,6 +129,8 @@
 (require 'config/google-this)
 ;; Complete text-based user interface to Git
 (require 'config/magit)
+;; A major mode for editing Markdown-formatted text files
+(require 'config/markdown)
 ;; Org Mode is a mode for document editing, formatting, and organizing
 (require 'config/org)
 ;; Provide rich support for citations, labels and cross-references in Org-mode
