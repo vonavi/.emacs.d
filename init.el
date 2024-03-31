@@ -86,9 +86,11 @@
         browse-url-generic-program (executable-find "wslview")))
 
 ;; Store BibTeX files here
-(defvar my/bib-files '("~/org/bibliography/references.bib"))
+(defvar my/bib-files
+  `(,(expand-file-name "~/org/bibliography/references.bib")))
 ;; Store PDFs here
-(defvar my/pdf-dirs '("~/org/bibliography/bibtex-pdfs/"))
+(defvar my/pdf-dirs
+  `(,(expand-file-name "~/org/bibliography/bibtex-pdfs/")))
 
 ;; Set up the load-paths and autoloads for installed packages
 (package-initialize)

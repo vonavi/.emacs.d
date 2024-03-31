@@ -49,7 +49,7 @@
    ;; Set the directory where CSL styles are stored
    org-cite-csl-styles-dir "~/org/styles/"
    ;; Automatically select the processor for exporting citations
-   org-cite-export-processors '((latex biblatex)
+   org-cite-export-processors '((latex . (bibtex "ieeetr"))
                                 (t . (csl "ieee.csl"))))
 
   ;; Allow to use the CSL backend
@@ -69,32 +69,22 @@
 (use-package ox-latex
   :ensure org
   :init
-  ;; To use the listings package automatically for LaTeX documents
-  (setq org-latex-listings 'minted)
-  ;; List of additional LaTeX packages
-  (add-to-list 'org-latex-packages-alist '("" "listings"))
-  (add-to-list 'org-latex-packages-alist '("" "color"))
-  (add-to-list 'org-latex-packages-alist '("" "minted"))
-  (add-to-list 'org-latex-packages-alist '("" "cmap"))
-  (add-to-list 'org-latex-packages-alist '("english, russian" "babel"))
-  ;; Listings package options
-  (setq org-latex-listings-options
-        '(("inputencoding" "utf8")
-          ("extendedchars" "\\true")
-          ("keepspaces" "true")
-          ("basicstyle" "\\ttfamily")
-          ("columns" "flexible")
-          ("showstringspaces" "false")))
+  ;; Choose the Minted package for LaTeX documents
+  (setq org-latex-src-block-backend 'minted)
   ;; Minted package options
   (setq org-latex-minted-options '(("encoding" "utf8")))
+  ;; List of additional LaTeX packages
+  (add-to-list 'org-latex-packages-alist '("" "minted"))
+  (add-to-list 'org-latex-packages-alist '("" "cmap"))
+  (add-to-list 'org-latex-packages-alist '("russian" "babel"))
 
   ;; Customize how Org-mode produces a PDF file
   (setq
    org-latex-pdf-process
-   '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-     "bibtex %b"
-     "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-     "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f")))
+   '("%latex -interaction nonstopmode -shell-escape -output-directory %o %f"
+     "%bib %b"
+     "%latex -interaction nonstopmode -shell-escape -output-directory %o %f"
+     "%latex -interaction nonstopmode -shell-escape -output-directory %o %f")))
 
 (provide 'config/org)
 ;;; org.el ends here
