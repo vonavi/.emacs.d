@@ -5,6 +5,7 @@
 
 (use-package autoinsert
   :ensure nil
+  :ensure-system-package git
   :init
   (setq auto-insert-query nil          ; don't prompt before insertion
         auto-insert 'other) ; insert if possible, but mark as unmodified

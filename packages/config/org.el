@@ -5,6 +5,7 @@
 (assq-delete-all 'org package--builtin-versions)
 
 (use-package org
+  :ensure-system-package evince
   :init
   (setq org-highlight-latex-and-related '(native) ; highlight inline mathematics
         org-pretty-entities t   ; display entities as UTF-8 characters
@@ -68,6 +69,10 @@
 
 (use-package ox-latex
   :ensure org
+  :ensure-system-package
+  (latexmk
+   (pdflatex . texlive-latex-base)
+   (pygmentize . python3-pygments))
   :init
   ;; Choose the Minted package for LaTeX documents
   (setq org-latex-src-block-backend 'minted)

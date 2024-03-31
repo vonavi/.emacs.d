@@ -1,6 +1,7 @@
 ;;; magit.el
 
 (use-package magit
+  :ensure-system-package git
   :init
   ;; Show fine (word-granularity) differences within diff hunks
   (setq magit-diff-refine-hunk 'all)

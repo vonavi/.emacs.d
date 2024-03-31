@@ -6,6 +6,7 @@
 (use-package showtip)
 
 (use-package sdcv
+  :ensure-system-package sdcv
   :after (popup pos-tip showtip)
   :init
   ;; Simple dictionary list

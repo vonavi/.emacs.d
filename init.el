@@ -100,11 +100,16 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-(add-to-list 'load-path (concat user-emacs-directory "packages/"))
-
 ;; Always install packages if they are not installed
 (require 'use-package-ensure)
 (setq use-package-always-ensure t)
+
+(add-to-list 'load-path (concat user-emacs-directory "packages/"))
+
+;; Manage your installed packages with Emacs
+(require 'config/system-packages)
+;; Allow to ensure system binaries exist alongside your package declarations
+(use-package use-package-ensure-system-package)
 
 ;; Built-in packages
 (require 'config/auto-insert)
