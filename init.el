@@ -76,15 +76,6 @@
 ;; Configure and load packages
 ;;----------------------------
 
-;; Check if we're on WSL (Windows Subsystem Linux)
-(defconst my/wsl
-  (let ((case-fold-search nil))
-    (string-match "WSL" (shell-command-to-string "uname -r"))))
-
-(when my/wsl
-  (setq browse-url-browser-function 'browse-url-generic
-        browse-url-generic-program (executable-find "wslview")))
-
 ;; Store BibTeX files here
 (defvar my/bib-files
   `(,(expand-file-name "~/org/bibliography/references.bib")))

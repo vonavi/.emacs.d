@@ -2,7 +2,6 @@
 
 (use-package tex
   :ensure auctex
-  :ensure-system-package evince
   :init
   (setq
    ;; Parse the buffer on load for extracting information
@@ -13,11 +12,6 @@
    TeX-source-correlate-start-server t
    ;; Insert paired symbols for opening and closing inline equation
    TeX-electric-math '("$" . "$"))
-
-  ;; Open PDF files in Evince
-  (setq TeX-view-program-list
-        '(("Evince" "evince --page-index=%(outpage) %o"))
-        TeX-view-program-selection '((output-pdf "Evince")))
 
   :hook
   (TeX-mode . (lambda ()

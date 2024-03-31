@@ -5,7 +5,7 @@
 (assq-delete-all 'org package--builtin-versions)
 
 (use-package org
-  :ensure-system-package evince
+  :ensure-system-package (xdg-open . xdg-utils)
   :init
   (setq org-highlight-latex-and-related '(native) ; highlight inline mathematics
         org-pretty-entities t   ; display entities as UTF-8 characters
@@ -14,12 +14,6 @@
   ;; Set the font family for Org headings
   (set-face-attribute 'variable-pitch nil
                       :family (face-attribute 'default :family))
-
-  :config
-  ;; Default viewer for PDF files
-  (add-to-list 'org-file-apps '("\\.pdf\\'" . "evince %s"))
-  (add-to-list 'org-file-apps
-               '("\\.pdf::\\([0-9]+\\)\\'" . "evince --page-label=%1 %s"))
 
   ;; Indent text according to outline structure
   :hook (org-mode . (lambda () (org-indent-mode +1))))
