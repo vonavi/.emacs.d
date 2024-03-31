@@ -81,10 +81,7 @@
   ;; Customize how Org-mode produces a PDF file
   (setq
    org-latex-pdf-process
-   '("%latex -interaction nonstopmode -shell-escape -output-directory %o %f"
-     "%bib %b"
-     "%latex -interaction nonstopmode -shell-escape -output-directory %o %f"
-     "%latex -interaction nonstopmode -shell-escape -output-directory %o %f")))
+   '("latexmk -shell-escape -f -pdf -%latex -interaction=nonstopmode -output-directory=%o %f")))
 
 (provide 'config/org)
 ;;; org.el ends here
