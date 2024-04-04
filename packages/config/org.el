@@ -82,5 +82,9 @@
    org-latex-pdf-process
    '("latexmk -shell-escape -f -pdf -%latex -interaction=nonstopmode -output-directory=%o %f")))
 
+(use-package org-protocol
+  :ensure org
+  :requires server)
+
 (provide 'config/org)
 ;;; org.el ends here

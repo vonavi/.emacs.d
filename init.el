@@ -107,6 +107,7 @@
 (require 'config/dired)
 (require 'config/display-fill-column-indicator)
 (require 'config/flyspell)
+(require 'config/server)
 (require 'config/so-long)
 
 ;; Show line numbers in the margin
