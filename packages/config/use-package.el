@@ -15,5 +15,8 @@
   :init (setq system-packages-noconfirm t))
 (use-package use-package-ensure-system-package)
 
+;; Customize the mode names displayed in the mode line
+(use-package delight)
+
 (provide 'config/use-package)
 ;;; use-package.el ends here

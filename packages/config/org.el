@@ -10,11 +10,13 @@
   (setq org-highlight-latex-and-related '(native) ; highlight inline mathematics
         org-pretty-entities t   ; display entities as UTF-8 characters
         org-src-fontify-natively t)     ; fontify code in code blocks
-
   ;; Set the font family for Org headings
   (set-face-attribute 'variable-pitch nil
-                      :family (face-attribute 'default :family))
+                      :family (face-attribute 'default :family)))
 
+(use-package org-indent
+  :ensure org
+  :delight
   ;; Indent text according to outline structure
   :hook (org-mode . (lambda () (org-indent-mode +1))))
 

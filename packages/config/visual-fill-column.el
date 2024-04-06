@@ -1,6 +1,7 @@
 ;;; visual-fill-column.el
 
 (use-package visual-fill-column
+  :delight visual-line-mode
   :init
   (setq visual-line-fringe-indicators '(nil right-curly-arrow)
         visual-fill-column-fringes-outside-margins nil)

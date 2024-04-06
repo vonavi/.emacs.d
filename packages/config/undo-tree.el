@@ -1,6 +1,7 @@
 ;;; undo-tree.el
 
 (use-package undo-tree
+  :delight
   :init
   (setq undo-tree-auto-save-history t   ; save history to a file
         ;; Back up all undo-history files into one directory
