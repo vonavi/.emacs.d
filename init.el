@@ -93,6 +93,7 @@
 
 ;; Built-in packages
 (require 'config/auto-insert)
+(require 'config/auto-revert)
 (require 'config/dired)
 (require 'config/display-fill-column-indicator)
 (require 'config/flyspell)
