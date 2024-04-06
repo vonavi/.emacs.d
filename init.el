@@ -86,21 +86,10 @@
 ;; Set up the load-paths and autoloads for installed packages
 (package-initialize)
 
-;; Bootstrap `use-package'
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-
-;; Always install packages if they are not installed
-(require 'use-package-ensure)
-(setq use-package-always-ensure t)
-
 (add-to-list 'load-path (concat user-emacs-directory "packages/"))
 
-;; Manage your installed packages with Emacs
-(require 'config/system-packages)
-;; Allow to ensure system binaries exist alongside your package declarations
-(use-package use-package-ensure-system-package)
+;; Set up package customization in a declarative way
+(require 'config/use-package)
 
 ;; Built-in packages
 (require 'config/auto-insert)
