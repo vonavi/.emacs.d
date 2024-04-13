@@ -43,7 +43,12 @@
   ;; Easy typing of mathematical symbols
   :hook (LaTeX-mode . (lambda () (LaTeX-math-mode +1))))
 
+(use-package auctex-latexmk
+  :ensure-system-package latexmk
+  :config (auctex-latexmk-setup))
+
 (use-package reftex
+  :ensure nil
   :init
   (setq
    ;; Make RefTeX work properly with AUCTeX
