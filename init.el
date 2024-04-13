@@ -110,6 +110,11 @@
 ;; Unobtrusively remove trailing whitespace
 (require 'config/ws-butler)
 
+;; Org Mode is a mode for document editing, formatting, and organizing
+(require 'config/org)
+;; Rudimentary Roam replica with Org-mode
+(require 'config/org-roam)
+
 ;; Extensible package for writing and formatting TeX files
 (require 'config/auctex)
 ;; Jump to things in Emacs tree-style
@@ -120,8 +125,6 @@
 (require 'config/magit)
 ;; A major mode for editing Markdown-formatted text files
 (require 'config/markdown)
-;; Org Mode is a mode for document editing, formatting, and organizing
-(require 'config/org)
 ;; Provide rich support for citations, labels and cross-references in Org-mode
 (require 'config/org-ref)
 ;; Implementation of Pomodoro and Third Time techniques
