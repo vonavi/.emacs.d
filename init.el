@@ -41,37 +41,6 @@
       display-time-default-load-average nil) ; don't display the system load average
 (display-time)
 
-;;-------
-;; El-Get
-;;-------
-
-;; Ensure that El-Get is available
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-(unless (require 'el-get nil 'noerror)
-  (with-current-buffer
-      (url-retrieve-synchronously
-       "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el")
-    (goto-char (point-max))
-    (eval-print-last-sexp)))
-
-;; Use available package.el repositories
-(add-to-list 'package-archives '("elpa" . "https://elpa.gnu.org/packages/"))
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-
-;; Build the El-Get copy of ELPA and EmacsWiki packages if we have not
-;; built them before
-(unless (file-directory-p el-get-recipe-path-elpa)
-  (el-get-elpa-build-local-recipes))
-(unless (file-directory-p el-get-recipe-path-emacswiki)
-  (el-get-emacswiki-build-local-recipes))
-
-;; Look for init-pkgname.el configurations here
-(setq el-get-user-package-directory
-      (concat user-emacs-directory "init-files/"))
-
-(el-get-save-package-status 'el-get "installed")
-(el-get-do-init 'el-get)
-
 ;;----------------------------
 ;; Configure and load packages
 ;;----------------------------
@@ -83,8 +52,9 @@
 (defvar my/pdf-dirs
   `(,(expand-file-name "~/org/bibliography/bibtex-pdfs/")))
 
-;; Set up the load-paths and autoloads for installed packages
-(package-initialize)
+;; Use available package.el repositories
+(add-to-list 'package-archives '("elpa" . "https://elpa.gnu.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
 (add-to-list 'load-path (concat user-emacs-directory "packages/"))
 
