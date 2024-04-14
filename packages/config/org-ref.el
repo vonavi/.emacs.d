@@ -4,10 +4,13 @@
 
 (use-package org-ref-bibtex
   :ensure org-ref
+  :after (oc org)
   :init
   ;; Set bibtex-completion variables
-  (setq bibtex-completion-bibliography my/bib-files
-        bibtex-completion-library-path my/pdf-dirs))
+  (setq bibtex-completion-bibliography org-cite-global-bibliography
+        bibtex-completion-library-path
+        `(,(concat (file-name-as-directory org-directory)
+                   "bibliography/bibtex-pdfs/"))))
 
 (provide 'config/org-ref)
 ;;; org-ref.el ends here

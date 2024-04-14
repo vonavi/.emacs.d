@@ -42,10 +42,12 @@
   :init
   (setq
    ;; Set bibliographies globally
-   org-cite-global-bibliography my/bib-files
+   org-cite-global-bibliography
+   `(,(concat (file-name-as-directory org-directory)
+              "bibliography/references.bib"))
    ;; Set the directory where CSL styles are stored
-   org-cite-csl-styles-dir (concat (file-name-as-directory org-directory)
-                                   "styles/")
+   org-cite-csl-styles-dir
+   (concat (file-name-as-directory org-directory) "styles/")
    ;; Automatically select the processor for exporting citations
    org-cite-export-processors '((latex . (bibtex "ieeetr"))
                                 (t . (csl "ieee.csl"))))
@@ -55,7 +57,7 @@
 
 (use-package citar
   :init
-  (setq citar-bibliography my/bib-files)
+  (setq citar-bibliography org-cite-global-bibliography)
   ;; Select citation processors
   (setq org-cite-activate-processor 'citar
         org-cite-follow-processor 'citar

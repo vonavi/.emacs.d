@@ -45,13 +45,6 @@
 ;; Configure and load packages
 ;;----------------------------
 
-;; Store BibTeX files here
-(defvar my/bib-files
-  `(,(expand-file-name "~/org/bibliography/references.bib")))
-;; Store PDFs here
-(defvar my/pdf-dirs
-  `(,(expand-file-name "~/org/bibliography/bibtex-pdfs/")))
-
 ;; Use available package.el repositories
 (add-to-list 'package-archives '("elpa" . "https://elpa.gnu.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
