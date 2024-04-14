@@ -142,10 +142,14 @@
 ;; VERTical Interactive COmpletion
 (require 'config/vertico)
 
+;; Major mode for editing CMake sources
+(use-package cmake-mode)
 ;; An Emacs mode for handling Dockerfiles
 (use-package dockerfile-mode)
 ;; Major mode for editing Protocol buffers
 (use-package protobuf-mode)
+;; Major mode for editing files in the YAML data serialization format
+(use-package yaml-mode)
 
 ;;-----------------
 ;; Emacs feel setup
