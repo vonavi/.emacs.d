@@ -57,6 +57,7 @@
 ;; Built-in packages
 (require 'config/auto-insert)
 (require 'config/auto-revert)
+(require 'config/bibtex)
 (require 'config/dired)
 (require 'config/display-fill-column-indicator)
 (require 'config/flyspell)
@@ -73,6 +74,8 @@
 ;; Unobtrusively remove trailing whitespace
 (require 'config/ws-butler)
 
+;; Quickly find and act on bibliographic references
+(require 'config/citar)
 ;; Org Mode is a mode for document editing, formatting, and organizing
 (require 'config/org)
 ;; Rudimentary Roam replica with Org-mode

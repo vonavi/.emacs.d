@@ -39,32 +39,21 @@
 
 (use-package oc
   :ensure org
+  :after bibtex
   :init
   (setq
    ;; Set bibliographies globally
-   org-cite-global-bibliography
-   `(,(concat (file-name-as-directory org-directory)
-              "bibliography/references.bib"))
+   org-cite-global-bibliography bibtex-completion-bibliography
    ;; Set the directory where CSL styles are stored
-   org-cite-csl-styles-dir
-   (concat (file-name-as-directory org-directory) "styles/")
+   org-cite-csl-styles-dir (concat (file-name-as-directory org-directory)
+                                   "styles/")
    ;; Automatically select the processor for exporting citations
    org-cite-export-processors '((latex . (bibtex "ieeetr"))
                                 (t . (csl "ieee.csl"))))
-
+  :bind
+  (:map org-mode-map ("C-c b" . org-cite-insert))
   ;; Allow to use the CSL backend
   :config (require 'oc-csl))
-
-(use-package citar
-  :init
-  (setq citar-bibliography org-cite-global-bibliography)
-  ;; Select citation processors
-  (setq org-cite-activate-processor 'citar
-        org-cite-follow-processor 'citar
-        org-cite-insert-processor 'citar)
-
-  :bind
-  (:map org-mode-map ("C-c b" . org-cite-insert)))
 
 (use-package ox-latex
   :ensure org

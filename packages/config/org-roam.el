@@ -16,10 +16,5 @@
 (use-package org-roam-ui
   :delight)
 
-(use-package citar-org-roam
-  :after (citar org-roam)
-  :delight
-  :config (citar-org-roam-mode +1))
-
 (provide 'config/org-roam)
 ;;; org-roam.el ends here
