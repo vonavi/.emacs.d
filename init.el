@@ -15,24 +15,6 @@
 ;; Emacs appearance setup
 ;;-----------------------
 
-(set-face-attribute 'default nil
-                    :family "JetBrainsMono Nerd Font"
-                    :weight 'normal
-                    :height 120) ; set the default font
-(blink-cursor-mode 0)            ; no blinking cursor
-(setq inhibit-splash-screen t)   ; prevent silly initial splash screen
-(tool-bar-mode 0)                ; no tool bar
-(set-scroll-bar-mode 'right)     ; place scroll bar
-
-;; Create a reasonable title bar
-(add-hook 'window-configuration-change-hook
-          (lambda ()
-            (setq frame-title-format
-                  (concat
-                   invocation-name "@" system-name ": "
-                   (replace-regexp-in-string
-                    (getenv "HOME") "~" (or buffer-file-name "%b"))))))
-
 ;; Mode bar preferences
 (column-number-mode +1)           ; show column number in mode-line
 (setq display-time-day-and-date t ; display the day and date in the mode line
