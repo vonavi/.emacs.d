@@ -4,8 +4,8 @@
   :ensure-system-package (dot . graphviz)
   :after org
   :init
-  (setq org-roam-directory     ; directory to store the Org-roam files
-        (concat (file-name-as-directory org-directory) "roam"))
+  ;; Set the directory to store Org-roam files
+  (setq org-roam-directory (expand-file-name "roam/" org-directory))
   ;; Show the tags associated with the note
   (setq org-roam-node-display-template
         (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))

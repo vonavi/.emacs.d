@@ -6,11 +6,9 @@
   :init
   ;; Set bibtex-completion variables
   (setq bibtex-completion-bibliography
-        `(,(concat (file-name-as-directory org-directory)
-                   "bibliography/references.bib"))
+        `(,(expand-file-name "bibliography/references.bib" org-directory))
         bibtex-completion-library-path
-        `(,(concat (file-name-as-directory org-directory)
-                   "bibliography/bibtex-pdfs/"))))
+        `(,(expand-file-name "bibliography/bibtex-pdfs/" org-directory))))
 
 (provide 'config/bibtex)
 ;;; bibtex.el ends here

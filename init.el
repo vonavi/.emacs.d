@@ -31,7 +31,7 @@
 (add-to-list 'package-archives '("elpa" . "https://elpa.gnu.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
-(add-to-list 'load-path (concat user-emacs-directory "packages/"))
+(add-to-list 'load-path (expand-file-name "packages/" user-emacs-directory))
 
 ;; Set up package customization in a declarative way
 (require 'config/use-package)
@@ -119,7 +119,8 @@
 
 ;; Create a backup file
 (setq backup-by-copying t               ; don't clobber symlinks
-      backup-directory-alist '(("." . "~/.emacs.d/backup/")) ; don't litter my fs tree
+      backup-directory-alist            ; don't litter my fs tree
+      `(("." . ,(expand-file-name "backup/" user-emacs-directory)))
       kept-new-versions 4           ; keep 4 last backups
       kept-old-versions 0           ; don't keep first backups
       delete-old-versions t         ; delete intermediate backup files
@@ -127,12 +128,12 @@
 
 ;; Automatically save and restore sessions
 (desktop-save-mode 1)
-(setq desktop-path '("~/.emacs.d/desktop/")
+(setq desktop-path `(,(expand-file-name "desktop/" user-emacs-directory))
       desktop-save t
       desktop-load-locked-desktop t)
 
 ;; File for storing customization information
-(setq custom-file (concat user-emacs-directory "custom.el"))
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (when (file-exists-p custom-file)
   (load custom-file))
 

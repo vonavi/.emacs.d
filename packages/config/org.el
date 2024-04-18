@@ -45,8 +45,7 @@
    ;; Set bibliographies globally
    org-cite-global-bibliography bibtex-completion-bibliography
    ;; Set the directory where CSL styles are stored
-   org-cite-csl-styles-dir (concat (file-name-as-directory org-directory)
-                                   "styles/")
+   org-cite-csl-styles-dir (expand-file-name "styles/" org-directory)
    ;; Automatically select the processor for exporting citations
    org-cite-export-processors '((latex . (bibtex "ieeetr"))
                                 (t . (csl "ieee.csl"))))

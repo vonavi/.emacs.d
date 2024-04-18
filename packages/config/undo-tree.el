@@ -6,7 +6,7 @@
   (setq undo-tree-auto-save-history t   ; save history to a file
         ;; Back up all undo-history files into one directory
         undo-tree-history-directory-alist
-        `(("." . ,(concat user-emacs-directory "undo/"))))
+        `(("." . ,(expand-file-name "undo/" user-emacs-directory))))
   :config (global-undo-tree-mode +1))
 
 (provide 'config/undo-tree)
