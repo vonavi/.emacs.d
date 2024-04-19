@@ -42,6 +42,7 @@
 (require 'config/bibtex)
 (require 'config/dired)
 (require 'config/display-fill-column-indicator)
+(require 'config/eglot)
 (require 'config/flyspell)
 (require 'config/server)
 (require 'config/so-long)
@@ -92,7 +93,7 @@
 
 ;; Major mode for editing CMake sources
 (use-package cmake-mode)
-;; An Emacs mode for handling Dockerfiles
+;; Emacs mode for handling Dockerfiles
 (use-package dockerfile-mode)
 ;; Major mode for editing Protocol buffers
 (use-package protobuf-mode)
