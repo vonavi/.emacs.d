@@ -17,11 +17,6 @@
 
 ;; Mode bar preferences
 (column-number-mode +1)           ; show column number in mode-line
-(setq display-time-day-and-date t ; display the day and date in the mode line
-      display-time-24hr-format t  ; use 24hr format
-      display-time-interval 10    ; redisplay every ten seconds
-      display-time-default-load-average nil) ; don't display the system load average
-(display-time)
 
 ;;----------------------------
 ;; Configure and load packages
@@ -40,12 +35,16 @@
 (require 'config/auto-insert)
 (require 'config/auto-revert)
 (require 'config/bibtex)
+(require 'config/desktop)
 (require 'config/dired)
 (require 'config/display-fill-column-indicator)
 (require 'config/eglot)
+(require 'config/files)
 (require 'config/flyspell)
+(require 'config/mouse)
 (require 'config/server)
 (require 'config/so-long)
+(require 'config/time)
 
 ;; Show line numbers in the margin
 (require 'config/nlinum)
@@ -100,38 +99,9 @@
 ;; Major mode for editing files in the YAML data serialization format
 (use-package yaml-mode)
 
-;;-----------------
-;; Emacs feel setup
-;;-----------------
-
-;; Enable mouse wheel
-(mouse-wheel-mode 1)
-(setq mouse-wheel-scroll-amount '(1) ; mouse scroll one line at a time
-      mouse-wheel-progressive-speed nil ; don't accelerate scrolling
-      mouse-wheel-follow-mouse t        ; scroll window under mouse
-      scroll-conservatively 10000) ; scroll one line at a time if point moves off-screen
-
-(setq x-select-enable-clipboard t   ; cut and paste to the X clipboard
-      mouse-yank-at-point t)        ; paste at point NOT at cursor
-
 ;;-------------------------
 ;; Backup and restore Emacs
 ;;-------------------------
-
-;; Create a backup file
-(setq backup-by-copying t               ; don't clobber symlinks
-      backup-directory-alist            ; don't litter my fs tree
-      `(("." . ,(expand-file-name "backup/" user-emacs-directory)))
-      kept-new-versions 4           ; keep 4 last backups
-      kept-old-versions 0           ; don't keep first backups
-      delete-old-versions t         ; delete intermediate backup files
-      version-control t)            ; use versioned backups
-
-;; Automatically save and restore sessions
-(desktop-save-mode 1)
-(setq desktop-path `(,(expand-file-name "desktop/" user-emacs-directory))
-      desktop-save t
-      desktop-load-locked-desktop t)
 
 ;; File for storing customization information
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
