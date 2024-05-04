@@ -2,6 +2,7 @@
 
 (use-package tex
   :ensure auctex
+  :ensure-system-package (pdflatex . texlive-latex-base)
   :init
   (setq
    ;; Parse the buffer on load for extracting information
