@@ -23,6 +23,7 @@
 ;;----------------------------
 
 ;; Use available package.el repositories
+(require 'package)
 (add-to-list 'package-archives '("elpa" . "https://elpa.gnu.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
@@ -38,6 +39,7 @@
 (require 'config/desktop)
 (require 'config/dired)
 (require 'config/display-fill-column-indicator)
+(require 'config/display-line-numbers)
 (require 'config/eglot)
 (require 'config/files)
 (require 'config/flyspell)
@@ -46,8 +48,6 @@
 (require 'config/so-long)
 (require 'config/time)
 
-;; Show line numbers in the margin
-(require 'config/nlinum)
 ;; Visual Fill Column
 (require 'config/visual-fill-column)
 
