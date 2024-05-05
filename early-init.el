@@ -3,6 +3,8 @@
 ;; Enable pixelwise resizing of frames and windows
 (setq frame-resize-pixelwise t
       window-resize-pixelwise t)
+;; Don't resize frame to a specific column size
+(setq frame-inhibit-implied-resize t)
 
 ;; Prevent silly initial splash screen
 (setq inhibit-splash-screen t)
