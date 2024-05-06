@@ -48,9 +48,6 @@
 (require 'config/so-long)
 (require 'config/time)
 
-;; Visual Fill Column
-(require 'config/visual-fill-column)
-
 ;; Smart hungry deletion of whitespace
 (require 'config/smart-hungry-delete)
 ;; Unobtrusively remove trailing whitespace
@@ -89,6 +86,8 @@
 (require 'config/undo-tree)
 ;; VERTical Interactive COmpletion
 (require 'config/vertico)
+;; Visual Fill Column
+(require 'config/visual-fill-column)
 
 ;; Major mode for editing CMake sources
 (use-package cmake-mode)
