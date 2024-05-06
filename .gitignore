@@ -1,14 +1,25 @@
+# Top-level directories
 /auto-save-list/
 /backup/
 /desktop/*
 !/desktop/.gitkeep
-/el-get/
+/eln-cache/
 /elpa/
-/eshell/
-/network-security.data
-/recentf
 /transient/
 /undo/
+
+# File to Org ID mapping
+/.org-id-locations
+# Customization information
+/custom.el
+# History of 'savehist'
+/history
+# Org-roam database
+/org-roam.db
+# History of Pomodoro timer
+/pomm
+# Tramp connection history
+/tramp
 
 # Byte-compiled files
 *.elc
