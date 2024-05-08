@@ -42,7 +42,6 @@
 (require 'config/display-line-numbers)
 (require 'config/eglot)
 (require 'config/files)
-(require 'config/flyspell)
 (require 'config/mouse)
 (require 'config/server)
 (require 'config/so-long)
@@ -82,6 +81,8 @@
 (require 'config/sdcv)
 ;; The Solarized colour theme, ported to Emacs
 (require 'config/solarized-theme)
+;; Fast & light spelling highlighter
+(require 'config/spell-fu)
 ;; Treat undo history as a tree
 (require 'config/undo-tree)
 ;; VERTical Interactive COmpletion
