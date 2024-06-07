@@ -1,9 +1,7 @@
 ;;; eglot.el
 
 (use-package eglot
-  :ensure nil
-  :ensure-system-package (pylsp . python3-pylsp)
-  :hook (python-mode . eglot-ensure))
+  :ensure nil)
 
 (use-package corfu
   :init (setq corfu-auto t)             ; enable auto completion

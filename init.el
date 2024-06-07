@@ -76,6 +76,8 @@
 (require 'config/pomm)
 ;; Generic Emacs interface for interactive proof assistants
 (require 'config/proof-general)
+;; Python's flying circus support for Emacs
+(require 'config/python)
 ;; Highlight delimiters according to their depth
 (require 'config/rainbow-delimiters)
 ;; Interface for sdcv (StartDict console version)
