@@ -64,6 +64,8 @@
 (require 'config/auctex)
 ;; Jump to things in Emacs tree-style
 (require 'config/avy)
+;; Tree-sitter support for C and C++
+(require 'config/c-ts-mode)
 ;; A set of Emacs functions and bindings to google under point
 (require 'config/google-this)
 ;; Complete text-based user interface to Git
@@ -121,10 +123,6 @@
 ;; Indentation setup
 (electric-indent-mode 1)            ; auto indentation
 (setq-default indent-tabs-mode nil) ; never use tab characters for indentation
-(setq tab-width 4                   ; set tab-width
-      c-default-style "stroustrup"  ; indent style in CC mode
-      js-indent-level 2             ; indentation level in JS mode
-      css-indent-offset 2)          ; indentation level in CSS mode
 
 ;;--------------------
 ;; Miscellaneous stuff
