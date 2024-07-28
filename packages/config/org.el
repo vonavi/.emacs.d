@@ -23,6 +23,12 @@
   ;; Indent text according to outline structure
   :hook (org-mode . (lambda () (org-indent-mode +1))))
 
+(use-package org-id
+  :ensure org
+  :init
+  ;; Do not create ID if a CUSTOM_ID exists
+  (setq org-id-link-to-org-use-id 'create-if-interactive-and-no-custom-id))
+
 (use-package ol
   :ensure org
   :bind ("C-c l" . org-store-link))
