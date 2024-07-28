@@ -12,7 +12,10 @@
         org-src-fontify-natively t)     ; fontify code in code blocks
   ;; Set the font family for Org headings
   (set-face-attribute 'variable-pitch nil
-                      :family (face-attribute 'default :family)))
+                      :family (face-attribute 'default :family))
+  :config
+  ;; Use "xdg-open" to open files by default
+  (setcdr (assq t org-file-apps-gnu) "xdg-open %s"))
 
 (use-package org-indent
   :ensure org
@@ -69,6 +72,7 @@
   (add-to-list 'org-latex-packages-alist '("" "minted"))
   (add-to-list 'org-latex-packages-alist '("" "cmap"))
   (add-to-list 'org-latex-packages-alist '("russian" "babel"))
+  (add-to-list 'org-latex-packages-alist '("T2A" "fontenc"))
 
   ;; Customize how Org-mode produces a PDF file
   (setq
