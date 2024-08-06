@@ -1,5 +1,11 @@
 ;;; spell-fu.el
 
+(use-package text-mode
+  :ensure nil
+  :init
+  ;; Remove ispell from the default completion
+  (setq text-mode-ispell-word-completion nil))
+
 (use-package spell-fu
   :ensure-system-package aspell
   :after org
