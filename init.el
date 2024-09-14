@@ -28,9 +28,13 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
 (add-to-list 'load-path (expand-file-name "packages/" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "pkg-setup/" user-emacs-directory))
 
 ;; Set up package customization in a declarative way
 (require 'config/use-package)
+
+;; Buffer-local direnv integration for Emacs
+(require 'tools/envrc)
 
 ;; Built-in packages
 (require 'config/auto-insert)
