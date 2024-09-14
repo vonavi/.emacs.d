@@ -32,6 +32,9 @@
 ;; Set up package customization in a declarative way
 (require 'config/use-package)
 
+;; Buffer-local direnv integration for Emacs
+(require 'tools/envrc)
+
 ;; Built-in packages
 (require 'config/auto-insert)
 (require 'config/auto-revert)
