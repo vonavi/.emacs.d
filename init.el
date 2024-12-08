@@ -35,6 +35,8 @@
 
 ;; Buffer-local direnv integration for Emacs
 (require 'tools/envrc)
+;; Complete text-based user interface to Git
+(require 'tools/magit)
 
 ;; Built-in packages
 (require 'config/auto-insert)
@@ -72,8 +74,6 @@
 (require 'config/c-ts-mode)
 ;; A set of Emacs functions and bindings to google under point
 (require 'config/google-this)
-;; Complete text-based user interface to Git
-(require 'config/magit)
 ;; A major mode for editing Markdown-formatted text files
 (require 'config/markdown)
 ;; Provide rich support for citations, labels and cross-references in Org-mode
