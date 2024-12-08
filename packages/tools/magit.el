@@ -1,4 +1,4 @@
-;;; magit.el
+;;; tools/magit.el
 
 (use-package magit
   :ensure-system-package git
@@ -15,5 +15,5 @@
   ;; Fold long lines
   :hook (magit-mode . (lambda () (toggle-truncate-lines -1))))
 
-(provide 'config/magit)
-;;; magit.el ends here
+(provide 'tools/magit)
+;;; tools/magit.el ends here
