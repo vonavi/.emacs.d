@@ -33,6 +33,8 @@
 ;; Set up package customization in a declarative way
 (require 'config/use-package)
 
+;; Fast & light spelling highlighter
+(require 'checkers/spell-fu)
 ;; Buffer-local direnv integration for Emacs
 (require 'tools/envrc)
 ;; Complete text-based user interface to Git
@@ -90,8 +92,6 @@
 (require 'config/sdcv)
 ;; The Solarized colour theme, ported to Emacs
 (require 'config/solarized-theme)
-;; Fast & light spelling highlighter
-(require 'config/spell-fu)
 ;; Treat undo history as a tree
 (require 'config/undo-tree)
 ;; VERTical Interactive COmpletion

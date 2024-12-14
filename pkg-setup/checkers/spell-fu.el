@@ -1,4 +1,4 @@
-;;; spell-fu.el
+;;; checkers/spell-fu.el
 
 (use-package text-mode
   :ensure nil
@@ -8,14 +8,12 @@
 
 (use-package spell-fu
   :ensure-system-package aspell
-  :after org
   :hook
   ((spell-fu-mode . (lambda ()
                       ;; Use multiple languages in the same buffer
                       (spell-fu-dictionary-add
                        (spell-fu-get-ispell-dictionary "ru"))))
-   ((prog-mode text-mode) . (lambda ()
-                              (spell-fu-mode +1)))
+   ((prog-mode text-mode) . (lambda () (spell-fu-mode +1)))
    (org-mode . (lambda ()
                  (setq spell-fu-faces-exclude
                        '(org-block
@@ -26,5 +24,5 @@
                          org-special-keyword))
                  (spell-fu-mode +1)))))
 
-(provide 'config/spell-fu)
-;;; spell-fu.el ends here
+(provide 'checkers/spell-fu)
+;;; checkers/spell-fu.el ends here
