@@ -9,10 +9,12 @@
   :init
   (setq org-highlight-latex-and-related '(native) ; highlight inline mathematics
         org-pretty-entities t   ; display entities as UTF-8 characters
-        org-src-fontify-natively t)     ; fontify code in code blocks
+        org-src-fontify-natively t ; use the language major mode to fontify code
+        org-src-tab-acts-natively t) ; use the language major mode to indent code
   ;; Set the font family for Org headings
   (set-face-attribute 'variable-pitch nil
                       :family (face-attribute 'default :family))
+
   :config
   ;; Use "xdg-open" to open files by default
   (setcdr (assq t org-file-apps-gnu) "xdg-open %s"))
