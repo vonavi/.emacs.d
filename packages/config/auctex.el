@@ -5,14 +5,16 @@
   :ensure-system-package (pdflatex . texlive-latex-base)
   :init
   (setq
+   ;; Give TeX permission to call foreign programs
+   TeX-command-extra-options "-shell-escape"
+   ;; Insert paired symbols for opening and closing inline equation
+   TeX-electric-math '("$" . "$")
    ;; Parse the buffer on load for extracting information
    TeX-parse-self t
    ;; Auto save before compiling
    TeX-save-query nil
    ;; Start a correlation server without asking
-   TeX-source-correlate-start-server t
-   ;; Insert paired symbols for opening and closing inline equation
-   TeX-electric-math '("$" . "$"))
+   TeX-source-correlate-start-server t)
 
   :hook
   (TeX-mode . (lambda ()
