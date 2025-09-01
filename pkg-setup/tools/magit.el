@@ -2,18 +2,18 @@
 
 (use-package magit
   :ensure-system-package git
-  :init
+  :custom
   ;; Show fine (word-granularity) differences within diff hunks
-  (setq magit-diff-refine-hunk 'all)
+  (magit-diff-refine-hunk 'all)
   ;; Open Magit full-frame then restore windows on quit
-  (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1
-        magit-bury-buffer-function #'magit-restore-window-configuration)
-
+  (magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1)
+  (magit-bury-buffer-function #'magit-restore-window-configuration)
+  :bind
   ;; Magit's status buffer
-  :bind ("C-x m" . magit-status)
-
+  ("C-x m" . magit-status)
+  :hook
   ;; Fold long lines
-  :hook (magit-mode . (lambda () (toggle-truncate-lines -1))))
+  (magit-mode . (lambda () (toggle-truncate-lines -1))))
 
 (provide 'tools/magit)
 ;;; tools/magit.el ends here
