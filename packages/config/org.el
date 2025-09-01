@@ -79,9 +79,9 @@
   ;; List of additional LaTeX packages
   (add-to-list 'org-latex-packages-alist '("" "minted"))
   (add-to-list 'org-latex-packages-alist '("" "cmap"))
-  (add-to-list 'org-latex-packages-alist '("russian" "babel"))
+  (add-to-list 'org-latex-packages-alist '("english,russian" "babel"))
   (add-to-list 'org-latex-packages-alist '("T2A" "fontenc"))
-
+  (add-to-list 'org-latex-packages-alist '("parfill" "parskip"))
   ;; Customize how Org-mode produces a PDF file
   (setq
    org-latex-pdf-process
