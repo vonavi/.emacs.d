@@ -13,7 +13,6 @@
 (use-package system-packages
   ;; Bypass prompts asking the user to confirm package upgrades
   :init (setq system-packages-noconfirm t))
-(use-package use-package-ensure-system-package)
 
 ;; Customize the mode names displayed in the mode line
 (use-package delight)
