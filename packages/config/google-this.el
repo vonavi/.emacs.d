@@ -3,7 +3,7 @@
 (use-package google-this
   :delight
   ;; Reassign keybinding to personal preferences
-  :init (setq google-this-keybind (kbd "C-x g"))
+  :custom (google-this-keybind (kbd "C-x g"))
   :config (google-this-mode +1))
 
 (provide 'config/google-this)

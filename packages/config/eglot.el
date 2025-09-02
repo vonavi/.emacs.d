@@ -4,7 +4,7 @@
   :ensure nil)
 
 (use-package corfu
-  :init (setq corfu-auto t)             ; enable auto completion
+  :custom (corfu-auto t)                ; enable auto completion
   :config (global-corfu-mode +1))
 
 (use-package cape

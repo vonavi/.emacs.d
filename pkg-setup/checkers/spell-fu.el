@@ -2,9 +2,8 @@
 
 (use-package text-mode
   :ensure nil
-  :init
   ;; Remove ispell from the default completion
-  (setq text-mode-ispell-word-completion nil))
+  :custom (text-mode-ispell-word-completion nil))
 
 (use-package spell-fu
   :ensure-system-package aspell

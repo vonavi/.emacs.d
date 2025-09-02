@@ -8,19 +8,17 @@
 (use-package sdcv
   :ensure-system-package sdcv
   :after (popup pos-tip showtip)
-  :init
+  :custom
   ;; Simple dictionary list
-  (setq sdcv-dictionary-simple-list
-        '("LingvoUniversal (En-Ru)"
-          "Universal (Ru-En)"
-          "Physics (En-Ru)"
-          "Physics (Ru-En)"))
+  (sdcv-dictionary-simple-list '("LingvoUniversal (En-Ru)"
+                                 "Universal (Ru-En)"
+                                 "Physics (En-Ru)"
+                                 "Physics (Ru-En)"))
   ;; Complete dictionary list
-  (setq sdcv-dictionary-complete-list
-        '("LingvoUniversal (En-Ru)"
-          "Universal (Ru-En)"
-          "Physics (En-Ru)"
-          "Physics (Ru-En)")))
+  (sdcv-dictionary-complete-list '("LingvoUniversal (En-Ru)"
+                                   "Universal (Ru-En)"
+                                   "Physics (En-Ru)"
+                                   "Physics (Ru-En)")))
 
 (provide 'config/sdcv)
 ;;; sdcv.el ends here

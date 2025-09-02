@@ -4,6 +4,9 @@
   :ensure nil
   :ensure-system-package clangd
   :after (eglot treesit)
+  :custom
+  (c-ts-mode-indent-style 'k&r)         ; the placement of braces
+  (c-ts-mode-indent-offset 4)           ; the size of an indent
   :init
   ;; Install the tree-sitter grammar library
   (add-to-list 'treesit-language-source-alist
@@ -15,9 +18,6 @@
   (add-to-list 'major-mode-remap-alist '(c-mode . c-ts-mode))
   (add-to-list 'major-mode-remap-alist '(c++-mode . c++-ts-mode))
   (add-to-list 'major-mode-remap-alist '(c-or-c++-mode . c-or-c++-ts-mode))
-
-  (setq c-ts-mode-indent-style 'k&r     ; the placement of braces
-        c-ts-mode-indent-offset 4)      ; the size of an indent
 
   ;; Start the LSP server
   :hook ((c-ts-mode c++-ts-mode c-or-c++-ts-mode) . eglot-ensure))
