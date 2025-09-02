@@ -6,7 +6,6 @@
   :after (eglot treesit)
   :custom
   (c-ts-mode-indent-style 'k&r)         ; the placement of braces
-  (c-ts-mode-indent-offset 4)           ; the size of an indent
   :init
   ;; Install the tree-sitter grammar library
   (add-to-list 'treesit-language-source-alist
