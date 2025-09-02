@@ -17,12 +17,13 @@
   :hook (rfn-eshadow-update-overlay . vertico-directory-tidy))
 
 (use-package orderless
-  :init
+  :custom
   ;; Enable orderless completion
-  (setq completion-styles '(orderless basic))
+  (completion-styles '(orderless basic))
+  ;; Use orderless completion exclusively
+  (completion-category-defaults nil)
   ;; Set partial-completion for the file completion category only
-  (setq completion-category-defaults nil
-        completion-category-overrides '((file (styles partial-completion)))))
+  (completion-category-overrides '((file (styles partial-completion)))))
 
 (provide 'config/vertico)
 ;;; vertico.el ends here
