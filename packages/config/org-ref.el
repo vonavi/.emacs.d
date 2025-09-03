@@ -4,7 +4,7 @@
 
 (use-package org-ref-bibtex
   :ensure org-ref
-  :after bibtex)
+  :after bibtex-completion)
 
 (provide 'config/org-ref)
 ;;; org-ref.el ends here

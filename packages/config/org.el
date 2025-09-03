@@ -44,7 +44,7 @@
 
 (use-package oc
   :ensure org
-  :after bibtex
+  :after bibtex-completion
   :custom
   ;; Set bibliographies globally
   (org-cite-global-bibliography bibtex-completion-bibliography)

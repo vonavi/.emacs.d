@@ -43,7 +43,6 @@
 ;; Built-in packages
 (require 'config/auto-insert)
 (require 'config/auto-revert)
-(require 'config/bibtex)
 (require 'config/desktop)
 (require 'config/dired)
 (require 'config/display-fill-column-indicator)
@@ -61,6 +60,8 @@
 ;; Unobtrusively remove trailing whitespace
 (require 'config/ws-butler)
 
+;; A BibTeX backend for completion frameworks
+(require 'config/bibtex-completion)
 ;; Quickly find and act on bibliographic references
 (require 'config/citar)
 ;; Org Mode is a mode for document editing, formatting, and organizing

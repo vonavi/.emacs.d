@@ -1,7 +1,6 @@
-;;; bibtex.el
+;;; bibtex-completion.el
 
-(use-package bibtex
-  :ensure nil
+(use-package bibtex-completion
   :after org
   :init
   ;; Set bibtex-completion variables
@@ -10,5 +9,5 @@
         bibtex-completion-library-path
         `(,(expand-file-name "bibliography/bibtex-pdfs/" org-directory))))
 
-(provide 'config/bibtex)
-;;; bibtex.el ends here
+(provide 'config/bibtex-completion)
+;;; bibtex-completion.el ends here

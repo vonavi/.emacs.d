@@ -1,7 +1,7 @@
 ;;; citar.el
 
 (use-package citar
-  :after (bibtex oc)
+  :after (bibtex-completion oc)
   :custom
   (citar-bibliography bibtex-completion-bibliography)
   (citar-library-paths bibtex-completion-library-path)
