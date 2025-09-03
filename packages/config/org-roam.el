@@ -3,12 +3,12 @@
 (use-package org-roam
   :ensure-system-package (dot . graphviz)
   :after org
-  :init
+  :custom
   ;; Set the directory to store Org-roam files
-  (setq org-roam-directory (expand-file-name "roam/" org-directory))
+  (org-roam-directory (expand-file-name "roam/" org-directory))
   ;; Show the tags associated with the note
-  (setq org-roam-node-display-template
-        (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
+  (org-roam-node-display-template
+   (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
   :bind
   (("C-c n f" . org-roam-node-find)
    ("C-c n g" . org-roam-graph)
