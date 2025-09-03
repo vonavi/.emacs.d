@@ -1,12 +1,8 @@
 ;;; use-package.el
 
-;; Bootstrap `use-package'
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-
 ;; Always install packages if they are not installed
-(use-package use-package-ensure
+(use-package use-package
+  :ensure nil
   :custom (use-package-always-ensure t))
 
 ;; Allow to ensure system binaries exist alongside your package declarations
