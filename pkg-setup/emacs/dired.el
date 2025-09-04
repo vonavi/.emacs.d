@@ -1,5 +1,8 @@
 ;;; emacs/dired.el
 
+;;
+;;; DIRectory EDiting
+
 (use-package dired
   :ensure nil
   ;; Kill the current buffer when selecting a new directory

@@ -34,14 +34,10 @@
 (require 'config/use-package)
 
 (require 'checkers/spell)
-;; VERTical Interactive COmpletion
 (require 'completion/vertico)
-;; DIRectory EDiting
 (require 'emacs/dired)
-;; Undoing changes
 (require 'emacs/undo)
 (require 'tools/direnv)
-;; Complete text-based user interface to Git
 (require 'tools/magit)
 
 ;; Built-in packages

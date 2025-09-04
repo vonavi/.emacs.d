@@ -1,5 +1,8 @@
 ;;; tools/magit.el
 
+;;
+;;; A Git porcelain inside Emacs
+
 (use-package magit
   :ensure-system-package git
   :custom

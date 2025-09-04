@@ -1,7 +1,13 @@
 ;;; emacs/undo.el
 
+;;
+;;; Persistent undo, available between sessions
+
 (use-package undo-fu-session
   :config (global-undo-fu-session-mode +1))
+
+;;
+;;; Visual undo tree
 
 (use-package vundo
   :custom

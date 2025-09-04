@@ -1,10 +1,13 @@
 ;;; completion/vertico.el
 
-(use-package vertico
-  :config (vertico-mode +1))
-
 (use-package savehist
   :config (savehist-mode +1))
+
+;;
+;;; VERTical Interactive COmpletion
+
+(use-package vertico
+  :config (vertico-mode +1))
 
 (use-package vertico-directory
   :ensure vertico
