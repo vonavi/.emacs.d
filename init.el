@@ -37,6 +37,8 @@
 (require 'checkers/spell-fu)
 ;; VERTical Interactive COmpletion
 (require 'completion/vertico)
+;; Undoing changes
+(require 'emacs/undo)
 ;; Buffer-local direnv integration for Emacs
 (require 'tools/envrc)
 ;; Complete text-based user interface to Git
@@ -95,8 +97,6 @@
 (require 'config/sdcv)
 ;; The Solarized colour theme, ported to Emacs
 (require 'config/solarized-theme)
-;; Treat undo history as a tree
-(require 'config/undo-tree)
 ;; Visual Fill Column
 (require 'config/visual-fill-column)
 

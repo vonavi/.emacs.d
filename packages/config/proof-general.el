@@ -8,11 +8,11 @@
 
 (use-package coq-mode
   :ensure proof-general
-  :after undo-tree
+  :after vundo
+  :mode "\\.v\\'"
   ;; Do not indicate the proof position by arrow
   :init (setq overlay-arrow-string "")
-  :hook (coq-mode . (lambda () (undo-tree-mode +1)))
-  :mode "\\.v\\'")
+  :bind (:map coq-mode-map ("C-x u" . vundo)))
 
 (provide 'config/proof-general)
 ;;; proof-general.el ends here

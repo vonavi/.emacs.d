@@ -7,7 +7,7 @@
 /elpa/
 /spell-fu/
 /transient/
-/undo/
+/undo-fu-session/
 
 # File to Org ID mapping
 /.org-id-locations
