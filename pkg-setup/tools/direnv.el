@@ -1,4 +1,7 @@
-;;; tools/envrc.el
+;;; tools/direnv.el
+
+;;
+;;; Support for `direnv' that operates buffer-locally
 
 (use-package envrc
   :delight
@@ -9,5 +12,5 @@
   (advice-add #'org-babel-execute-src-block
               :around #'envrc-propagate-environment))
 
-(provide 'tools/envrc)
-;;; tools/envrc.el ends here
+(provide 'tools/direnv)
+;;; tools/direnv.el ends here

@@ -40,8 +40,7 @@
 (require 'emacs/dired)
 ;; Undoing changes
 (require 'emacs/undo)
-;; Buffer-local direnv integration for Emacs
-(require 'tools/envrc)
+(require 'tools/direnv)
 ;; Complete text-based user interface to Git
 (require 'tools/magit)
 
