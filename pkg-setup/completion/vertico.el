@@ -1,4 +1,4 @@
-;;; vertico.el
+;;; completion/vertico.el
 
 (use-package vertico
   :config (vertico-mode +1))
@@ -25,5 +25,5 @@
   ;; Set partial-completion for the file completion category only
   (completion-category-overrides '((file (styles partial-completion)))))
 
-(provide 'config/vertico)
-;;; vertico.el ends here
+(provide 'completion/vertico)
+;;; completion/vertico.el ends here

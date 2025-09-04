@@ -35,6 +35,8 @@
 
 ;; Fast & light spelling highlighter
 (require 'checkers/spell-fu)
+;; VERTical Interactive COmpletion
+(require 'completion/vertico)
 ;; Buffer-local direnv integration for Emacs
 (require 'tools/envrc)
 ;; Complete text-based user interface to Git
@@ -95,8 +97,6 @@
 (require 'config/solarized-theme)
 ;; Treat undo history as a tree
 (require 'config/undo-tree)
-;; VERTical Interactive COmpletion
-(require 'config/vertico)
 ;; Visual Fill Column
 (require 'config/visual-fill-column)
 
