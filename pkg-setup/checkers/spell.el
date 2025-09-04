@@ -1,9 +1,12 @@
-;;; checkers/spell-fu.el
+;;; checkers/spell.el
 
 (use-package text-mode
   :ensure nil
   ;; Remove ispell from the default completion
   :custom (text-mode-ispell-word-completion nil))
+
+;;
+;;; Fast & light spelling highlighter
 
 (use-package spell-fu
   :ensure-system-package aspell
@@ -32,5 +35,5 @@
                          org-meta-line
                          org-special-keyword))))))
 
-(provide 'checkers/spell-fu)
-;;; checkers/spell-fu.el ends here
+(provide 'checkers/spell)
+;;; checkers/spell.el ends here

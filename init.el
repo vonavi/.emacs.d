@@ -33,8 +33,7 @@
 ;; Set up package customization in a declarative way
 (require 'config/use-package)
 
-;; Fast & light spelling highlighter
-(require 'checkers/spell-fu)
+(require 'checkers/spell)
 ;; VERTical Interactive COmpletion
 (require 'completion/vertico)
 ;; DIRectory EDiting
