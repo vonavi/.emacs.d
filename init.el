@@ -37,6 +37,8 @@
 (require 'checkers/spell-fu)
 ;; VERTical Interactive COmpletion
 (require 'completion/vertico)
+;; DIRectory EDiting
+(require 'emacs/dired)
 ;; Undoing changes
 (require 'emacs/undo)
 ;; Buffer-local direnv integration for Emacs
@@ -48,7 +50,6 @@
 (require 'config/auto-insert)
 (require 'config/auto-revert)
 (require 'config/desktop)
-(require 'config/dired)
 (require 'config/display-fill-column-indicator)
 (require 'config/display-line-numbers)
 (require 'config/eglot)
