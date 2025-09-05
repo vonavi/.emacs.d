@@ -39,6 +39,7 @@
 (require 'emacs/undo)
 (require 'tools/direnv)
 (require 'tools/magit)
+(require 'tools/tree-sitter)
 
 ;; Built-in packages
 (require 'config/auto-insert)
@@ -52,7 +53,6 @@
 (require 'config/server)
 (require 'config/so-long)
 (require 'config/time)
-(require 'config/treesit)
 
 ;; Smart hungry deletion of whitespace
 (require 'config/smart-hungry-delete)
