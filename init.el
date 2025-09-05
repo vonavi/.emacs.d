@@ -41,6 +41,7 @@
 (require 'lang/coq)
 (require 'lang/latex)
 (require 'lang/markdown)
+(require 'lang/org)
 (require 'lang/python)
 (require 'themes/solarized)
 (require 'tools/biblio)
@@ -68,8 +69,6 @@
 ;; Unobtrusively remove trailing whitespace
 (require 'config/ws-butler)
 
-;; Org Mode is a mode for document editing, formatting, and organizing
-(require 'config/org)
 ;; Rudimentary Roam replica with Org-mode
 (require 'config/org-roam)
 

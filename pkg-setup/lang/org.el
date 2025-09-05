@@ -1,4 +1,7 @@
-;;; org.el
+;;; lang/org.el
+
+;;
+;;; Outline-based notes management and organizer
 
 (use-package org
   :ensure-system-package (xdg-open . xdg-utils)
@@ -68,5 +71,5 @@
   :ensure org
   :requires server)
 
-(provide 'config/org)
-;;; org.el ends here
+(provide 'lang/org)
+;;; lang/org.el ends here
