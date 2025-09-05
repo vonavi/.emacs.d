@@ -34,6 +34,7 @@
 (require 'config/use-package)
 
 (require 'checkers/spell)
+(require 'completion/corfu)
 (require 'completion/vertico)
 (require 'editor/file-templates)
 (require 'emacs/dired)
@@ -49,6 +50,7 @@
 (require 'tools/biblio)
 (require 'tools/debugger)
 (require 'tools/direnv)
+(require 'tools/lsp)
 (require 'tools/magit)
 (require 'tools/make)
 (require 'tools/tree-sitter)
@@ -58,7 +60,6 @@
 (require 'config/desktop)
 (require 'config/display-fill-column-indicator)
 (require 'config/display-line-numbers)
-(require 'config/eglot)
 (require 'config/files)
 (require 'config/mouse)
 (require 'config/server)

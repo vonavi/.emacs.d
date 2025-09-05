@@ -1,11 +1,14 @@
-;;; eglot.el
+;;; completion/corfu.el
 
-(use-package eglot
-  :ensure nil)
+;;
+;;; COmpletion in Region FUnction
 
 (use-package corfu
   :custom (corfu-auto t)                ; enable auto completion
   :config (global-corfu-mode +1))
+
+;;
+;;; Completion At Point Extensions
 
 (use-package cape
   :config
@@ -13,5 +16,5 @@
   ;; sufficiently many candidates in the first place.
   (advice-add 'eglot-completion-at-point :around #'cape-wrap-buster))
 
-(provide 'config/eglot)
-;;; eglot.el ends here
+(provide 'completion/corfu)
+;;; completion/corfu.el ends here
