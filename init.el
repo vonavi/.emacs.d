@@ -39,6 +39,7 @@
 (require 'emacs/undo)
 (require 'tools/direnv)
 (require 'tools/magit)
+(require 'tools/make)
 (require 'tools/tree-sitter)
 
 ;; Built-in packages
