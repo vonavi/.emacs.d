@@ -37,6 +37,7 @@
 (require 'completion/vertico)
 (require 'emacs/dired)
 (require 'emacs/undo)
+(require 'tools/debugger)
 (require 'tools/direnv)
 (require 'tools/magit)
 (require 'tools/make)
