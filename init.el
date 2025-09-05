@@ -37,6 +37,7 @@
 (require 'completion/vertico)
 (require 'emacs/dired)
 (require 'emacs/undo)
+(require 'themes/solarized)
 (require 'tools/biblio)
 (require 'tools/debugger)
 (require 'tools/direnv)
@@ -89,8 +90,6 @@
 (require 'config/rainbow-delimiters)
 ;; Interface for sdcv (StartDict console version)
 (require 'config/sdcv)
-;; The Solarized colour theme, ported to Emacs
-(require 'config/solarized-theme)
 ;; Visual Fill Column
 (require 'config/visual-fill-column)
 
