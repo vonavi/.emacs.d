@@ -40,6 +40,7 @@
 (require 'lang/cc)
 (require 'lang/coq)
 (require 'lang/latex)
+(require 'lang/markdown)
 (require 'lang/python)
 (require 'themes/solarized)
 (require 'tools/biblio)
@@ -76,8 +77,6 @@
 (require 'config/avy)
 ;; A set of Emacs functions and bindings to google under point
 (require 'config/google-this)
-;; A major mode for editing Markdown-formatted text files
-(require 'config/markdown)
 ;; Provide rich support for citations, labels and cross-references in Org-mode
 (require 'config/org-ref)
 ;; Implementation of Pomodoro and Third Time techniques
