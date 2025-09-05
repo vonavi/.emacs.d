@@ -1,4 +1,4 @@
-;;; auctex.el
+;;; lang/latex.el
 
 (use-package tex
   :ensure auctex
@@ -83,5 +83,5 @@
   ;; Automatically add a quick menu of document headings
   (reftex-mode . imenu-add-menubar-index))
 
-(provide 'config/auctex)
-;;; auctex.el ends here
+(provide 'lang/latex)
+;;; lang/latex.el ends here

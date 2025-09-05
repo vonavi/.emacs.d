@@ -39,6 +39,7 @@
 (require 'emacs/undo)
 (require 'lang/cc)
 (require 'lang/coq)
+(require 'lang/latex)
 (require 'lang/python)
 (require 'themes/solarized)
 (require 'tools/biblio)
@@ -71,8 +72,6 @@
 ;; Rudimentary Roam replica with Org-mode
 (require 'config/org-roam)
 
-;; Extensible package for writing and formatting TeX files
-(require 'config/auctex)
 ;; Jump to things in Emacs tree-style
 (require 'config/avy)
 ;; A set of Emacs functions and bindings to google under point
