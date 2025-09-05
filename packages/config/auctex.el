@@ -77,11 +77,11 @@
   (advice-add 'reftex-label :after #'my/RefTeX-fold)
   (advice-add 'reftex-reference :after #'my/RefTeX-fold)
   (advice-add 'reftex-citation :after #'my/RefTeX-fold)
-
+  :hook
   ;; Support for labels, references, citations and index entries
-  :hook (TeX-mode . turn-on-reftex)
+  (TeX-mode . turn-on-reftex)
   ;; Automatically add a quick menu of document headings
-  :hook (reftex-mode . imenu-add-menubar-index))
+  (reftex-mode . imenu-add-menubar-index))
 
 (provide 'config/auctex)
 ;;; auctex.el ends here
