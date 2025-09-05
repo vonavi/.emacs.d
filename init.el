@@ -35,6 +35,7 @@
 
 (require 'checkers/spell)
 (require 'completion/vertico)
+(require 'editor/file-templates)
 (require 'emacs/dired)
 (require 'emacs/undo)
 (require 'lang/cc)
@@ -53,7 +54,6 @@
 (require 'tools/tree-sitter)
 
 ;; Built-in packages
-(require 'config/auto-insert)
 (require 'config/auto-revert)
 (require 'config/desktop)
 (require 'config/display-fill-column-indicator)

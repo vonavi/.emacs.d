@@ -1,7 +1,4 @@
-;;; auto-insert.el
-
-(eval-when-compile
-  (require 'subr-x))
+;;; editor/file-templates.el
 
 (use-package autoinsert
   :ensure nil
@@ -17,5 +14,5 @@
   :config
   (auto-insert-mode +1))
 
-(provide 'config/auto-insert)
-;;; auto-insert.el ends here
+(provide 'editor/file-templates)
+;;; editor/file-templates.el ends here
