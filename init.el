@@ -38,6 +38,7 @@
 (require 'emacs/dired)
 (require 'emacs/undo)
 (require 'lang/cc)
+(require 'lang/coq)
 (require 'lang/python)
 (require 'themes/solarized)
 (require 'tools/biblio)
@@ -82,8 +83,6 @@
 (require 'config/org-ref)
 ;; Implementation of Pomodoro and Third Time techniques
 (require 'config/pomm)
-;; Generic Emacs interface for interactive proof assistants
-(require 'config/proof-general)
 ;; Highlight delimiters according to their depth
 (require 'config/rainbow-delimiters)
 ;; Interface for sdcv (StartDict console version)

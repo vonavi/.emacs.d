@@ -1,4 +1,7 @@
-;;; proof-general.el
+;;; lang/coq.el
+
+;;
+;;; A generic Emacs interface for proof assistants
 
 (use-package proof-general
   :custom
@@ -14,5 +17,5 @@
   :init (setq overlay-arrow-string "")
   :bind (:map coq-mode-map ("C-x u" . vundo)))
 
-(provide 'config/proof-general)
-;;; proof-general.el ends here
+(provide 'lang/coq)
+;;; lang/coq.el ends here
