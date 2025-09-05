@@ -41,7 +41,8 @@
 (require 'lang/coq)
 (require 'lang/latex)
 (require 'lang/markdown)
-(require 'lang/org)
+(require 'lang/org/org)
+(require 'lang/org/roam)
 (require 'lang/python)
 (require 'themes/solarized)
 (require 'tools/biblio)
@@ -68,9 +69,6 @@
 (require 'config/smart-hungry-delete)
 ;; Unobtrusively remove trailing whitespace
 (require 'config/ws-butler)
-
-;; Rudimentary Roam replica with Org-mode
-(require 'config/org-roam)
 
 ;; Jump to things in Emacs tree-style
 (require 'config/avy)

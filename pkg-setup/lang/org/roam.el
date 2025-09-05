@@ -1,4 +1,7 @@
-;;; org-roam.el
+;;; lang/org/roam.el
+
+;;
+;;; A database abstraction layer for Org-mode
 
 (use-package org-roam
   :ensure-system-package (dot . graphviz)
@@ -25,8 +28,11 @@
   ;; Update SQLite database of Org files as they are modified
   (org-roam-db-autosync-mode +1))
 
+;;
+;;; User Interface for Org-roam
+
 (use-package org-roam-ui
   :delight)
 
-(provide 'config/org-roam)
-;;; org-roam.el ends here
+(provide 'lang/org/roam)
+;;; lang/org/roam.el ends here

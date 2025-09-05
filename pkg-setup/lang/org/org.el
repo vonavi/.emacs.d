@@ -1,4 +1,4 @@
-;;; lang/org.el
+;;; lang/org/org.el
 
 ;;
 ;;; Outline-based notes management and organizer
@@ -71,5 +71,5 @@
   :ensure org
   :requires server)
 
-(provide 'lang/org)
-;;; lang/org.el ends here
+(provide 'lang/org/org)
+;;; lang/org/org.el ends here
