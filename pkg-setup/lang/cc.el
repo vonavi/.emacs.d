@@ -1,6 +1,6 @@
-;;; c-ts-mode.el
+;;; lang/cc.el
 
-(use-package c-ts-mode
+(use-package cc-mode
   :ensure nil
   :ensure-system-package clangd
   :after (eglot treesit)
@@ -20,5 +20,5 @@
   ;; Start the LSP server
   ((c-ts-mode c++-ts-mode c-or-c++-ts-mode) . eglot-ensure))
 
-(provide 'config/c-ts-mode)
-;;; c-ts-mode.el ends here
+(provide 'lang/cc)
+;;; lang/cc.el ends here

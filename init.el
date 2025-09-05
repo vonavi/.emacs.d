@@ -37,6 +37,7 @@
 (require 'completion/vertico)
 (require 'emacs/dired)
 (require 'emacs/undo)
+(require 'lang/cc)
 (require 'lang/python)
 (require 'themes/solarized)
 (require 'tools/biblio)
@@ -73,8 +74,6 @@
 (require 'config/auctex)
 ;; Jump to things in Emacs tree-style
 (require 'config/avy)
-;; Tree-sitter support for C and C++
-(require 'config/c-ts-mode)
 ;; A set of Emacs functions and bindings to google under point
 (require 'config/google-this)
 ;; A major mode for editing Markdown-formatted text files
