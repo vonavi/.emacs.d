@@ -1,9 +1,12 @@
-;;; python.el
+;;; lang/python.el
 
 (use-package python
   :ensure nil
   :ensure-system-package (pylsp . python3-pylsp)
   :after (eglot treesit)
+  :custom
+  ;; Silence warnings about Python indentation
+  (python-indent-guess-indent-offset-verbose nil)
   :init
   ;; Install the tree-sitter grammar library
   (add-to-list 'treesit-language-source-alist
@@ -14,5 +17,5 @@
   (python-ts-mode . eglot-ensure)       ; start the LSP server
   (python-ts-mode . (lambda () (setq-local tab-width 4))))
 
-(provide 'config/python)
-;;; python.el ends here
+(provide 'lang/python)
+;;; lang/python.el ends here
