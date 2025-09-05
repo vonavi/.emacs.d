@@ -42,22 +42,6 @@
    '((C . t)
      (python . t))))
 
-(use-package oc
-  :ensure org
-  :after bibtex-completion
-  :custom
-  ;; Set bibliographies globally
-  (org-cite-global-bibliography bibtex-completion-bibliography)
-  ;; Set the directory where CSL styles are stored
-  (org-cite-csl-styles-dir (expand-file-name "styles/" org-directory))
-  ;; Automatically select the processor for exporting citations
-  (org-cite-export-processors '((latex . (bibtex "ieeetr"))
-                                (t . (csl "ieee.csl"))))
-  :bind
-  (:map org-mode-map ("C-c b" . org-cite-insert))
-  ;; Allow to use the CSL backend
-  :config (require 'oc-csl))
-
 (use-package ox-latex
   :ensure org
   :ensure-system-package

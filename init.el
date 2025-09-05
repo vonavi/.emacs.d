@@ -37,6 +37,7 @@
 (require 'completion/vertico)
 (require 'emacs/dired)
 (require 'emacs/undo)
+(require 'tools/biblio)
 (require 'tools/debugger)
 (require 'tools/direnv)
 (require 'tools/magit)
@@ -61,10 +62,6 @@
 ;; Unobtrusively remove trailing whitespace
 (require 'config/ws-butler)
 
-;; A BibTeX backend for completion frameworks
-(require 'config/bibtex-completion)
-;; Quickly find and act on bibliographic references
-(require 'config/citar)
 ;; Org Mode is a mode for document editing, formatting, and organizing
 (require 'config/org)
 ;; Rudimentary Roam replica with Org-mode
