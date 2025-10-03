@@ -7,7 +7,7 @@
 (setq frame-inhibit-implied-resize t)
 
 ;; Prevent silly initial splash screen
-(setq inhibit-splash-screen t)
+(setq inhibit-startup-screen t)
 ;; Hide the tool bar on all frames
 (tool-bar-mode -1)
 ;; Specify whether to have vertical scroll bars and where to place them
