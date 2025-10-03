@@ -46,7 +46,7 @@
 (require 'lang/org/org)
 (require 'lang/org/roam)
 (require 'lang/python)
-(require 'themes/solarized)
+(require 'themes/zenburn)
 (require 'tools/biblio)
 (require 'tools/debugger)
 (require 'tools/direnv)
