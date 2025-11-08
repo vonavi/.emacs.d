@@ -39,6 +39,7 @@
 (require 'editor/file-templates)
 (require 'emacs/dired)
 (require 'emacs/undo)
+(require 'emacs/vc)
 (require 'lang/cc)
 (require 'lang/coq)
 (require 'lang/latex)
