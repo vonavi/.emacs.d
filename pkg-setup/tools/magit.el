@@ -14,6 +14,9 @@
   :bind
   ;; Magit's status buffer
   ("C-x m" . magit-status)
+  ;; Visit the respective file in the working tree
+  (:map magit-diff-section-map
+   ([remap magit-visit-thing] . magit-diff-visit-worktree-file))
   :hook
   ;; Fold long lines
   (magit-mode . (lambda () (toggle-truncate-lines -1))))
