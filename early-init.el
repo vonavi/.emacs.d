@@ -32,4 +32,9 @@
 ;; Disable the annoying bell ring
 (setq ring-bell-function #'ignore)
 
+;; Since Emacs 27, package initialization occurs before `user-init-file' is
+;; loaded, but after `early-init-file'. We prevent Emacs from doing it early,
+;; until straight.el is loaded.
+(setq package-enable-at-startup nil)
+
 ;;; early-init.el ends here
