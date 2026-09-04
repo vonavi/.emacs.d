@@ -13,12 +13,6 @@
 ;; Specify whether to have vertical scroll bars and where to place them
 (set-scroll-bar-mode 'right)
 
-;; Set the default font
-(set-face-attribute 'default nil
-                    :family "JetBrainsMono Nerd Font"
-                    :weight 'normal
-                    :height 120)
-
 ;; Create a reasonable title bar
 (setq frame-title-format
       '((:eval (if (buffer-file-name)

@@ -15,6 +15,18 @@
 ;; Emacs appearance setup
 ;;-----------------------
 
+;; Set up fonts
+(defun my/setup-fonts (&optional frame)
+  "Configure fonts for FRAME, or the currently selected frame."
+  (with-selected-frame (or frame (selected-frame))
+    (set-face-attribute 'default nil
+                        :family "Iosevka Nerd Font"
+                        :width 'normal
+                        :height 120)))
+(if (daemonp)
+    (add-hook 'after-make-frame-functions #'my/setup-fonts)
+  (my/setup-fonts))
+
 ;; Mode bar preferences
 (column-number-mode +1)           ; show column number in mode-line
 
