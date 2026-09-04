@@ -10,9 +10,6 @@
   (org-pretty-entities t)       ; display entities as UTF-8 characters
   (org-src-fontify-natively t) ; use the language major mode to fontify code
   (org-src-tab-acts-natively t) ; use the language major mode to indent code
-  :custom-face
-  ;; Set the font family for Org headings
-  (variable-pitch ((t (:family ,(face-attribute 'default :family)))))
   :config
   ;; Use "xdg-open" to open files by default
   (setcdr (assq t org-file-apps-gnu) "xdg-open %s"))
