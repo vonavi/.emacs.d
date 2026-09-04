@@ -18,5 +18,13 @@
   ;; Fold long lines
   (magit-mode . (lambda () (toggle-truncate-lines -1))))
 
+(use-package magit-extras
+  :ensure magit
+  :after project
+  :config
+  ;; Teach `project-switch-project' about Magit's status
+  (keymap-set project-prefix-map "m" #'magit-project-status)
+  (add-to-list 'project-switch-commands '(magit-project-status "Magit") t))
+
 (provide 'tools/magit)
 ;;; tools/magit.el ends here
